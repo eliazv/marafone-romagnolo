@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Smartphone, Apple } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -17,7 +18,7 @@ const HeroSection = () => {
         <div className="mb-8 flex justify-center">
           <img 
             src="/lovable-uploads/6dd8a649-d872-4963-8149-c33ebbce875b.png" 
-            alt="Marafone Romagnolo Logo" 
+            alt="Marafone Romagnolo - Gioco di carte tradizionale della Romagna" 
             className="w-48 h-48 md:w-64 md:h-64 object-contain animate-bounce-gentle"
           />
         </div>
@@ -36,12 +37,14 @@ const HeroSection = () => {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <Button 
             size="lg" 
             className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
-            <Smartphone className="mr-2 h-6 w-6" />
+            <svg className="mr-2 h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+            </svg>
             Gioca ora su Android
           </Button>
           
@@ -53,6 +56,18 @@ const HeroSection = () => {
             <Apple className="mr-2 h-6 w-6" />
             Presto su iOS
           </Button>
+        </div>
+
+        {/* Rules link */}
+        <div className="mb-12">
+          <Link to="/regole">
+            <Button 
+              variant="ghost"
+              className="text-marafone-dark hover:bg-marafone-dark/10 font-game font-semibold underline"
+            >
+              📖 Scopri le regole del gioco
+            </Button>
+          </Link>
         </div>
 
         {/* Scroll indicator */}

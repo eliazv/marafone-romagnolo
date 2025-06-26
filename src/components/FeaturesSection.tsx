@@ -5,8 +5,8 @@ const FeaturesSection = () => {
   const features = [
     {
       icon: <Gamepad className="h-12 w-12 text-marafone-red" />,
-      title: "Gioca offline e online",
-      description: "Sfida l'IA o i tuoi amici online da tutto il mondo!"
+      title: "Gioca offline con IA",
+      description: "Sfida l'intelligenza artificiale quando vuoi tu!"
     },
     {
       icon: <Brain className="h-12 w-12 text-marafone-red" />,
@@ -19,9 +19,9 @@ const FeaturesSection = () => {
       description: "Conquista la vetta e sblocca nuovi livelli!"
     },
     {
-      icon: <div className="h-12 w-12 bg-marafone-red rounded-lg flex items-center justify-center text-white font-bold text-xl">🎨</div>,
-      title: "Personalizzazione totale",
-      description: "Carte, tavoli e avatar unici per il tuo stile"
+      icon: <div className="h-12 w-12 bg-marafone-red rounded-lg flex items-center justify-center text-white font-bold text-xl">👥</div>,
+      title: "Aggiungi amici",
+      description: "Segui i progressi degli amici nelle classifiche (multiplayer in sviluppo)"
     }
   ];
 
