@@ -1,5 +1,5 @@
 
-import { Gamepad, Brain, award } from "lucide-react";
+import { Gamepad, Brain, Award } from "lucide-react";
 
 const FeaturesSection = () => {
   const features = [
@@ -14,7 +14,7 @@ const FeaturesSection = () => {
       description: "3 livelli di difficoltà per sfidare le tue abilità"
     },
     {
-      icon: <award className="h-12 w-12 text-marafone-red" />,
+      icon: <Award className="h-12 w-12 text-marafone-red" />,
       title: "Classifiche globali",
       description: "Conquista la vetta e sblocca nuovi livelli!"
     },
