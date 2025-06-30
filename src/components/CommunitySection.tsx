@@ -1,11 +1,87 @@
 import { Button } from "@/components/ui/button";
 import { Handshake } from "lucide-react";
 import QRCode from "react-qr-code";
+import { carteImages } from "@/lib/carteImages";
 
 const CommunitySection = () => {
   return (
-    <section className="py-20 px-4 bg-marafone-red text-white">
-      <div className="container mx-auto text-center">
+    <section className="relative py-20 px-4 bg-marafone-red text-white overflow-hidden">
+      {/* Carte decorative animate */}
+      <div className="absolute inset-0 pointer-events-none select-none z-0">
+        {carteImages.slice(20, 26).map((src, i) => {
+          const positions = [
+            {
+              top: "8%",
+              left: "12%",
+              rotate: "-10deg",
+              size: 44,
+              anim: "animate-float",
+            },
+            {
+              top: "22%",
+              right: "10%",
+              rotate: "8deg",
+              size: 50,
+              anim: "animate-bounce-gentle",
+            },
+            {
+              bottom: "18%",
+              left: "18%",
+              rotate: "12deg",
+              size: 46,
+              anim: "animate-float-slow",
+            },
+            {
+              bottom: "10%",
+              right: "8%",
+              rotate: "-6deg",
+              size: 54,
+              anim: "animate-bounce-gentle",
+            },
+            {
+              top: "55%",
+              left: "35%",
+              rotate: "6deg",
+              size: 48,
+              anim: "animate-float",
+            },
+            {
+              bottom: "32%",
+              right: "28%",
+              rotate: "-8deg",
+              size: 52,
+              anim: "animate-float-slow",
+            },
+          ];
+          const pos = positions[i % positions.length];
+          return (
+            <img
+              key={src}
+              src={src}
+              alt="Carta da gioco romagnola"
+              className={pos.anim}
+              style={{
+                position: "absolute",
+                ...("top" in pos ? { top: pos.top } : {}),
+                ...("bottom" in pos ? { bottom: pos.bottom } : {}),
+                ...("left" in pos ? { left: pos.left } : {}),
+                ...("right" in pos ? { right: pos.right } : {}),
+                width: pos.size,
+                height: pos.size * 1.5,
+                transform: `rotate(${pos.rotate})`,
+                zIndex: 1,
+                filter: "drop-shadow(0 2px 8px #0003) blur(0.5px)",
+                opacity: 0.7,
+                pointerEvents: "none",
+                userSelect: "none",
+                transition: "transform 0.5s",
+              }}
+              draggable={false}
+            />
+          );
+        })}
+      </div>
+      <div className="container mx-auto text-center relative z-10">
         <h2 className="font-retro text-4xl md:text-5xl mb-8">
           Unisciti alla Community!
         </h2>
@@ -43,10 +119,14 @@ const CommunitySection = () => {
               Scansiona per scaricare subito!
             </p>
           </div>
-          {/* Divider or Icon */}
-          <div className="hidden md:flex flex-col items-center justify-center order-1 md:order-2">
-            <div className="w-1 h-32 bg-marafone-yellow rounded-full opacity-60"></div>
-            <span className="text-5xl mt-4 animate-bounce">🃏</span>
+          {/* galletto */}
+          <div className="flex flex-col items-center justify-center order-1 md:order-2 relative">
+            <img
+              src="/img/vieni a giocare.png"
+              alt="Gallo stratega"
+              className="w-40 h-40 md:w-48 md:h-48 mb-2 drop-shadow-lg"
+              draggable={false}
+            />
           </div>
           {/* Invite Card */}
           <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm flex flex-col items-center justify-center text-center md:col-span-1 order-3">

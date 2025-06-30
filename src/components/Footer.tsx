@@ -1,10 +1,86 @@
-import { Smartphone, Apple, Mail, Shield, HelpCircle } from "lucide-react";
+import { Smartphone, Mail, Shield, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { carteImages } from "@/lib/carteImages";
 
 const Footer = () => {
   return (
-    <footer className="bg-marafone-dark text-white py-16 px-4">
-      <div className="container mx-auto">
+    <footer className="relative bg-marafone-dark text-white py-16 px-4 overflow-hidden">
+      {/* Carte decorative animate */}
+      <div className="absolute inset-0 pointer-events-none select-none z-0">
+        {carteImages.slice(26, 32).map((src, i) => {
+          const positions = [
+            {
+              top: "10%",
+              left: "8%",
+              rotate: "-8deg",
+              size: 38,
+              anim: "animate-float",
+            },
+            {
+              top: "18%",
+              right: "10%",
+              rotate: "10deg",
+              size: 44,
+              anim: "animate-bounce-gentle",
+            },
+            {
+              bottom: "15%",
+              left: "15%",
+              rotate: "6deg",
+              size: 36,
+              anim: "animate-float-slow",
+            },
+            {
+              bottom: "8%",
+              right: "12%",
+              rotate: "-12deg",
+              size: 50,
+              anim: "animate-bounce-gentle",
+            },
+            {
+              top: "60%",
+              left: "30%",
+              rotate: "4deg",
+              size: 42,
+              anim: "animate-float",
+            },
+            {
+              bottom: "30%",
+              right: "25%",
+              rotate: "-6deg",
+              size: 40,
+              anim: "animate-float-slow",
+            },
+          ];
+          const pos = positions[i % positions.length];
+          return (
+            <img
+              key={src}
+              src={src}
+              alt="Carta da gioco romagnola"
+              className={pos.anim}
+              style={{
+                position: "absolute",
+                ...("top" in pos ? { top: pos.top } : {}),
+                ...("bottom" in pos ? { bottom: pos.bottom } : {}),
+                ...("left" in pos ? { left: pos.left } : {}),
+                ...("right" in pos ? { right: pos.right } : {}),
+                width: pos.size,
+                height: pos.size * 1.5,
+                transform: `rotate(${pos.rotate})`,
+                zIndex: 1,
+                filter: "drop-shadow(0 2px 8px #0003) blur(0.5px)",
+                opacity: 0.5,
+                pointerEvents: "none",
+                userSelect: "none",
+                transition: "transform 0.5s",
+              }}
+              draggable={false}
+            />
+          );
+        })}
+      </div>
+      <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Logo and description */}
           <div className="md:col-span-2">
@@ -23,7 +99,7 @@ const Footer = () => {
                 className="bg-marafone-red p-3 rounded-lg flex items-center hover:bg-marafone-yellow/80 transition-colors"
               >
                 <svg
-                  className="h-6 w-6"
+                  className="h-8 w-8"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -32,7 +108,17 @@ const Footer = () => {
                 <span className="ml-2 font-game font-semibold">Play Store</span>
               </a>
               <div className="bg-gray-600 p-3 rounded-lg opacity-50 flex items-center">
-                <Apple className="h-6 w-6" />
+                {/* Icona App Store stilizzata (SVG) */}
+                <span className="h-8 w-8 inline-block align-middle">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    width="32"
+                    height="32"
+                  >
+                    <path d="M17.564 13.06c-.02-2.14 1.75-3.16 1.83-3.21-1-1.46-2.56-1.66-3.11-1.68-1.32-.13-2.58.77-3.25.77-.67 0-1.7-.75-2.8-.73-1.44.02-2.77.84-3.51 2.13-1.5 2.6-.38 6.45 1.07 8.56.71 1.03 1.56 2.18 2.68 2.14 1.08-.04 1.49-.69 2.8-.69 1.31 0 1.68.69 2.81.67 1.16-.02 1.89-1.05 2.59-2.08.82-1.19 1.16-2.34 1.18-2.4-.03-.01-2.26-.87-2.28-3.45zm-2.68-6.3c.6-.73 1-1.75.89-2.77-.86.03-1.89.57-2.5 1.3-.55.65-1.04 1.7-.86 2.7.91.07 1.86-.52 2.47-1.23z" />
+                  </svg>
+                </span>
                 <span className="ml-2 font-game font-semibold">App Store</span>
               </div>
             </div>
@@ -72,7 +158,14 @@ const Footer = () => {
             <div className="font-game space-y-2 opacity-80">
               <p>👨‍💻 Sviluppatore: Elia Zavatta</p>
               <p>📧 zavattaelia@gmail.com</p>
-              <p>🌐 www.eliazavatta.it</p>
+              <a
+                href="https://www.eliazavatta.it/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-marafone-yellow transition-colors"
+              >
+                🌐 eliazavatta.it
+              </a>
             </div>
           </div>
         </div>
