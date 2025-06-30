@@ -9,131 +9,41 @@ const HeroSection = () => {
   return (
     <>
       <Header />
-      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-gradient-to-br from-marafone-yellow via-marafone-beige to-marafone-red pt-26 md:pt-28">
-        {/* Background decorative elements + carte */}
-        <div className="absolute inset-0 opacity-20 pointer-events-none select-none z-0">
-          {/* Cerchi colorati */}
-          <div className="absolute top-20 left-10 w-32 h-32 bg-marafone-red rounded-full animate-float shadow-2xl blur-sm"></div>
-          <div className="absolute bottom-32 right-20 w-24 h-24 bg-marafone-yellow rounded-full animate-bounce-gentle shadow-xl blur-sm"></div>
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-marafone-red rounded-full animate-pulse shadow-lg blur-sm"></div>
-          <div className="absolute bottom-10 left-1/2 w-40 h-40 bg-marafone-yellow/60 rounded-full animate-float-slow shadow-2xl blur-2xl"></div>
-          <div className="absolute top-10 right-1/3 w-24 h-24 bg-marafone-red/70 rounded-full animate-bounce-gentle shadow-xl blur"></div>
-
-          {/* Carte decorative randomizzate */}
-          {carteImages.slice(0, 8).map((src, i) => {
-            // Posizioni e rotazioni predefinite per un effetto "sparso"
-            const positions = [
-              {
-                top: "8%",
-                left: "8%",
-                rotate: "-12deg",
-                size: 60,
-                anim: "animate-float",
-              },
-              {
-                top: "15%",
-                right: "12%",
-                rotate: "8deg",
-                size: 64,
-                anim: "animate-bounce-gentle",
-              },
-              {
-                bottom: "18%",
-                left: "18%",
-                rotate: "16deg",
-                size: 56,
-                anim: "animate-float-slow",
-              },
-              {
-                bottom: "10%",
-                right: "10%",
-                rotate: "-8deg",
-                size: 70,
-                anim: "animate-bounce-gentle",
-              },
-              {
-                top: "40%",
-                left: "4%",
-                rotate: "6deg",
-                size: 54,
-                anim: "animate-float",
-              },
-              {
-                top: "60%",
-                right: "6%",
-                rotate: "-14deg",
-                size: 62,
-                anim: "animate-float-slow",
-              },
-              {
-                bottom: "30%",
-                left: "40%",
-                rotate: "10deg",
-                size: 58,
-                anim: "animate-float",
-              },
-              {
-                top: "25%",
-                right: "35%",
-                rotate: "-6deg",
-                size: 66,
-                anim: "animate-bounce-gentle",
-              },
-            ];
-            const pos = positions[i % positions.length];
-            return (
-              <img
-                key={src}
-                src={src}
-                alt="Carta da gioco romagnola"
-                className={pos.anim}
-                style={{
-                  position: "absolute",
-                  ...("top" in pos ? { top: pos.top } : {}),
-                  ...("bottom" in pos ? { bottom: pos.bottom } : {}),
-                  ...("left" in pos ? { left: pos.left } : {}),
-                  ...("right" in pos ? { right: pos.right } : {}),
-                  width: pos.size,
-                  height: pos.size * 1.5,
-                  transform: `rotate(${pos.rotate})`,
-                  zIndex: 1,
-                  filter: "drop-shadow(0 2px 8px #0003) blur(0.5px)",
-                  opacity: 0.85,
-                  pointerEvents: "none",
-                  userSelect: "none",
-                  transition: "transform 0.5s",
-                }}
-                draggable={false}
-              />
-            );
-          })}
-        </div>
+      <section
+        className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden pt-26 md:pt-28"
+        style={{
+          backgroundImage: 'url("/img/hero.webp")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {/* Nessun elemento decorativo o carte nello sfondo */}
 
         <div className="container mx-auto text-center relative z-10">
-          {/* Logo/Character */}
-          <div className="mb-1 flex justify-center relative">
-            <img
-              src="/img/logo.png"
-              alt="Marafone Romagnolo - Gioco di carte tradizionale della Romagna"
-              className="w-48 h-48 md:w-64 md:h-64 object-contain drop-shadow-2xl"
-            />
-          </div>
+          {/* Logo rimosso */}
 
           {/* Main Title */}
-          <h1 className="font-retro text-4xl md:text-6xl lg:text-7xl text-marafone-red mb-4 drop-shadow-lg tracking-tight animate-hero-title">
+          <h1
+            className="font-retro text-4xl md:text-6xl lg:text-7xl text-white mb-4 drop-shadow-2xl tracking-tight animate-hero-title relative"
+            style={{ textShadow: "0 2px 12px #000, 0 1px 0 #fff8" }}
+          >
             <span className="inline-block animate-wiggle-slow">M</span>ARAFONE
             <br />
-            <span className="text-marafone-dark animate-wiggle">ROMAGNOLO</span>
+            <span className="text-white animate-wiggle">ROMAGNOLO</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="font-game text-xl md:text-2xl text-marafone-dark mb-8 max-w-2xl mx-auto font-semibold animate-fade-in">
+          <p
+            className="font-game text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto font-semibold animate-fade-in relative"
+            style={{ textShadow: "0 2px 8px #000, 0 1px 0 #fff8" }}
+          >
             Il gioco di carte della Romagna, <br className="hidden md:block" />
             ora anche sul tuo smartphone!
           </p>
 
           {/* CTA Buttons - più grandi e verticali */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-8 animate-fade-in w-full max-w-xs sm:max-w-md mx-auto">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 animate-fade-in w-full max-w-xs sm:max-w-md mx-auto">
             <a
               href="https://play.google.com/store/apps/details?id=com.eliazavatta.maraffa"
               target="_blank"
@@ -142,8 +52,12 @@ const HeroSection = () => {
             >
               <Button
                 size="sm"
-                className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game font-bold text-lg px-4 py-2 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center w-full min-h-[2.6rem] sm:min-h-[3rem]"
-                style={{ minHeight: "2.6rem", fontSize: "1.2rem" }}
+                className="bg-white/90 hover:bg-white text-marafone-dark font-game font-bold text-lg px-6 py-3 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 flex items-center justify-center w-full min-h-[3rem] border-2 border-marafone-dark/60 backdrop-blur-sm"
+                style={{
+                  minHeight: "3rem",
+                  fontSize: "1.2rem",
+                  boxShadow: "0 4px 32px #0007, 0 1.5px 0 #fff8",
+                }}
               >
                 <svg
                   className="mr-2 h-8 w-8 sm:h-10 sm:w-10"
@@ -159,8 +73,12 @@ const HeroSection = () => {
               size="sm"
               disabled
               variant="outline"
-              className="w-full sm:w-auto flex-1 border-4 border-marafone-dark text-marafone-dark hover:bg-marafone-dark hover:text-white font-game font-bold text-lg px-4 py-2 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center min-h-[2.6rem] sm:min-h-[3rem]"
-              style={{ minHeight: "2.6rem", fontSize: "1.2rem" }}
+              className="w-full sm:w-auto flex-1 border-2 border-marafone-dark/60 text-marafone-dark font-game font-bold text-lg px-6 py-3 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center min-h-[3rem] bg-white/70 backdrop-blur-sm"
+              style={{
+                minHeight: "3rem",
+                fontSize: "1.2rem",
+                boxShadow: "0 4px 32px #0007, 0 1.5px 0 #fff8",
+              }}
             >
               <svg
                 viewBox="0 0 24 24"
@@ -180,7 +98,7 @@ const HeroSection = () => {
 
           {/* Scroll indicator */}
           <div
-            className="flex justify-center animate-bounce mt-8 cursor-pointer"
+            className="flex justify-center animate-bounce mt-8 cursor-pointer "
             onClick={() => {
               const el = document.getElementById("features");
               if (el) {
@@ -206,7 +124,7 @@ const HeroSection = () => {
             }}
           >
             <svg
-              className="w-8 h-8 text-marafone-dark"
+              className="w-8 h-8 text-white"
               fill="none"
               stroke="currentColor"
               strokeWidth={3}
