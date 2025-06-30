@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <>
       <Header />
-      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-gradient-to-br from-marafone-yellow via-marafone-beige to-marafone-red">
+      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-gradient-to-br from-marafone-yellow via-marafone-beige to-marafone-red pt-26 md:pt-28">
         {/* Background decorative elements + carte */}
         <div className="absolute inset-0 opacity-20 pointer-events-none select-none z-0">
           {/* Cerchi colorati */}
@@ -133,7 +133,7 @@ const HeroSection = () => {
           </p>
 
           {/* CTA Buttons - più grandi e verticali */}
-          <div className="flex flex-col gap-6 justify-center items-center mb-8 animate-fade-in w-full max-w-md mx-auto">
+          <div className="flex flex-col gap-4 justify-center items-center mb-8 animate-fade-in w-full max-w-md mx-auto">
             <a
               href="https://play.google.com/store/apps/details?id=com.eliazavatta.maraffa"
               target="_blank"
@@ -141,12 +141,12 @@ const HeroSection = () => {
               className="w-full"
             >
               <Button
-                size="lg"
-                className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game font-bold text-2xl px-12 py-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center w-full min-h-[5rem]"
-                style={{ minHeight: "5rem", fontSize: "1.5rem" }}
+                size="sm"
+                className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game font-bold text-lg px-6 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center w-full min-h-[3.2rem]"
+                style={{ minHeight: "3.2rem", fontSize: "1.1rem" }}
               >
                 <svg
-                  className="mr-4 h-12 w-12"
+                  className="mr-3 h-14 w-14"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -157,16 +157,16 @@ const HeroSection = () => {
             </a>
 
             <Button
-              size="lg"
+              size="sm"
               disabled
               variant="outline"
-              className="border-4 border-marafone-dark text-marafone-dark hover:bg-marafone-dark hover:text-white font-game font-bold text-2xl px-12 py-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center w-full min-h-[5rem]"
-              style={{ minHeight: "5rem", fontSize: "1.5rem" }}
+              className="border-4 border-marafone-dark text-marafone-dark hover:bg-marafone-dark hover:text-white font-game font-bold text-lg px-6 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center w-full min-h-[3.2rem]"
+              style={{ minHeight: "3.2rem", fontSize: "1.1rem" }}
             >
               {/* Icona App Store stilizzata (SVG) */}
               <span
-                className="mr-4 inline-block align-middle"
-                style={{ width: "3rem", height: "3rem" }}
+                className="mr-3 inline-block align-middle"
+                style={{ width: "3.5rem", height: "3.5rem" }}
               >
                 <svg
                   viewBox="0 0 24 24"
