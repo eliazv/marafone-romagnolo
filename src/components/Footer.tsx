@@ -1,4 +1,11 @@
-import { Smartphone, Mail, Shield, HelpCircle } from "lucide-react";
+import {
+  Smartphone,
+  Mail,
+  Shield,
+  HelpCircle,
+  Globe,
+  BookOpenText,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { carteImages } from "@/lib/carteImages";
 
@@ -133,7 +140,8 @@ const Footer = () => {
                   to="/regole"
                   className="hover:text-marafone-yellow cursor-pointer transition-colors"
                 >
-                  📖 Regole del Gioco
+                  <BookOpenText className="inline h-4 w-4 mr-2" />
+                  Regole del Gioco
                 </Link>
               </li>
               <li>
@@ -156,15 +164,21 @@ const Footer = () => {
           <div>
             <h4 className="font-game font-bold text-lg mb-4">Contatti</h4>
             <div className="font-game space-y-2 opacity-80">
-              <p>👨‍💻 Sviluppatore: Elia Zavatta</p>
-              <p>📧 zavattaelia@gmail.com</p>
+              <a
+                href="mailto:zavattaelia@gmail.com"
+                className="hover:text-marafone-yellow transition-colors flex items-center"
+              >
+                <Mail className="inline h-4 w-4 mr-2" />
+                zavattaelia@gmail.com
+              </a>
               <a
                 href="https://www.eliazavatta.it/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-marafone-yellow transition-colors"
               >
-                🌐 eliazavatta.it
+                <Globe className="inline h-4 w-4 mr-2" />
+                eliazavatta.it
               </a>
             </div>
           </div>
@@ -176,7 +190,7 @@ const Footer = () => {
             © 2025 Marafone Romagnolo. Tutti i diritti riservati.
           </p>
           <p className="font-game opacity-60 mt-2 text-sm">
-            Made with ❤️ in Romagna by Elia Zavatta
+            Made in Romagna by Elia Zavatta
           </p>
         </div>
       </div>

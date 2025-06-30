@@ -35,10 +35,6 @@ function MobileMenu({ onMenuStateChange }) {
 
   return (
     <>
-      {/* Overlay scuro animato con effetto gradient */}
-      {open && (
-        <div className="fixed inset-0 bg-gradient-to-br from-black/60 via-purple-900/30 to-black/60 z-40 transition-all duration-500 ease-out" />
-      )}
       <div ref={menuRef} className="relative z-50">
         {/* Hamburger button con animazione */}
         <button
@@ -162,16 +158,15 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-3 left-1/2 z-50 -translate-x-1/2 w-[98vw] max-w-5xl rounded-2xl shadow-2xl border-2 border-marafone-yellow flex items-center justify-between px-3 md:px-6 py-2 md:py-3 gap-2 transition-all duration-300 ${
+      className={`fixed top-3 left-1/2 z-50 -translate-x-1/2 w-full max-w-5xl rounded-2xl shadow-2xl border-2 border-marafone-yellow flex items-center justify-between px-2 md:px-6 py-1.5 md:py-3 gap-2 transition-all duration-300 ${
         isMobileMenuOpen
           ? "bg-white/95 md:bg-white/80 md:backdrop-blur-lg"
           : "bg-white/70 md:bg-white/80 backdrop-blur-lg"
       }`}
       style={{
-        margin: "0 auto",
         left: "50%",
         right: "auto",
-        width: "calc(100vw - 1.5rem)",
+        width: "calc(100vw - 3rem)",
         maxWidth: "100vw",
         boxSizing: "border-box",
       }}
@@ -185,11 +180,11 @@ const Header = () => {
         <img
           src="/img/logo.png"
           alt="Logo Marafone"
-          className="w-12 h-12 md:w-20 md:h-20 drop-shadow-2xl group-hover:scale-110 transition-all duration-300 -translate-y-1 md:-translate-y-3 shadow-xl hover:shadow-2xl"
+          className="w-14 h-14 md:w-20 md:h-20 drop-shadow-2xl group-hover:scale-110 transition-all duration-300 -translate-y-1 md:-translate-y-3 shadow-xl hover:shadow-2xl"
           style={{ position: "absolute", left: "0.5rem", top: "-0.5rem" }}
         />
         <span
-          className="font-retro text-xl md:text-4xl text-marafone-red font-bold tracking-tight group-hover:text-marafone-dark transition-all duration-300 ml-16 md:ml-24 drop-shadow-lg hover:drop-shadow-xl"
+          className="font-retro text-xl md:text-4xl text-marafone-red font-bold tracking-tight group-hover:text-marafone-dark transition-all duration-300 ml-20 md:ml-24 drop-shadow-lg hover:drop-shadow-xl"
           style={{ whiteSpace: "nowrap" }}
         >
           Marafone

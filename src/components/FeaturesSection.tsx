@@ -27,7 +27,10 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="relative py-20 px-4 bg-white overflow-hidden">
+    <section
+      id="features"
+      className="relative py-20 px-4 bg-white overflow-hidden"
+    >
       {/* Carte decorative animate */}
       <div className="absolute inset-0 pointer-events-none select-none z-0">
         {carteImages.slice(8, 14).map((src, i) => {

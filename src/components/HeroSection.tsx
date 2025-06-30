@@ -133,20 +133,20 @@ const HeroSection = () => {
           </p>
 
           {/* CTA Buttons - più grandi e verticali */}
-          <div className="flex flex-col gap-4 justify-center items-center mb-8 animate-fade-in w-full max-w-md mx-auto">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-8 animate-fade-in w-full max-w-xs sm:max-w-md mx-auto">
             <a
               href="https://play.google.com/store/apps/details?id=com.eliazavatta.maraffa"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full"
+              className="w-full sm:w-auto flex-1"
             >
               <Button
                 size="sm"
-                className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game font-bold text-lg px-6 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center w-full min-h-[3.2rem]"
-                style={{ minHeight: "3.2rem", fontSize: "1.1rem" }}
+                className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game font-bold text-lg px-4 py-2 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center w-full min-h-[2.6rem] sm:min-h-[3rem]"
+                style={{ minHeight: "2.6rem", fontSize: "1.2rem" }}
               >
                 <svg
-                  className="mr-3 h-14 w-14"
+                  className="mr-2 h-8 w-8 sm:h-10 sm:w-10"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -155,29 +155,23 @@ const HeroSection = () => {
                 Scarica su Play Store
               </Button>
             </a>
-
             <Button
               size="sm"
               disabled
               variant="outline"
-              className="border-4 border-marafone-dark text-marafone-dark hover:bg-marafone-dark hover:text-white font-game font-bold text-lg px-6 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center w-full min-h-[3.2rem]"
-              style={{ minHeight: "3.2rem", fontSize: "1.1rem" }}
+              className="w-full sm:w-auto flex-1 border-4 border-marafone-dark text-marafone-dark hover:bg-marafone-dark hover:text-white font-game font-bold text-lg px-4 py-2 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center min-h-[2.6rem] sm:min-h-[3rem]"
+              style={{ minHeight: "2.6rem", fontSize: "1.2rem" }}
             >
-              {/* Icona App Store stilizzata (SVG) */}
-              <span
-                className="mr-3 inline-block align-middle"
-                style={{ width: "3.5rem", height: "3.5rem" }}
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="100%"
+                height="100%"
+                className="mr-2 h-8 w-8 sm:h-10 sm:w-10"
+                style={{ display: "block" }}
               >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  width="100%"
-                  height="100%"
-                  style={{ display: "block" }}
-                >
-                  <path d="M17.564 13.06c-.02-2.14 1.75-3.16 1.83-3.21-1-1.46-2.56-1.66-3.11-1.68-1.32-.13-2.58.77-3.25.77-.67 0-1.7-.75-2.8-.73-1.44.02-2.77.84-3.51 2.13-1.5 2.6-.38 6.45 1.07 8.56.71 1.03 1.56 2.18 2.68 2.14 1.08-.04 1.49-.69 2.8-.69 1.31 0 1.68.69 2.81.67 1.16-.02 1.89-1.05 2.59-2.08.82-1.19 1.16-2.34 1.18-2.4-.03-.01-2.26-.87-2.28-3.45zm-2.68-6.3c.6-.73 1-1.75.89-2.77-.86.03-1.89.57-2.5 1.3-.55.65-1.04 1.7-.86 2.7.91.07 1.86-.52 2.47-1.23z" />
-                </svg>
-              </span>
+                <path d="M17.564 13.06c-.02-2.14 1.75-3.16 1.83-3.21-1-1.46-2.56-1.66-3.11-1.68-1.32-.13-2.58.77-3.25.77-.67 0-1.7-.75-2.8-.73-1.44.02-2.77.84-3.51 2.13-1.5 2.6-.38 6.45 1.07 8.56.71 1.03 1.56 2.18 2.68 2.14 1.08-.04 1.49-.69 2.8-.69 1.31 0 1.68.69 2.81.67 1.16-.02 1.89-1.05 2.59-2.08.82-1.19 1.16-2.34 1.18-2.4-.03-.01-2.26-.87-2.28-3.45zm-2.68-6.3c.6-.73 1-1.75.89-2.77-.86.03-1.89.57-2.5 1.3-.55.65-1.04 1.7-.86 2.7.91.07 1.86-.52 2.47-1.23z" />
+              </svg>
               Presto su App Store
             </Button>
           </div>
@@ -185,7 +179,32 @@ const HeroSection = () => {
           {/* ...rimosso bottone Regole dalla Hero, ora solo nell'header... */}
 
           {/* Scroll indicator */}
-          <div className="flex justify-center animate-bounce mt-8">
+          <div
+            className="flex justify-center animate-bounce mt-8 cursor-pointer"
+            onClick={() => {
+              const el = document.getElementById("features");
+              if (el) {
+                if (window.location.pathname !== "/") {
+                  window.location.href = "/#features";
+                } else {
+                  el.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+              } else {
+                window.location.href = "/#features";
+              }
+            }}
+            tabIndex={0}
+            role="button"
+            aria-label="Scorri alla sezione funzionalità"
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                const el = document.getElementById("funzionalita");
+                if (el) {
+                  el.scrollIntoView({ behavior: "smooth" });
+                }
+              }
+            }}
+          >
             <svg
               className="w-8 h-8 text-marafone-dark"
               fill="none"

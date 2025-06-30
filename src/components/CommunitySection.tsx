@@ -5,7 +5,10 @@ import { carteImages } from "@/lib/carteImages";
 
 const CommunitySection = () => {
   return (
-    <section className="relative py-20 px-4 bg-marafone-red text-white overflow-hidden">
+    <section
+      id="community"
+      className="relative py-20 px-4 bg-marafone-red text-white overflow-hidden"
+    >
       {/* Carte decorative animate */}
       <div className="absolute inset-0 pointer-events-none select-none z-0">
         {carteImages.slice(20, 26).map((src, i) => {
