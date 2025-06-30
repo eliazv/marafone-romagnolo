@@ -1,6 +1,5 @@
-
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Users, Target, Award } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const GameRules = () => {
@@ -10,7 +9,10 @@ const GameRules = () => {
       <div className="bg-marafone-dark text-white py-4 px-4">
         <div className="container mx-auto">
           <Link to="/">
-            <Button variant="ghost" className="text-white hover:bg-white/20 mb-4">
+            <Button
+              variant="ghost"
+              className="text-white hover:bg-white/20 mb-4"
+            >
               <ArrowLeft className="mr-2 h-4 w-4" />
               Torna alla Home
             </Button>
@@ -24,138 +26,206 @@ const GameRules = () => {
         </div>
       </div>
 
-      {/* Rules content */}
+      {/* Rules content aggiornata */}
       <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
-          
-          {/* Introduction */}
-          <section className="bg-white rounded-2xl p-8 mb-8 shadow-lg border-2 border-marafone-yellow">
+        <div className="max-w-4xl mx-auto space-y-8">
+          {/* Introduzione */}
+          <section className="bg-white rounded-2xl p-8 shadow-lg border-2 border-marafone-yellow">
             <h2 className="font-retro text-2xl text-marafone-red mb-4">
-              Cos'è il Marafone?
+              Introduzione
             </h2>
-            <p className="font-game text-marafone-dark mb-4 leading-relaxed">
-              Il <strong>Marafone</strong> (anche chiamato <strong>Maraffa</strong>) è un tradizionale gioco di carte della Romagna, 
-              tipicamente giocato nei bar e nelle osterie di paese. È un gioco di strategia e fortuna che si tramanda 
-              di generazione in generazione.
+            <p className="font-game text-marafone-dark leading-relaxed mb-2">
+              Il <strong>Marafone Romagnolo</strong> è un gioco di carte
+              tradizionale della Romagna, appartenente alla famiglia della
+              briscola. Si gioca in 4, a squadre di 2, con un mazzo da 40 carte.
             </p>
+            <ul className="font-game text-marafone-dark list-disc ml-6 mb-2">
+              <li>Squadre: 2 da 2 giocatori</li>
+              <li>Mazzo: 40 carte</li>
+              <li>Vince chi arriva a 41 punti</li>
+            </ul>
             <p className="font-game text-marafone-dark leading-relaxed">
-              La nostra versione digitale mantiene tutte le regole tradizionali, permettendoti di giocare 
-              ovunque tu sia con un'esperienza autentica.
+              L'obiettivo è raggiungere 41 punti prima degli avversari,
+              conquistando prese e sperando di avere la marafone.
             </p>
           </section>
 
-          {/* Basic Rules */}
-          <section className="bg-white rounded-2xl p-8 mb-8 shadow-lg border-2 border-marafone-yellow">
-            <div className="flex items-center mb-6">
-              <Users className="h-8 w-8 text-marafone-red mr-3" />
-              <h2 className="font-retro text-2xl text-marafone-red">
-                Regole Base
-              </h2>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="font-game font-bold text-xl text-marafone-dark mb-3">
-                  🃏 Le Carte
-                </h3>
-                <ul className="font-game text-marafone-dark space-y-2">
-                  <li>• Si gioca con un mazzo di 40 carte italiane</li>
-                  <li>• 4 semi: Coppe, Denari, Spade, Bastoni</li>
-                  <li>• Ogni seme ha 10 carte (Asso, 2-7, Fante, Cavallo, Re)</li>
-                </ul>
-              </div>
-              
-              <div>
-                <h3 className="font-game font-bold text-xl text-marafone-dark mb-3">
-                  👥 I Giocatori
-                </h3>
-                <ul className="font-game text-marafone-dark space-y-2">
-                  <li>• Si gioca in 2 o 4 giocatori</li>
-                  <li>• Con 4 giocatori si formano 2 coppie</li>
-                  <li>• Nell'app puoi sfidare l'IA o aggiungere amici</li>
-                </ul>
-              </div>
-            </div>
+          {/* Le Carte */}
+          <section className="bg-white rounded-2xl p-8 shadow-lg border-2 border-marafone-yellow">
+            <h2 className="font-retro text-2xl text-marafone-red mb-4">
+              Le Carte
+            </h2>
+            <ul className="font-game text-marafone-dark space-y-2 list-disc ml-6">
+              <li>Si usa un mazzo da 40 carte (romagnolo o spagnolo).</li>
+              <li>
+                Valori decrescenti: 3, 2, asso, re, cavallo, fante, 7, 6, 5, 4.
+              </li>
+              <li>Scartini: 7, 6, 5, 4 (non valgono punti).</li>
+              <li>Figure: re, cavallo, fante.</li>
+              <li>
+                <strong>Marafone</strong>: hai scelto la briscola e possiedi
+                asso, 2 e 3 di briscola.
+              </li>
+              <li>
+                <strong>Briscola</strong>: Determinata a turno da un giocatore.
+              </li>
+              <li>
+                Asso è la carta che vale di più, ma attenzione: 3 e 2 vincono
+                sempre su di lui.
+              </li>
+            </ul>
           </section>
 
-          {/* How to Play */}
-          <section className="bg-white rounded-2xl p-8 mb-8 shadow-lg border-2 border-marafone-yellow">
-            <div className="flex items-center mb-6">
-              <Target className="h-8 w-8 text-marafone-red mr-3" />
-              <h2 className="font-retro text-2xl text-marafone-red">
-                Come si Gioca
-              </h2>
-            </div>
-            
-            <div className="space-y-6">
-              <div>
-                <h3 className="font-game font-bold text-xl text-marafone-dark mb-3">
-                  🎯 Obiettivo
-                </h3>
-                <p className="font-game text-marafone-dark leading-relaxed">
-                  L'obiettivo è conquistare il maggior numero di punti attraverso le prese. 
-                  Vince chi per primo raggiunge il punteggio stabilito (solitamente 21 punti).
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="font-game font-bold text-xl text-marafone-dark mb-3">
-                  🎲 Distribuzione
-                </h3>
-                <ul className="font-game text-marafone-dark space-y-2">
-                  <li>• Ogni giocatore riceve 3 carte</li>
-                  <li>• 4 carte vengono scoperte sul tavolo</li>
-                  <li>• Il resto del mazzo rimane coperto</li>
-                </ul>
-              </div>
-              
-              <div>
-                <h3 className="font-game font-bold text-xl text-marafone-dark mb-3">
-                  ⚡ Le Prese
-                </h3>
-                <ul className="font-game text-marafone-dark space-y-2">
-                  <li>• Puoi prendere carte dal tavolo se la somma è uguale alla tua carta</li>
-                  <li>• Esempio: con un 7 puoi prendere un 7 o carte che sommano 7 (es: 3+4)</li>
-                  <li>• Alcune combinazioni speciali danno punti extra</li>
-                </ul>
-              </div>
-            </div>
+          {/* Distribuzione */}
+          <section className="bg-white rounded-2xl p-8 shadow-lg border-2 border-marafone-yellow">
+            <h2 className="font-retro text-2xl text-marafone-red mb-4">
+              Distribuzione
+            </h2>
+            <ul className="font-game text-marafone-dark space-y-2 list-disc ml-6">
+              <li>
+                Le carte vengono distribuite in senso antiorario, 5 alla volta,
+                fino a 10 carte per giocatore.
+              </li>
+              <li>
+                Chi ha il 4 di denari decide la briscola di quella mano e inizia
+                a giocare.
+              </li>
+              <li>
+                La mano successiva starà al giocatore alla destra di chi ha
+                scelto la briscola la scorsa mano a sceglierle e iniziare il
+                turno.
+              </li>
+            </ul>
           </section>
 
-          {/* Scoring */}
-          <section className="bg-white rounded-2xl p-8 mb-8 shadow-lg border-2 border-marafone-yellow">
-            <div className="flex items-center mb-6">
-              <Award className="h-8 w-8 text-marafone-red mr-3" />
-              <h2 className="font-retro text-2xl text-marafone-red">
-                Punteggi e Classifiche
-              </h2>
-            </div>
-            
-            <div className="space-y-4">
-              <p className="font-game text-marafone-dark leading-relaxed">
-                Nell'app Marafone Romagnolo puoi:
-              </p>
-              <ul className="font-game text-marafone-dark space-y-2 ml-4">
-                <li>• <strong>Giocare offline</strong> contro l'IA con 3 livelli di difficoltà</li>
-                <li>• <strong>Aggiungere amici</strong> per vedere i loro progressi (multiplayer online in sviluppo)</li>
-                <li>• <strong>Scalare le classifiche</strong> globali conquistando punti</li>
-                <li>• <strong>Sbloccare achievement</strong> e personalizzazioni</li>
-                <li>• <strong>Personalizzare</strong> carte, tavoli e avatar</li>
+          {/* Come si Gioca */}
+          <section className="bg-white rounded-2xl p-8 shadow-lg border-2 border-marafone-yellow">
+            <h2 className="font-retro text-2xl text-marafone-red mb-4">
+              Come si Gioca
+            </h2>
+            <ul className="font-game text-marafone-dark space-y-2 list-disc ml-6">
+              <li>Si gioca in senso antiorario.</li>
+              <li>
+                Si deve sempre rispondere al seme giocato se possibile (obbligo
+                di colore).
+              </li>
+              <li>
+                Se non si ha il seme, si può giocare qualsiasi altro seme.
+              </li>
+              <li>
+                Vince la presa la briscola più alta, altrimenti la carta più
+                alta del seme iniziale.
+              </li>
+              <li>Il vincitore della presa inizia la successiva.</li>
+              <li>
+                Alla fine della mano, ovvero quando tutti esauriscono le carte
+                in mano, la briscola della mano successiva viene scelta dal
+                giocatore successivo al precedente "dichiarante".
+              </li>
+              <li>
+                <strong>Obbligo di rispondere a colore</strong>
+              </li>
+            </ul>
+          </section>
+
+          {/* Comunicazione */}
+          <section className="bg-white rounded-2xl p-8 shadow-lg border-2 border-marafone-yellow">
+            <h2 className="font-retro text-2xl text-marafone-red mb-4">
+              Comunicazione
+            </h2>
+            <p className="font-game text-marafone-dark leading-relaxed mb-2">
+              È vietato comunicare col compagno, tranne chi apre il turno che
+              può dichiarare:
+            </p>
+            <ul className="font-game text-marafone-dark space-y-2 list-disc ml-6">
+              <li>
+                <span className="font-bold">👊 Busso</span>: Invita il compagno
+                a prendere la mano e continuare con lo stesso seme.
+              </li>
+              <li>
+                <span className="font-bold">🐍 Striscio</span>: Si ha solo una
+                carta rimasta di quel seme.
+              </li>
+              <li>
+                <span className="font-bold">🕊️ Volo</span>: Non si hanno più
+                carte di quel seme: il compagno sa che potrai tagliare.
+              </li>
+            </ul>
+            <p className="font-game text-marafone-dark leading-relaxed mt-2">
+              Comunicazione solo tramite dichiarazioni ammesse
+            </p>
+          </section>
+
+          {/* Punteggi */}
+          <section className="bg-white rounded-2xl p-8 shadow-lg border-2 border-marafone-yellow">
+            <h2 className="font-retro text-2xl text-marafone-red mb-4">
+              Punteggi
+            </h2>
+            <ul className="font-game text-marafone-dark space-y-2 list-disc ml-6">
+              <li>Ogni mano ha un punteggio massimo di 11 punti:</li>
+              <ul className="ml-6">
+                <li>Asso: 1 punto</li>
+                <li>Tre, due, re, cavallo, fante: 1/3 di punto ciascuna</li>
+                <li>7, 6, 5, 4: 0 punti</li>
+                <li>L'ultima presa ("bàga"): 1 punto</li>
+                <li>
+                  <strong>Marafone</strong> (hai scelto la briscola e possiedi
+                  asso, 2 e 3 di briscola): +3 punti extra, vengono aggiunti
+                  agli 11 totali
+                </li>
               </ul>
-            </div>
+            </ul>
+          </section>
+
+          {/* Strategie */}
+          <section className="bg-white rounded-2xl p-8 shadow-lg border-2 border-marafone-yellow">
+            <h2 className="font-retro text-2xl text-marafone-red mb-4">
+              Strategie
+            </h2>
+            <ul className="font-game text-marafone-dark space-y-2 list-disc ml-6">
+              <li>
+                Ascolta le dichiarazioni del compagno (busso, striscio, volo).
+              </li>
+              <li>Ricorda le carte già giocate, soprattutto le briscole.</li>
+              <li>Punta a vincere l'ultima presa (bàga).</li>
+              <li>
+                Comunica solo tramite le carte giocate e le dichiarazioni
+                ammesse.
+              </li>
+            </ul>
+          </section>
+
+          {/* FAQ */}
+          <section className="bg-white rounded-2xl p-8 shadow-lg border-2 border-marafone-yellow">
+            <h2 className="font-retro text-2xl text-marafone-red mb-4">FAQ</h2>
+            <ul className="font-game text-marafone-dark space-y-2 list-disc ml-6">
+              <li>
+                <span className="font-bold">
+                  Quando si dichiara il marafone?
+                </span>
+                <br />
+                Il marafone va dichiarato subito all'inizio della mano, appena
+                hai scelto la briscola e possiedi asso, 2 e 3 di briscola.
+              </li>
+              <li>
+                <span className="font-bold">
+                  Cosa succede in caso di parità di punti?
+                </span>
+                <br />
+                Si gioca un'ulteriore mano di spareggio.
+              </li>
+            </ul>
           </section>
 
           {/* Download CTA */}
           <section className="bg-marafone-red rounded-2xl p-8 text-white text-center">
-            <h2 className="font-retro text-3xl mb-4">
-              Pronto a giocare?
-            </h2>
+            <h2 className="font-retro text-3xl mb-4">Pronto a giocare?</h2>
             <p className="font-game text-xl mb-8 opacity-90">
               Scarica subito Marafone Romagnolo e inizia la tua avventura!
             </p>
             <Link to="/">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-marafone-yellow text-marafone-dark hover:bg-marafone-yellow/90 font-game font-bold text-lg px-8 py-4 rounded-xl"
               >
                 Scarica il Gioco

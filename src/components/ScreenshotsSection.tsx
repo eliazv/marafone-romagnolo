@@ -1,18 +1,23 @@
-
 const ScreenshotsSection = () => {
   const screenshots = [
     {
-      title: "Sfida i tuoi amici!",
-      description: "Partite online in tempo reale"
+      img: "/img/screen modalit.png",
+      title: "Modalità di gioco",
+      description:
+        "Scegli tra diverse modalità: classica, veloce, contro l'IA o online!",
     },
     {
-      title: "Sblocca il tuo rank!",
-      description: "Sistema di livelli e achievement"
+      img: "/img/screen gioco.png",
+      title: "Partita in corso",
+      description:
+        "Interfaccia fedele al tavolo da bar romagnolo, carte grandi e leggibili.",
     },
     {
-      title: "Atmosfera autentica!",
-      description: "Grafiche che richiamano i bar romagnoli"
-    }
+      img: "/img/screen classifica.png",
+      title: "Classifica e progressi",
+      description:
+        "Scala la classifica, sblocca achievement e confronta i tuoi risultati!",
+    },
   ];
 
   return (
@@ -21,17 +26,17 @@ const ScreenshotsSection = () => {
         <h2 className="font-retro text-4xl md:text-5xl text-center text-marafone-red mb-16">
           Guarda il gioco in azione!
         </h2>
-        
-        {/* Placeholder for screenshots */}
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {screenshots.map((screenshot, index) => (
             <div key={index} className="text-center">
-              <div className="bg-marafone-dark rounded-2xl aspect-[9/16] mb-6 flex items-center justify-center shadow-xl border-4 border-white">
-                <div className="text-white font-game text-lg opacity-50">
-                  Screenshot {index + 1}
-                  <br />
-                  <span className="text-sm">In arrivo...</span>
-                </div>
+              <div className="bg-marafone-dark rounded-2xl aspect-[9/16] mb-6 flex items-center justify-center shadow-xl border-4 border-white overflow-hidden">
+                <img
+                  src={screenshot.img}
+                  alt={screenshot.title}
+                  className="object-cover w-full h-full"
+                  loading="lazy"
+                />
               </div>
               <h3 className="font-game font-bold text-2xl text-marafone-red mb-2">
                 {screenshot.title}
@@ -41,12 +46,6 @@ const ScreenshotsSection = () => {
               </p>
             </div>
           ))}
-        </div>
-        
-        <div className="text-center">
-          <p className="font-game text-lg text-marafone-dark mb-8">
-            📱 Screenshot dell'app in arrivo presto!
-          </p>
         </div>
       </div>
     </section>
