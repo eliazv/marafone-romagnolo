@@ -61,6 +61,7 @@ const HeroSection = () => {
 
           <Button
             size="lg"
+            disabled
             variant="outline"
             className="border-2 border-marafone-dark text-marafone-dark hover:bg-marafone-dark hover:text-white font-game font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
           >
@@ -68,6 +69,8 @@ const HeroSection = () => {
             Presto su iOS
           </Button>
         </div>
+
+        {/* TODO tasto gioca online che porta ad un'altra pagina dello stesso sito ma dove c'è il gioco */}
 
         {/* Rules link */}
         <div className="mb-12 flex justify-center animate-fade-in">
@@ -78,7 +81,7 @@ const HeroSection = () => {
               style={{ boxShadow: "0 4px 24px 0 rgba(255, 221, 51, 0.15)" }}
             >
               <span className="text-2xl">📖</span>
-              <span>Scopri le regole del gioco</span>
+              <span>Regole del gioco</span>
             </Button>
           </Link>
         </div>

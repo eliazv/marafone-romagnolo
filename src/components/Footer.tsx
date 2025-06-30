@@ -50,9 +50,14 @@ const Footer = () => {
                   📖 Regole del Gioco
                 </Link>
               </li>
-              <li className="hover:text-marafone-yellow cursor-pointer transition-colors">
-                <Shield className="inline h-4 w-4 mr-2" />
-                Privacy Policy
+              <li>
+                <Link
+                  to="/privacy-policy"
+                  className="hover:text-marafone-yellow cursor-pointer transition-colors flex items-center"
+                >
+                  <Shield className="inline h-4 w-4 mr-2" />
+                  Privacy Policy
+                </Link>
               </li>
               <li className="hover:text-marafone-yellow cursor-pointer transition-colors">
                 <HelpCircle className="inline h-4 w-4 mr-2" />
