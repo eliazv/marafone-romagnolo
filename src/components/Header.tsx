@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
+import { Star, BookOpen, Users } from "lucide-react";
 
 // Componente menu mobile con overlay e animazioni
 function MobileMenu({ onMenuStateChange }) {
@@ -77,15 +78,8 @@ function MobileMenu({ onMenuStateChange }) {
               "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05)",
           }}
         >
-          {/* Header del menu */}
-          <div className="px-6 pb-4 border-b border-gray-200/50">
-            <h3 className="font-retro text-xl text-marafone-red font-bold">
-              Menu
-            </h3>
-          </div>
-
           {/* Menu items */}
-          <div className="px-3 pt-4 space-y-2">
+          <div className="px-3 space-y-2">
             <button
               className="w-full group relative overflow-hidden bg-gradient-to-r from-yellow-50 to-yellow-100 hover:from-yellow-100 hover:to-yellow-200 text-marafone-dark hover:text-marafone-red transition-all duration-300 px-6 py-4 rounded-2xl text-left font-game text-lg border border-yellow-200/50 hover:border-yellow-300 hover:shadow-lg hover:shadow-yellow-500/20 transform hover:scale-[1.02] active:scale-[0.98]"
               onClick={() => {
@@ -103,7 +97,10 @@ function MobileMenu({ onMenuStateChange }) {
               }}
             >
               <div className="flex items-center space-x-3">
-                <span className="text-2xl">⭐</span>
+                <Star
+                  className="w-6 h-6 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
+                  strokeWidth={2.2}
+                />
                 <span>Funzionalità</span>
               </div>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -117,7 +114,10 @@ function MobileMenu({ onMenuStateChange }) {
               }}
             >
               <div className="flex items-center space-x-3">
-                <span className="text-2xl">📖</span>
+                <BookOpen
+                  className="w-6 h-6 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
+                  strokeWidth={2.2}
+                />
                 <span>Regole</span>
               </div>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -140,7 +140,10 @@ function MobileMenu({ onMenuStateChange }) {
               }}
             >
               <div className="flex items-center space-x-3">
-                <span className="text-2xl">👥</span>
+                <Users
+                  className="w-6 h-6 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
+                  strokeWidth={2.2}
+                />
                 <span>Community</span>
               </div>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -199,7 +202,7 @@ const Header = () => {
       {/* Menu desktop: visibile solo su desktop */}
       <nav className="hidden md:flex flex-1 justify-center gap-8 md:gap-12">
         <button
-          className="relative font-game text-xl text-marafone-dark hover:text-marafone-red transition-all duration-300 px-4 py-2 rounded-xl bg-transparent border-none cursor-pointer group overflow-hidden hover:bg-marafone-yellow/10 hover:shadow-lg hover:scale-105 active:scale-95"
+          className="relative font-game text-xl text-marafone-dark hover:text-marafone-red transition-all duration-300 px-4 py-2 rounded-xl bg-transparent border-none cursor-pointer group overflow-hidden hover:bg-marafone-yellow/10 hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
           onClick={() => {
             const el = document.getElementById("features");
             if (el) {
@@ -213,20 +216,28 @@ const Header = () => {
             }
           }}
         >
+          <Star
+            className="w-6 h-6 mr-1 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
+            strokeWidth={2.2}
+          />
           <span className="relative z-10">Funzionalità</span>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-marafone-yellow/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
         </button>
         <button
-          className="relative font-game text-xl text-marafone-dark hover:text-marafone-red transition-all duration-300 px-4 py-2 rounded-xl bg-transparent border-none cursor-pointer group overflow-hidden hover:bg-marafone-yellow/10 hover:shadow-lg hover:scale-105 active:scale-95"
+          className="relative font-game text-xl text-marafone-dark hover:text-marafone-red transition-all duration-300 px-4 py-2 rounded-xl bg-transparent border-none cursor-pointer group overflow-hidden hover:bg-marafone-yellow/10 hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
           onClick={() => {
             window.location.href = "/regole";
           }}
         >
+          <BookOpen
+            className="w-6 h-6 mr-1 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
+            strokeWidth={2.2}
+          />
           <span className="relative z-10">Regole</span>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-marafone-yellow/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
         </button>
         <button
-          className="relative font-game text-xl text-marafone-dark hover:text-marafone-red transition-all duration-300 px-4 py-2 rounded-xl bg-transparent border-none cursor-pointer group overflow-hidden hover:bg-marafone-yellow/10 hover:shadow-lg hover:scale-105 active:scale-95"
+          className="relative font-game text-xl text-marafone-dark hover:text-marafone-red transition-all duration-300 px-4 py-2 rounded-xl bg-transparent border-none cursor-pointer group overflow-hidden hover:bg-marafone-yellow/10 hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
           onClick={() => {
             const el = document.getElementById("community");
             if (el) {
@@ -240,6 +251,10 @@ const Header = () => {
             }
           }}
         >
+          <Users
+            className="w-6 h-6 mr-1 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
+            strokeWidth={2.2}
+          />
           <span className="relative z-10">Community</span>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-marafone-yellow/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
         </button>
