@@ -1,8 +1,21 @@
+# Robots.txt for Maraffa Romagnola Online - Marafone Romagnolo
+# Gioco di carte romagnolo gratis online
+
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -10,5 +23,23 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
 User-agent: *
 Allow: /
+Crawl-delay: 2
+
+# Sitemap location
+Sitemap: https://marafone-romagnolo.it/sitemap.xml
+
+# Important pages for crawling
+# Homepage: https://marafone-romagnolo.it/
+# Game: Maraffa Romagnola Online Gratis
+# Keywords: marafone romagnolo, maraffa online, carte romagnole gratis
