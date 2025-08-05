@@ -1,5 +1,5 @@
-
 import HeroSection from "@/components/HeroSection";
+import ScreenshotCarousel from "@/components/ScreenshotCarousel";
 import FeaturesSection from "@/components/FeaturesSection";
 import ScreenshotsSection from "@/components/ScreenshotsSection";
 import CommunitySection from "@/components/CommunitySection";
@@ -9,6 +9,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
       <HeroSection />
+      <ScreenshotCarousel />
       <FeaturesSection />
       <ScreenshotsSection />
       <CommunitySection />

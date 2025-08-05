@@ -3,7 +3,7 @@ import { carteImages } from "@/lib/carteImages";
 const ScreenshotsSection = () => {
   const screenshots = [
     {
-      img: "/img/screen modalit.png",
+      img: "img/onboarding/gioca-onboarding.png",
       title: "Modalità di gioco",
       description:
         "Scegli tra diverse modalità: classica, veloce, contro l'IA o online!",
@@ -15,7 +15,7 @@ const ScreenshotsSection = () => {
         "Interfaccia fedele al tavolo da bar romagnolo, carte grandi e leggibili.",
     },
     {
-      img: "/img/screen classifica.png",
+      img: "img/onboarding/profilo-onboarding.png",
       title: "Classifica e progressi",
       description:
         "Scala la classifica, sblocca achievement e confronta i tuoi risultati!",

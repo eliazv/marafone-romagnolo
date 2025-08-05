@@ -1,4 +1,13 @@
-import { Gamepad, Brain, Award, Handshake } from "lucide-react";
+import {
+  Gamepad,
+  Brain,
+  Award,
+  Handshake,
+  Smartphone,
+  Users,
+  Trophy,
+  Heart,
+} from "lucide-react";
 import { carteImages } from "@/lib/carteImages";
 
 const FeaturesSection = () => {
@@ -6,30 +15,65 @@ const FeaturesSection = () => {
     {
       icon: <Gamepad className="h-12 w-12 text-marafone-red" />,
       title: "Gioca offline con IA",
-      description: "Sfida l'intelligenza artificiale quando vuoi tu!",
+      description:
+        "Sfida l'intelligenza artificiale quando vuoi tu! Nessuna connessione internet richiesta.",
+      highlight: "100% Offline",
     },
     {
       icon: <Brain className="h-12 w-12 text-marafone-red" />,
       title: "IA strategica avanzata",
-      description: "3 livelli di difficoltà per sfidare le tue abilità",
+      description:
+        "3 livelli di difficoltà per sfidare le tue abilità: Principiante, Esperto e Maestro.",
+      highlight: "3 Livelli",
     },
     {
       icon: <Award className="h-12 w-12 text-marafone-red" />,
       title: "Classifiche globali",
-      description: "Conquista la vetta e sblocca nuovi livelli!",
+      description:
+        "Conquista la vetta delle classifiche mondiali e sblocca nuovi livelli e achievement!",
+      highlight: "Competizione",
     },
     {
-      icon: <Handshake className="h-12 w-12 text-marafone-red" />,
-      title: "Aggiungi amici",
+      icon: <Users className="h-12 w-12 text-marafone-red" />,
+      title: "Sistema amici",
       description:
-        "Segui i progressi degli amici nelle classifiche (multiplayer in sviluppo)",
+        "Aggiungi amici, segui i loro progressi e sfidali nelle classifiche.",
+      highlight: "Social",
+    },
+    // {
+    //   icon: <Smartphone className="h-12 w-12 text-marafone-red" />,
+    //   title: "Interfaccia intuitiva",
+    //   description:
+    //     "Design moderno e user-friendly, ottimizzato per smartphone e tablet.",
+    //   highlight: "Mobile First",
+    // },
+    {
+      icon: <Trophy className="h-12 w-12 text-marafone-red" />,
+      title: "Achievement",
+      description:
+        "Sblocca trofei e achievement giocando e migliorando le tue abilità.",
+      highlight: "Obiettivi",
+    },
+    // {
+    //   icon: <Heart className="h-12 w-12 text-marafone-red" />,
+    //   title: "Tradizione romagnola",
+    //   description:
+    //     "Regole autentiche del Marafone tradizionale, rispettando la cultura locale.",
+    //   highlight: "Autentico",
+    // },
+    {
+      icon: <Handshake className="h-12 w-12 text-marafone-red" />,
+      title: "Multiplayer in arrivo",
+      description:
+        "Presto potrai sfidare amici e giocatori di tutto il mondo in tempo reale!",
+      highlight: "Coming Soon",
     },
   ];
 
   return (
     <section
       id="features"
-      className="relative py-20 px-4 bg-white overflow-hidden"
+      className="relative py-16 px-4 bg-white overflow-hidden"
     >
       {/* Carte decorative animate */}
       <div className="absolute inset-0 pointer-events-none select-none z-0">
@@ -106,29 +150,68 @@ const FeaturesSection = () => {
           );
         })}
       </div>
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-10 px-1">
         <h2 className="font-retro text-4xl md:text-5xl text-center text-marafone-red mb-4">
           Perché scegliere
         </h2>
-        <h3 className="font-retro text-3xl md:text-4xl text-center text-marafone-dark mb-16">
+        <h3 className="font-retro text-3xl md:text-4xl text-center text-marafone-dark mb-4">
           Marafone Romagnolo?
         </h3>
+        <p className="font-game text-lg text-center text-marafone-dark opacity-80 mb-16 max-w-3xl mx-auto">
+          L'app che porta la tradizione del Marafone romagnolo nel mondo
+          digitale, con funzionalità moderne e rispetto per le regole
+          autentiche.
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-marafone-beige rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-marafone-yellow"
+              className="bg-gradient-to-br from-marafone-beige to-white rounded-2xl p-6 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-marafone-yellow/50 hover:border-marafone-red/50 group relative overflow-hidden"
             >
-              <div className="flex justify-center mb-6">{feature.icon}</div>
-              <h4 className="font-game font-bold text-xl text-marafone-dark mb-4">
+              {/* Badge highlight */}
+              <div className="absolute top-3 right-3 bg-marafone-red text-white text-xs font-game font-bold px-2 py-1 rounded-full">
+                {feature.highlight}
+              </div>
+
+              <div className="flex justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                {feature.icon}
+              </div>
+              <h4 className="font-game font-bold text-lg text-marafone-dark mb-3">
                 {feature.title}
               </h4>
-              <p className="font-game text-marafone-dark opacity-80">
+              <p className="font-game text-sm text-marafone-dark opacity-80 leading-relaxed">
                 {feature.description}
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Sezione aggiuntiva con statistiche */}
+        <div className="mt-10 bg-gradient-to-r from-marafone-red to-marafone-dark rounded-3xl p-8 text-white text-center">
+          <h3 className="font-retro text-2xl md:text-3xl mb-6">
+            Unisciti alla Comunità Romagnola!
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <div className="font-retro text-3xl md:text-4xl text-marafone-yellow mb-2">
+                200+
+              </div>
+              <div className="font-game">Giocatori Attivi</div>
+            </div>
+            <div>
+              <div className="font-retro text-3xl md:text-4xl text-marafone-yellow mb-2">
+                2000+
+              </div>
+              <div className="font-game">Partite Giocate</div>
+            </div>
+            <div>
+              <div className="font-retro text-3xl md:text-4xl text-marafone-yellow mb-2">
+                4.8★
+              </div>
+              <div className="font-game">Valutazione Media</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

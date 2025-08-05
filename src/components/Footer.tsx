@@ -5,6 +5,7 @@ import {
   HelpCircle,
   Globe,
   BookOpenText,
+  FileBadge2,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { carteImages } from "@/lib/carteImages";
@@ -103,30 +104,20 @@ const Footer = () => {
                 href="https://play.google.com/store/apps/details?id=com.eliazavatta.maraffa"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-marafone-red p-3 rounded-lg flex items-center hover:bg-marafone-yellow/80 transition-colors"
+                className="hover:scale-105 transition-transform duration-300"
               >
-                <svg
-                  className="h-8 w-8"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                </svg>
-                <span className="ml-2 font-game font-semibold">Play Store</span>
+                <img
+                  src="/img/playstore.png"
+                  alt="Scarica su Google Play Store"
+                  className="h-16 w-auto drop-shadow-lg"
+                />
               </a>
-              <div className="bg-gray-600 p-3 rounded-lg opacity-50 flex items-center">
-                {/* Icona App Store stilizzata (SVG) */}
-                <span className="h-8 w-8 inline-block align-middle">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    width="32"
-                    height="32"
-                  >
-                    <path d="M17.564 13.06c-.02-2.14 1.75-3.16 1.83-3.21-1-1.46-2.56-1.66-3.11-1.68-1.32-.13-2.58.77-3.25.77-.67 0-1.7-.75-2.8-.73-1.44.02-2.77.84-3.51 2.13-1.5 2.6-.38 6.45 1.07 8.56.71 1.03 1.56 2.18 2.68 2.14 1.08-.04 1.49-.69 2.8-.69 1.31 0 1.68.69 2.81.67 1.16-.02 1.89-1.05 2.59-2.08.82-1.19 1.16-2.34 1.18-2.4-.03-.01-2.26-.87-2.28-3.45zm-2.68-6.3c.6-.73 1-1.75.89-2.77-.86.03-1.89.57-2.5 1.3-.55.65-1.04 1.7-.86 2.7.91.07 1.86-.52 2.47-1.23z" />
-                  </svg>
-                </span>
-                <span className="ml-2 font-game font-semibold">App Store</span>
+              <div className="opacity-50 cursor-not-allowed">
+                <img
+                  src="/img/appstore.png"
+                  alt="Presto su App Store"
+                  className="h-16 w-auto drop-shadow-lg grayscale"
+                />
               </div>
             </div>
           </div>
@@ -158,14 +149,14 @@ const Footer = () => {
                   to="/termini-utilizzo"
                   className="hover:text-marafone-yellow cursor-pointer transition-colors flex items-center"
                 >
-                  <BookOpenText className="inline h-4 w-4 mr-2" />
+                  <FileBadge2 className="inline h-4 w-4 mr-2" />
                   Termini d'Utilizzo
                 </Link>
               </li>
-              <li className="hover:text-marafone-yellow cursor-pointer transition-colors">
+              {/* <li className="hover:text-marafone-yellow cursor-pointer transition-colors">
                 <HelpCircle className="inline h-4 w-4 mr-2" />
                 Supporto
-              </li>
+              </li> */}
             </ul>
           </div>
 
