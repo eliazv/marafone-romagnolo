@@ -200,7 +200,7 @@ const Header = () => {
       </div>
 
       {/* Menu desktop: visibile solo su desktop */}
-      <nav className="hidden md:flex flex-1 justify-center gap-8 md:gap-12">
+      <nav className="hidden md:flex flex-1 justify-center gap-8 lg:gap-12">
         <button
           className="relative font-game text-xl text-marafone-dark hover:text-marafone-red transition-all duration-300 px-4 py-2 rounded-xl bg-transparent border-none cursor-pointer group overflow-hidden hover:bg-marafone-yellow/10 hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
           onClick={() => {
@@ -217,10 +217,10 @@ const Header = () => {
           }}
         >
           <Star
-            className="w-6 h-6 mr-1 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
+            className="w-6 h-6 lg:mr-1 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
             strokeWidth={2.2}
           />
-          <span className="relative z-10">Funzionalità</span>
+          <span className="relative z-10 hidden lg:block">Funzionalità</span>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-marafone-yellow/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
         </button>
         <button
@@ -230,10 +230,10 @@ const Header = () => {
           }}
         >
           <BookOpen
-            className="w-6 h-6 mr-1 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
+            className="w-6 h-6 lg:mr-1 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
             strokeWidth={2.2}
           />
-          <span className="relative z-10">Regole</span>
+          <span className="relative z-10 hidden lg:block">Regole</span>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-marafone-yellow/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
         </button>
         <button
@@ -252,10 +252,10 @@ const Header = () => {
           }}
         >
           <Users
-            className="w-6 h-6 mr-1 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
+            className="w-6 h-6 lg:mr-1 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
             strokeWidth={2.2}
           />
-          <span className="relative z-10">Community</span>
+          <span className="relative z-10 hidden lg:block">Community</span>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-marafone-yellow/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
         </button>
       </nav>

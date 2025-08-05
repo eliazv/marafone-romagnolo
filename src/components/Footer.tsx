@@ -153,6 +153,15 @@ const Footer = () => {
                   Privacy Policy
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/termini-utilizzo"
+                  className="hover:text-marafone-yellow cursor-pointer transition-colors flex items-center"
+                >
+                  <BookOpenText className="inline h-4 w-4 mr-2" />
+                  Termini d'Utilizzo
+                </Link>
+              </li>
               <li className="hover:text-marafone-yellow cursor-pointer transition-colors">
                 <HelpCircle className="inline h-4 w-4 mr-2" />
                 Supporto

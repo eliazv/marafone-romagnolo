@@ -1,10 +1,9 @@
-// src/pages/PrivacyPolicy.tsx o .jsx
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { Helmet } from "react-helmet";
 import { useEffect } from "react";
-import { PRIVACY_POLICY } from "../../legalTexts";
+import { TERMS_OF_SERVICE } from "../../legalTexts";
 
 // Funzione per convertire markdown in HTML con stili migliorati
 const parseMarkdown = (markdown: string): string => {
@@ -44,7 +43,7 @@ const parseMarkdown = (markdown: string): string => {
   return html.replace(/\n+/g, '\n').trim();
 };
 
-const PrivacyPolicy = () => {
+const TermsOfService = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -52,14 +51,14 @@ const PrivacyPolicy = () => {
   return (
   <>
     <Helmet>
-      <title>Privacy Policy | Marafone Romagnolo - Maraffa</title>
+      <title>Termini d'Utilizzo | Marafone Romagnolo - Maraffa</title>
       <meta
         name="description"
-        content="Leggi la Privacy Policy di Marafone Romagnolo, il gioco di carte Maraffa. Scopri come vengono gestiti i dati, la sicurezza e i tuoi diritti. App 100% offline, nessuna raccolta dati personale."
+        content="Leggi i Termini d'Utilizzo di Marafone Romagnolo, il gioco di carte Maraffa. Condizioni d'uso, regole del gioco online e offline, diritti e doveri degli utenti."
       />
       <meta
         name="keywords"
-        content="privacy policy marafone, privacy maraffa, dati personali, sicurezza, gioco di carte romagnolo, app offline, marafone, maraffa, romagna, carte, regolamento privacy"
+        content="termini utilizzo marafone, terms maraffa, condizioni uso, gioco di carte romagnolo, app mobile, marafone, maraffa, romagna, carte, regolamento"
       />
     </Helmet>
     <div className="min-h-screen bg-gradient-to-br from-marafone-beige via-white to-marafone-yellow/20 text-marafone-dark py-4 px-4">
@@ -95,7 +94,7 @@ const PrivacyPolicy = () => {
         <div 
           className="prose prose-lg max-w-none legal-content"
           dangerouslySetInnerHTML={{ 
-            __html: parseMarkdown(PRIVACY_POLICY)
+            __html: parseMarkdown(TERMS_OF_SERVICE)
           }}
         />
         
@@ -103,10 +102,10 @@ const PrivacyPolicy = () => {
         <div className="mt-12 pt-8 border-t-2 border-marafone-yellow/30">
           <div className="bg-gradient-to-r from-marafone-beige to-marafone-yellow/20 rounded-xl p-6">
             <h3 className="font-game font-bold text-lg text-marafone-dark mb-3">
-              💬 Hai domande sulla privacy?
+              📋 Hai domande sui termini d'utilizzo?
             </h3>
             <p className="font-game text-marafone-dark mb-3">
-              Per qualsiasi dubbio o richiesta riguardo la gestione dei tuoi dati personali, non esitare a contattarci:
+              Per chiarimenti sui termini e condizioni d'uso dell'app, contattaci:
             </p>
             <a 
               href="mailto:zavattaelia@gmail.com" 
@@ -122,4 +121,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default TermsOfService;
