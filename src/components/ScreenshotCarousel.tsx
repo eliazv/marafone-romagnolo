@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { ScaleIn } from "@/components/ui/animated-element";
 
 const ScreenshotCarousel = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -99,38 +101,49 @@ const ScreenshotCarousel = () => {
   };
 
   return (
-    <section className="py-10 bg-gradient-to-r from-marafone-beige to-marafone-yellow overflow-hidden">
-      <div className="container mx-0 px-0">
-        <div
-          ref={carouselRef}
-          className="flex gap-6 overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing"
-          style={{
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-            WebkitScrollbar: { display: "none" },
-          }}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          {duplicatedScreenshots.map((screenshot, index) => (
-            <div key={index} className="flex-shrink-0 w-52 md:w-60 lg:w-72">
-              <img
-                src={screenshot}
-                alt={`Screenshot ${(index % screenshots.length) + 1}`}
-                className="w-full h-auto rounded-2xl shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-300"
-                draggable={false}
-                style={{ userSelect: "none" }}
-              />
-            </div>
-          ))}
+    <ScaleIn>
+      <section className="py-10 bg-gradient-to-r from-marafone-beige to-marafone-yellow overflow-hidden">
+        <div className="container mx-0 px-0">
+          <div
+            ref={carouselRef}
+            className="flex gap-6 overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              WebkitScrollbar: { display: "none" },
+            }}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            {duplicatedScreenshots.map((screenshot, index) => (
+              <motion.div
+                key={index}
+                className="flex-shrink-0 w-52 md:w-60 lg:w-72"
+                whileHover={{
+                  scale: 1.05,
+                  rotateY: 5,
+                  transition: { duration: 0.3 },
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <img
+                  src={screenshot}
+                  alt={`Screenshot ${(index % screenshots.length) + 1}`}
+                  className="w-full h-auto rounded-2xl shadow-2xl border-4 border-white transition-shadow duration-300"
+                  draggable={false}
+                  style={{ userSelect: "none" }}
+                />
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </ScaleIn>
   );
 };
 

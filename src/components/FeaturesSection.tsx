@@ -9,6 +9,13 @@ import {
   Heart,
 } from "lucide-react";
 import { carteImages } from "@/lib/carteImages";
+import {
+  FadeInUp,
+  StaggerContainer,
+  StaggerItem,
+  ScaleIn,
+} from "@/components/ui/animated-element";
+import { motion } from "framer-motion";
 
 const FeaturesSection = () => {
   const features = [
@@ -151,23 +158,34 @@ const FeaturesSection = () => {
         })}
       </div>
       <div className="container mx-auto relative z-10 px-1">
-        <h2 className="font-retro text-4xl md:text-5xl text-center text-marafone-red mb-4">
-          Perché scegliere
-        </h2>
-        <h3 className="font-retro text-3xl md:text-4xl text-center text-marafone-dark mb-4">
-          Marafone Romagnolo?
-        </h3>
-        <p className="font-game text-lg text-center text-marafone-dark opacity-80 mb-16 max-w-3xl mx-auto">
-          L'app che porta la tradizione del Marafone romagnolo nel mondo
-          digitale, con funzionalità moderne e rispetto per le regole
-          autentiche.
-        </p>
+        <FadeInUp delay={0.2}>
+          <h2 className="font-retro text-4xl md:text-5xl text-center text-marafone-red mb-4">
+            Perché scegliere
+          </h2>
+        </FadeInUp>
+        <FadeInUp delay={0.4}>
+          <h3 className="font-retro text-3xl md:text-4xl text-center text-marafone-dark mb-4">
+            Marafone Romagnolo?
+          </h3>
+        </FadeInUp>
+        <FadeInUp delay={0.6}>
+          <p className="font-game text-lg text-center text-marafone-dark opacity-80 mb-16 max-w-3xl mx-auto">
+            L'app che porta la tradizione del Marafone romagnolo nel mondo
+            digitale, con funzionalità moderne e rispetto per le regole
+            autentiche.
+          </p>
+        </FadeInUp>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerContainer className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <div
+            <StaggerItem
               key={index}
               className="bg-gradient-to-br from-marafone-beige to-white rounded-2xl p-6 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-marafone-yellow/50 hover:border-marafone-red/50 group relative overflow-hidden"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                transition: { duration: 0.2 },
+              }}
             >
               {/* Badge highlight */}
               <div className="absolute top-3 right-3 bg-marafone-red text-white text-xs font-game font-bold px-2 py-1 rounded-full">
@@ -183,36 +201,38 @@ const FeaturesSection = () => {
               <p className="font-game text-sm text-marafone-dark opacity-80 leading-relaxed">
                 {feature.description}
               </p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         {/* Sezione aggiuntiva con statistiche */}
-        <div className="mt-10 bg-gradient-to-r from-marafone-red to-marafone-dark rounded-3xl p-8 text-white text-center">
-          <h3 className="font-retro text-2xl md:text-3xl mb-6">
-            Unisciti alla Comunità Romagnola!
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <div className="font-retro text-3xl md:text-4xl text-marafone-yellow mb-2">
-                200+
-              </div>
-              <div className="font-game">Giocatori Attivi</div>
-            </div>
-            <div>
-              <div className="font-retro text-3xl md:text-4xl text-marafone-yellow mb-2">
-                2000+
-              </div>
-              <div className="font-game">Partite Giocate</div>
-            </div>
-            <div>
-              <div className="font-retro text-3xl md:text-4xl text-marafone-yellow mb-2">
-                4.8★
-              </div>
-              <div className="font-game">Valutazione Media</div>
-            </div>
+        <FadeInUp delay={0.8}>
+          <div className="mt-10 bg-gradient-to-r from-marafone-red to-marafone-dark rounded-3xl p-8 text-white text-center">
+            <h3 className="font-retro text-2xl md:text-3xl mb-6">
+              Unisciti alla Comunità Romagnola!
+            </h3>
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <StaggerItem>
+                <div className="font-retro text-3xl md:text-4xl text-marafone-yellow mb-2">
+                  200+
+                </div>
+                <div className="font-game">Giocatori Attivi</div>
+              </StaggerItem>
+              <StaggerItem>
+                <div className="font-retro text-3xl md:text-4xl text-marafone-yellow mb-2">
+                  2000+
+                </div>
+                <div className="font-game">Partite Giocate</div>
+              </StaggerItem>
+              <StaggerItem>
+                <div className="font-retro text-3xl md:text-4xl text-marafone-yellow mb-2">
+                  4.8★
+                </div>
+                <div className="font-game">Valutazione Media</div>
+              </StaggerItem>
+            </StaggerContainer>
           </div>
-        </div>
+        </FadeInUp>
       </div>
     </section>
   );
