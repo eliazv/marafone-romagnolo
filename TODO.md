@@ -1,1 +1,0 @@
-- animziaone cambio pagina non fuzniona bene togliela o sistemala
