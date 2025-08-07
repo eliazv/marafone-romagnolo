@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import { Star, BookOpen, Users } from "lucide-react";
+import { Star, BookOpen, HelpCircle } from "lucide-react";
 
 // Componente menu mobile con overlay e animazioni
 function MobileMenu({ onMenuStateChange }) {
@@ -127,24 +127,15 @@ function MobileMenu({ onMenuStateChange }) {
               className="w-full group relative overflow-hidden bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 text-marafone-dark hover:text-marafone-red transition-all duration-300 px-6 py-4 rounded-2xl text-left font-game text-lg border border-purple-200/50 hover:border-purple-300 hover:shadow-lg hover:shadow-purple-500/20 transform hover:scale-[1.02] active:scale-[0.98]"
               onClick={() => {
                 setOpen(false);
-                const el = document.getElementById("community");
-                if (el) {
-                  if (window.location.pathname !== "/") {
-                    window.location.href = "/#community";
-                  } else {
-                    el.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }
-                } else {
-                  window.location.href = "/#community";
-                }
+                window.location.href = "/supporto";
               }}
             >
               <div className="flex items-center space-x-3">
-                <Users
+                <HelpCircle
                   className="w-6 h-6 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
                   strokeWidth={2.2}
                 />
-                <span>Community</span>
+                <span>Supporto</span>
               </div>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </button>
@@ -239,23 +230,14 @@ const Header = () => {
         <button
           className="relative font-game text-xl text-marafone-dark hover:text-marafone-red transition-all duration-300 px-4 py-2 rounded-xl bg-transparent border-none cursor-pointer group overflow-hidden hover:bg-marafone-yellow/10 hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
           onClick={() => {
-            const el = document.getElementById("community");
-            if (el) {
-              if (window.location.pathname !== "/") {
-                window.location.href = "/#community";
-              } else {
-                el.scrollIntoView({ behavior: "smooth", block: "start" });
-              }
-            } else {
-              window.location.href = "/#community";
-            }
+            window.location.href = "/supporto";
           }}
         >
-          <Users
+          <HelpCircle
             className="w-6 h-6 lg:mr-1 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
             strokeWidth={2.2}
           />
-          <span className="relative z-10 hidden lg:block">Community</span>
+          <span className="relative z-10 hidden lg:block">Supporto</span>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-marafone-yellow/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
         </button>
       </nav>

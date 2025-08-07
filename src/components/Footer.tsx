@@ -153,10 +153,15 @@ const Footer = () => {
                   Termini d'Utilizzo
                 </Link>
               </li>
-              {/* <li className="hover:text-marafone-yellow cursor-pointer transition-colors">
-                <HelpCircle className="inline h-4 w-4 mr-2" />
-                Supporto
-              </li> */}
+              <li>
+                <Link
+                  to="/supporto"
+                  className="hover:text-marafone-yellow cursor-pointer transition-colors flex items-center"
+                >
+                  <HelpCircle className="inline h-4 w-4 mr-2" />
+                  Supporto
+                </Link>
+              </li>
             </ul>
           </div>
 
