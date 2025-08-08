@@ -2,6 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import ScreenshotCarousel from "@/components/ScreenshotCarousel";
 import FeaturesSection from "@/components/FeaturesSection";
 import ScreenshotsSection from "@/components/ScreenshotsSection";
+import BlogSection from "@/components/BlogSection";
 import CommunitySection from "@/components/CommunitySection";
 import Footer from "@/components/Footer";
 
@@ -12,6 +13,7 @@ const Index = () => {
       <ScreenshotCarousel />
       <FeaturesSection />
       <ScreenshotsSection />
+      <BlogSection />
       <CommunitySection />
       <Footer />
     </div>

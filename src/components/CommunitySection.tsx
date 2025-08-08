@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Handshake } from "lucide-react";
-import QRCode from "react-qr-code";
 import { carteImages } from "@/lib/carteImages";
 import {
   FadeInUp,
@@ -106,18 +105,18 @@ const CommunitySection = () => {
         </FadeInUp>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 items-stretch justify-center">
-          {/* QR Code Card */}
+          {/* Facebook Card */}
           <StaggerItem className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm flex flex-col items-center justify-center text-center md:col-span-1 order-2 md:order-1 mx-auto">
             <h4 className="font-game font-bold text-xl mb-4 text-marafone-yellow drop-shadow">
-              Scarica l'app
+              Pagina Facebook per rimanere aggiornato
             </h4>
             <div className="flex justify-center w-full">
               <motion.a
-                href="https://play.google.com/store/apps/details?id=com.eliazavatta.maraffa"
+                href="https://www.facebook.com/people/Marafone-romagnolo/61579215599753/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="QR Play Store"
-                className="block bg-white rounded-xl p-3 shadow-xl border-4 border-marafone-yellow mx-auto"
+                aria-label="Pagina Facebook Marafone Romagnolo"
+                className="block bg-white rounded-xl p-6 shadow-xl border-4 border-marafone-yellow mx-auto hover:shadow-2xl transition-shadow"
                 style={{ width: "200px", height: "200px" }}
                 whileHover={{
                   scale: 1.05,
@@ -126,18 +125,20 @@ const CommunitySection = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <QRCode
-                  value="https://play.google.com/store/apps/details?id=com.eliazavatta.maraffa"
-                  bgColor="#FFFFFF"
-                  fgColor="#000000"
-                  className="w-full h-full object-contain"
-                  style={{ width: "170px", height: "170px" }}
-                />
+                <div className="w-full h-full flex flex-col items-center justify-center">
+                  <svg
+                    className="w-16 h-16 mb-3"
+                    fill="#1877F2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                  </svg>
+                  <span className="font-game font-bold text-sm text-gray-800 text-center leading-tight">
+                    Seguici su Facebook
+                  </span>
+                </div>
               </motion.a>
             </div>
-            <p className="font-game text-base mt-4 opacity-80">
-              Scansiona per scaricare subito!
-            </p>
           </StaggerItem>
           {/* galletto */}
           <StaggerItem className="flex flex-col items-center justify-center order-1 md:order-2 relative">

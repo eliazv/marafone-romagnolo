@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, HelpCircle, Mail, Bug, FileText, Download, Users, Trash2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { carteImages } from "@/lib/carteImages";
 
 const SECTIONS = [
   { id: "contatti", title: "Contatti", icon: <Mail className="w-6 h-6 text-blue-700" />, color: "from-blue-100/80 to-blue-200/60" },
@@ -56,26 +59,94 @@ const Support = () => {
           content="supporto maraffa, assistenza tecnica, FAQ, bug report, contatti, privacy, eliminazione account"
         />
       </Helmet>
-      <div className="min-h-screen bg-gradient-to-br from-yellow-50/80 to-orange-100/60">
-        <div className="bg-marafone-dark text-white py-4 px-4">
-          <div className="container mx-auto">
-            <Link to="/">
+      <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
+        <Header />
+        <section className="relative py-16 px-4 bg-marafone-red text-white overflow-hidden">
+          {/* Carte decorative animate */}
+          <div className="absolute inset-0 pointer-events-none select-none z-0">
+            {carteImages.slice(0, 4).map((src, i) => {
+              const positions = [
+                {
+                  top: "10%",
+                  left: "8%",
+                  rotate: "-15deg",
+                  size: 40,
+                  anim: "animate-float-slow",
+                },
+                {
+                  top: "20%",
+                  right: "12%",
+                  rotate: "10deg",
+                  size: 45,
+                  anim: "animate-bounce-gentle",
+                },
+                {
+                  bottom: "15%",
+                  left: "15%",
+                  rotate: "8deg",
+                  size: 42,
+                  anim: "animate-float",
+                },
+                {
+                  bottom: "25%",
+                  right: "10%",
+                  rotate: "-12deg",
+                  size: 48,
+                  anim: "animate-float-slow",
+                },
+              ];
+              const pos = positions[i % positions.length];
+              return (
+                <img
+                  key={src}
+                  src={src}
+                  alt="Carta da gioco romagnola"
+                  className={pos.anim}
+                  style={{
+                    position: "absolute",
+                    ...("top" in pos ? { top: pos.top } : {}),
+                    ...("bottom" in pos ? { bottom: pos.bottom } : {}),
+                    ...("left" in pos ? { left: pos.left } : {}),
+                    ...("right" in pos ? { right: pos.right } : {}),
+                    width: pos.size,
+                    height: pos.size * 1.5,
+                    transform: `rotate(${pos.rotate})`,
+                    zIndex: 1,
+                    filter: "drop-shadow(0 2px 8px #0003) blur(0.5px)",
+                    opacity: 0.6,
+                    pointerEvents: "none",
+                    userSelect: "none",
+                    transition: "transform 0.5s",
+                  }}
+                  draggable={false}
+                />
+              );
+            })}
+          </div>
+
+          <div className="container mx-auto relative z-10 pt-16">
+            <div className="flex items-center gap-4 mb-6">
               <Button
-                variant="ghost"
-                className="text-white hover:bg-white/20 mb-4 rounded-xl px-6 py-3 font-game font-semibold transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl flex items-center gap-3 border-2 border-transparent hover:border-marafone-yellow/30"
+                variant="secondary"
+                className="bg-marafone-yellow text-marafone-dark hover:bg-marafone-yellow/90 font-game font-bold"
+                asChild
               >
-                <ArrowLeft className="w-5 h-5" />
-                Torna alla Home
+                <Link to="/">
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  Torna alla Home
+                </Link>
               </Button>
-            </Link>
-            <h1 className="font-retro text-3xl md:text-4xl text-marafone-yellow">
+            </div>
+
+            <h1 className="font-retro text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
               🃏 Supporto Maraffa Romagnola
             </h1>
-            <p className="font-game text-lg mt-2 opacity-90">
+
+            <p className="font-game text-xl opacity-90 max-w-4xl leading-relaxed">
               Centro assistenza per il gioco di carte tradizionale della Romagna
             </p>
           </div>
-        </div>
+        </section>
 
         <div className="md:max-w-4xl md:mx-auto px-0 md:px-4 mt-4">
           <nav className="mb-6 flex flex-wrap gap-1.5 justify-center px-2">
@@ -259,6 +330,8 @@ const Support = () => {
             </Card>
           </main>
         </div>
+        
+        <Footer />
       </div>
     </>
   );

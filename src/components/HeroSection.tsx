@@ -26,27 +26,29 @@ const HeroSection = () => {
           {/* Logo rimosso */}
 
           {/* Main Title */}
-          <FadeInUp delay={0.2} as="h1">
+          <FadeInUp delay={0.2}>
             <h1
               className="font-retro text-5xl md:text-6xl lg:text-7xl text-white mb-4 drop-shadow-2xl tracking-tight relative"
               style={{ textShadow: "0 2px 12px #000, 0 1px 0 #fff8" }}
             >
-              <motion.span
-                className="inline-block"
-                animate={{
-                  rotate: [0, -5, 5, -5, 0],
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatDelay: 3,
-                  ease: "easeInOut",
-                }}
-              >
-                M
-              </motion.span>
-              ARAFONE
+              <span className="whitespace-nowrap">
+                <motion.span
+                  className="inline-block"
+                  animate={{
+                    rotate: [0, -5, 5, -5, 0],
+                    scale: [1, 1.05, 1],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatDelay: 3,
+                    ease: "easeInOut",
+                  }}
+                >
+                  M
+                </motion.span>
+                ARAFONE
+              </span>
               <br />
               <motion.span
                 className="text-white"
@@ -68,7 +70,7 @@ const HeroSection = () => {
           </FadeInUp>
 
           {/* Subtitle */}
-          <FadeInUp delay={0.6} as="p">
+          <FadeInUp delay={0.6}>
             <p
               className="font-game text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto font-semibold relative"
               style={{ textShadow: "0 2px 8px #000, 0 1px 0 #fff8" }}

@@ -130,7 +130,7 @@ Questi termini sono regolati dalla legge italiana. Per controversie, è competen
 
 Gli utenti hanno il diritto di richiedere l'eliminazione completa dei propri dati dall'app e dai nostri server. Per richiedere la cancellazione:
 
-- **Email**: zavattaelia@gmail.com
+- **Email**: marafoneromagnolo@gmail.com
 - **Oggetto**: "Richiesta Eliminazione Dati - Maraffa Romagnola"
 - **Contenuto**: Specificare l'email dell'account da eliminare
 
@@ -142,7 +142,7 @@ La richiesta verrà elaborata entro 30 giorni lavorativi. Una volta confermata l
 
 Per domande sui termini d'utilizzo o segnalazioni:
 
-- Email: zavattaelia@gmail.com
+- Email: marafoneromagnolo@gmail.com
 - Oggetto: "Termini d'Utilizzo - Maraffa Romagnola"
 
 ---
@@ -202,7 +202,7 @@ I dati NON vengono condivisi con terze parti per scopi commerciali. Alcuni dati 
 
 Per richiedere l'eliminazione completa dei tuoi dati:
 
-1. **Invia una email a**: zavattaelia@gmail.com
+1. **Invia una email a**: marafoneromagnolo@gmail.com
 2. **Oggetto**: "Richiesta Eliminazione Dati - Maraffa Romagnola"
 3. **Includi**: L'indirizzo email dell'account da eliminare
 4. **Tempi**: La richiesta verrà elaborata entro 30 giorni lavorativi

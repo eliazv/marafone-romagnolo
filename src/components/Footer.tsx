@@ -6,6 +6,7 @@ import {
   Globe,
   BookOpenText,
   FileBadge2,
+  Facebook,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { carteImages } from "@/lib/carteImages";
@@ -170,17 +171,26 @@ const Footer = () => {
             <h4 className="font-game font-bold text-lg mb-4">Contatti</h4>
             <div className="font-game space-y-2 opacity-80">
               <a
-                href="mailto:zavattaelia@gmail.com"
+                href="mailto:marafoneromagnolo@gmail.com"
                 className="hover:text-marafone-yellow transition-colors flex items-center"
               >
                 <Mail className="inline h-4 w-4 mr-2" />
-                zavattaelia@gmail.com
+                marafoneromagnolo@gmail.com
+              </a>
+              <a
+                href="https://www.facebook.com/people/Marafone-romagnolo/61579215599753/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-marafone-yellow transition-colors flex items-center"
+              >
+                <Facebook className="inline h-4 w-4 mr-2" />
+                Segui su Facebook
               </a>
               <a
                 href="https://www.eliazavatta.it/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-marafone-yellow transition-colors"
+                className="hover:text-marafone-yellow transition-colors flex items-center"
               >
                 <Globe className="inline h-4 w-4 mr-2" />
                 eliazavatta.it

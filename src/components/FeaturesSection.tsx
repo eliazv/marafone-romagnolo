@@ -20,60 +20,46 @@ import { motion } from "framer-motion";
 const FeaturesSection = () => {
   const features = [
     {
-      icon: <Gamepad className="h-12 w-12 text-marafone-red" />,
-      title: "Gioca offline con IA",
+      icon: <Smartphone className="h-12 w-12 text-marafone-red" />,
+      title: "Gioca offline",
       description:
-        "Sfida l'intelligenza artificiale quando vuoi tu! Nessuna connessione internet richiesta.",
-      highlight: "100% Offline",
+        "Gioca offline senza connessione internet, ovunque tu sia.",
+      highlight: "Sempre Disponibile",
     },
     {
       icon: <Brain className="h-12 w-12 text-marafone-red" />,
-      title: "IA strategica avanzata",
+      title: "Sfida la CPU",
       description:
-        "3 livelli di difficoltà per sfidare le tue abilità: Principiante, Esperto e Maestro.",
+        "Tre livelli di difficoltà, perfetta per principianti e giocatori esperti.",
       highlight: "3 Livelli",
     },
     {
-      icon: <Award className="h-12 w-12 text-marafone-red" />,
-      title: "Classifiche globali",
+      icon: <Users className="h-12 w-12 text-marafone-red" />,
+      title: "Modalità online",
       description:
-        "Conquista la vetta delle classifiche mondiali e sblocca nuovi livelli e achievement!",
-      highlight: "Competizione",
+        "Modalità online con classifiche e sistema amici per sfidare altri appassionati.",
+      highlight: "Community",
     },
     {
-      icon: <Users className="h-12 w-12 text-marafone-red" />,
-      title: "Sistema amici",
+      icon: <Award className="h-12 w-12 text-marafone-red" />,
+      title: "Tavoli personalizzati",
       description:
-        "Aggiungi amici, segui i loro progressi e sfidali nelle classifiche.",
-      highlight: "Social",
+        "Tavoli personalizzati per rendere ogni partita unica.",
+      highlight: "Personalizza",
     },
-    // {
-    //   icon: <Smartphone className="h-12 w-12 text-marafone-red" />,
-    //   title: "Interfaccia intuitiva",
-    //   description:
-    //     "Design moderno e user-friendly, ottimizzato per smartphone e tablet.",
-    //   highlight: "Mobile First",
-    // },
+    {
+      icon: <Heart className="h-12 w-12 text-marafone-red" />,
+      title: "Tradizione autentica",
+      description:
+        "Perfetto per chi ama il Tressette e vuole scoprire le sue varianti regionali.",
+      highlight: "Autentico",
+    },
     {
       icon: <Trophy className="h-12 w-12 text-marafone-red" />,
-      title: "Achievement",
+      title: "Comunità unita",
       description:
-        "Sblocca trofei e achievement giocando e migliorando le tue abilità.",
-      highlight: "Obiettivi",
-    },
-    // {
-    //   icon: <Heart className="h-12 w-12 text-marafone-red" />,
-    //   title: "Tradizione romagnola",
-    //   description:
-    //     "Regole autentiche del Marafone tradizionale, rispettando la cultura locale.",
-    //   highlight: "Autentico",
-    // },
-    {
-      icon: <Handshake className="h-12 w-12 text-marafone-red" />,
-      title: "Multiplayer in arrivo",
-      description:
-        "Presto potrai sfidare amici e giocatori di tutto il mondo in tempo reale!",
-      highlight: "Coming Soon",
+        "Marafone Romagnolo è molto più di un semplice gioco: è una comunità che unisce generazioni attraverso le carte.",
+      highlight: "Generazioni",
     },
   ];
 
@@ -159,21 +145,16 @@ const FeaturesSection = () => {
       </div>
       <div className="container mx-auto relative z-10 px-1">
         <FadeInUp delay={0.2}>
-          <h2 className="font-retro text-4xl md:text-5xl text-center text-marafone-red mb-4">
-            Perché scegliere
-          </h2>
-        </FadeInUp>
-        <FadeInUp delay={0.4}>
-          <h3 className="font-retro text-3xl md:text-4xl text-center text-marafone-dark mb-4">
-            Marafone Romagnolo?
-          </h3>
-        </FadeInUp>
-        <FadeInUp delay={0.6}>
-          <p className="font-game text-lg text-center text-marafone-dark opacity-80 mb-16 max-w-3xl mx-auto">
-            L'app che porta la tradizione del Marafone romagnolo nel mondo
-            digitale, con funzionalità moderne e rispetto per le regole
-            autentiche.
+          <p className="font-game text-lg text-center text-marafone-dark mb-8 max-w-4xl mx-auto leading-relaxed">
+            Benvenuto su <strong>Marafone Romagnolo</strong>, il gioco di carte tradizionale romagnolo finalmente disponibile in versione digitale per smartphone e tablet.
+            Conosciuto anche come <strong>Maraffone</strong>, <strong>Beccaccino</strong>, <strong>Maraffa</strong> o <strong>Trionfo</strong>, questo gioco è una variante del Tressette che ha radici profonde nella cultura e nella tradizione romagnola, amata nelle case e nei bar di Forlì, Cesena, Ravenna e tutta la Romagna.
           </p>
+        </FadeInUp>
+
+        <FadeInUp delay={0.4}>
+          <h2 className="font-retro text-4xl md:text-5xl text-center text-marafone-red mb-12">
+            Perché scegliere Marafone Romagnolo?
+          </h2>
         </FadeInUp>
 
         <StaggerContainer className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -205,8 +186,20 @@ const FeaturesSection = () => {
           ))}
         </StaggerContainer>
 
-        {/* Sezione aggiuntiva con statistiche */}
+        {/* CTA Section */}
         <FadeInUp delay={0.8}>
+          <div className="mt-16 text-center max-w-4xl mx-auto">
+            <h3 className="font-retro text-3xl md:text-4xl text-marafone-red mb-6">
+              Scarica ora l'app e diventa campione di Marafone!
+            </h3>
+            <p className="font-game text-lg text-marafone-dark mb-8 leading-relaxed">
+              Unisciti a migliaia di giocatori che ogni giorno si sfidano nel gioco più amato della Romagna.
+            </p>
+          </div>
+        </FadeInUp>
+
+        {/* Sezione aggiuntiva con statistiche */}
+        <FadeInUp delay={1.0}>
           <div className="mt-10 bg-gradient-to-r from-marafone-red to-marafone-dark rounded-3xl p-8 text-white text-center">
             <h3 className="font-retro text-2xl md:text-3xl mb-6">
               Unisciti alla Comunità Romagnola!
@@ -214,13 +207,13 @@ const FeaturesSection = () => {
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <StaggerItem>
                 <div className="font-retro text-3xl md:text-4xl text-marafone-yellow mb-2">
-                  200+
+                  1000+
                 </div>
                 <div className="font-game">Giocatori Attivi</div>
               </StaggerItem>
               <StaggerItem>
                 <div className="font-retro text-3xl md:text-4xl text-marafone-yellow mb-2">
-                  2000+
+                  10K+
                 </div>
                 <div className="font-game">Partite Giocate</div>
               </StaggerItem>
