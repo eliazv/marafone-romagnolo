@@ -68,7 +68,7 @@ function MobileMenu({ onMenuStateChange }) {
 
         {/* Menu a comparsa con design moderno */}
         <div
-          className={`absolute right-0 mt-4 w-72 bg-gradient-to-br from-white via-white to-gray-50 rounded-3xl shadow-2xl border border-gray-200/50 py-6 z-50 backdrop-blur-xl transition-all duration-500 ease-out transform ${
+          className={`absolute right-0 mt-4 w-54 bg-gradient-to-br from-white via-white to-gray-50 rounded-3xl shadow-2xl border border-gray-200/50 py-6 z-50 backdrop-blur-xl transition-all duration-500 ease-out transform ${
             open
               ? "scale-100 opacity-100 pointer-events-auto translate-y-0"
               : "scale-95 opacity-0 pointer-events-none -translate-y-4"
