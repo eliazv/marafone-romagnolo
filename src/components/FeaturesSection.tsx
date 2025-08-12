@@ -22,8 +22,7 @@ const FeaturesSection = () => {
     {
       icon: <Smartphone className="h-12 w-12 text-marafone-red" />,
       title: "Gioca offline",
-      description:
-        "Gioca offline senza connessione internet, ovunque tu sia.",
+      description: "Gioca offline senza connessione internet, ovunque tu sia.",
       highlight: "Sempre Disponibile",
     },
     {
@@ -42,9 +41,8 @@ const FeaturesSection = () => {
     },
     {
       icon: <Award className="h-12 w-12 text-marafone-red" />,
-      title: "Tavoli personalizzati",
-      description:
-        "Tavoli personalizzati per rendere ogni partita unica.",
+      title: "Tavoli unici",
+      description: "Tavoli personalizzati per rendere ogni partita unica.",
       highlight: "Personalizza",
     },
     {
@@ -146,8 +144,14 @@ const FeaturesSection = () => {
       <div className="container mx-auto relative z-10 px-1">
         <FadeInUp delay={0.2}>
           <p className="font-game text-lg text-center text-marafone-dark mb-8 max-w-4xl mx-auto leading-relaxed">
-            Benvenuto su <strong>Marafone Romagnolo</strong>, il gioco di carte tradizionale romagnolo finalmente disponibile in versione digitale per smartphone e tablet.
-            Conosciuto anche come <strong>Maraffone</strong>, <strong>Beccaccino</strong>, <strong>Maraffa</strong> o <strong>Trionfo</strong>, questo gioco è una variante del Tressette che ha radici profonde nella cultura e nella tradizione romagnola, amata nelle case e nei bar di Forlì, Cesena, Ravenna e tutta la Romagna.
+            Benvenuto su <strong>Marafone Romagnolo</strong>, il gioco di carte
+            tradizionale romagnolo finalmente disponibile in versione digitale
+            per smartphone e tablet. Conosciuto anche come{" "}
+            <strong>Maraffone</strong>, <strong>Beccaccino</strong>,{" "}
+            <strong>Maraffa</strong> o <strong>Trionfo</strong>, questo gioco è
+            una variante del Tressette che ha radici profonde nella cultura e
+            nella tradizione romagnola, amata nelle case e nei bar di Forlì,
+            Cesena, Ravenna e tutta la Romagna.
           </p>
         </FadeInUp>
 
@@ -193,7 +197,8 @@ const FeaturesSection = () => {
               Scarica ora l'app e diventa campione di Marafone!
             </h3>
             <p className="font-game text-lg text-marafone-dark mb-8 leading-relaxed">
-              Unisciti a migliaia di giocatori che ogni giorno si sfidano nel gioco più amato della Romagna.
+              Unisciti a migliaia di giocatori che ogni giorno si sfidano nel
+              gioco più amato della Romagna.
             </p>
           </div>
         </FadeInUp>

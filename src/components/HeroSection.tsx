@@ -22,13 +22,13 @@ const HeroSection = () => {
       >
         {/* Nessun elemento decorativo o carte nello sfondo */}
 
-        <div className="container mx-auto text-center relative z-10">
+        <div className="container px-0 mx-auto text-center relative z-10">
           {/* Logo rimosso */}
 
           {/* Main Title */}
           <FadeInUp delay={0.2}>
             <h1
-              className="font-retro text-5xl md:text-6xl lg:text-7xl text-white mb-4 drop-shadow-2xl tracking-tight relative"
+              className="font-retro  text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-4 drop-shadow-2xl tracking-tight relative"
               style={{ textShadow: "0 2px 12px #000, 0 1px 0 #fff8" }}
             >
               <span className="whitespace-nowrap">
