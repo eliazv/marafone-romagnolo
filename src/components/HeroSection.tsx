@@ -101,20 +101,24 @@ const HeroSection = () => {
                   style={{ minWidth: 180, minHeight: 60 }}
                 />
               </motion.a>
-              <motion.div
-                className="w-full sm:w-auto flex-1 opacity-50 cursor-not-allowed"
+              <motion.a
+                href="https://apps.apple.com/us/app/marafone-beccaccino-romagnolo/id6749573579"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto flex-1"
                 whileHover={{
-                  scale: 1.02,
+                  scale: 1.05,
                   transition: { duration: 0.2 },
                 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <img
                   src="/img/appstore.png"
-                  alt="Presto su App Store"
-                  className="w-full h-auto max-w-[280px] mx-auto drop-shadow-2xl grayscale"
+                  alt="Scarica su App Store"
+                  className="w-full h-auto max-w-[280px] mx-auto drop-shadow-2xl"
                   style={{ minWidth: 180, minHeight: 60 }}
                 />
-              </motion.div>
+              </motion.a>
             </div>
           </FadeInUp>
 

@@ -312,16 +312,21 @@ const Support = () => {
                       </a>
                     </div>
                     
-                    <div className="bg-gray-50/80 rounded-xl p-6 border border-gray-200/50">
-                      <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                    <div className="bg-blue-50/80 rounded-xl p-6 border border-blue-200/50">
+                      <h4 className="font-bold text-blue-900 mb-2 flex items-center gap-2">
                         <Download className="w-5 h-5" />
                         iOS
                       </h4>
-                      <p className="text-gray-600 mb-4">Presto disponibile su App Store</p>
-                      <div className="inline-flex items-center gap-2 bg-gray-400 text-white px-4 py-2 rounded-lg font-medium cursor-not-allowed opacity-60">
+                      <p className="text-blue-800 mb-4">Disponibile su App Store</p>
+                      <a 
+                        href="https://apps.apple.com/us/app/marafone-beccaccino-romagnolo/id6749573579" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors font-medium"
+                      >
                         <Download className="w-4 h-4" />
-                        Prossimamente
-                      </div>
+                        Scarica per iOS
+                      </a>
                     </div>
                   </div>
                 </section>

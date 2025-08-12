@@ -113,13 +113,18 @@ const Footer = () => {
                   className="h-16 w-auto drop-shadow-lg"
                 />
               </a>
-              <div className="opacity-50 cursor-not-allowed">
+              <a
+                href="https://apps.apple.com/us/app/marafone-beccaccino-romagnolo/id6749573579"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-105 transition-transform duration-300"
+              >
                 <img
                   src="/img/appstore.png"
-                  alt="Presto su App Store"
-                  className="h-16 w-auto drop-shadow-lg grayscale"
+                  alt="Scarica su App Store"
+                  className="h-16 w-auto drop-shadow-lg"
                 />
-              </div>
+              </a>
             </div>
           </div>
 

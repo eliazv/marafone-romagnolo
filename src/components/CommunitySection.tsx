@@ -3,7 +3,6 @@ import { Handshake } from "lucide-react";
 import { carteImages } from "@/lib/carteImages";
 import {
   FadeInUp,
-  ScaleIn,
   StaggerContainer,
   StaggerItem,
 } from "@/components/ui/animated-element";
