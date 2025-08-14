@@ -2,7 +2,20 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Scroll, Diamond, Shuffle, PlayCircle, MessageCircle, Trophy, Brain, Info, Star, Target, Crown } from "lucide-react";
+import {
+  ArrowLeft,
+  Scroll,
+  Diamond,
+  Shuffle,
+  PlayCircle,
+  MessageCircle,
+  Trophy,
+  Brain,
+  Info,
+  Star,
+  Target,
+  Crown,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
@@ -10,14 +23,54 @@ import Footer from "@/components/Footer";
 import { carteImages } from "@/lib/carteImages";
 
 const SECTIONS = [
-  { id: "introduzione", title: "Introduzione", icon: <Scroll className="w-6 h-6 text-amber-700" />, color: "from-amber-100/80 to-amber-200/60" },
-  { id: "carte", title: "Le Carte", icon: <Diamond className="w-6 h-6 text-red-600" />, color: "from-red-100/80 to-amber-100/60" },
-  { id: "distribuzione", title: "Distribuzione", icon: <Shuffle className="w-6 h-6 text-green-600" />, color: "from-green-100/80 to-amber-100/60" },
-  { id: "svolgimento", title: "Come si Gioca", icon: <PlayCircle className="w-6 h-6 text-blue-600" />, color: "from-blue-100/80 to-amber-100/60" },
-  { id: "comunicazione", title: "Comunicazione", icon: <MessageCircle className="w-6 h-6 text-purple-600" />, color: "from-purple-100/80 to-amber-100/60" },
-  { id: "punteggi", title: "Punteggi", icon: <Trophy className="w-6 h-6 text-yellow-600" />, color: "from-yellow-100/80 to-amber-100/60" },
-  { id: "strategie", title: "Strategie", icon: <Brain className="w-6 h-6 text-indigo-600" />, color: "from-indigo-100/80 to-amber-100/60" },
-  { id: "faq", title: "FAQ", icon: <Info className="w-6 h-6 text-sky-600" />, color: "from-sky-100/80 to-amber-100/60" }
+  {
+    id: "introduzione",
+    title: "Introduzione",
+    icon: <Scroll className="w-6 h-6 text-amber-700" />,
+    color: "from-amber-100/80 to-amber-200/60",
+  },
+  {
+    id: "carte",
+    title: "Le Carte",
+    icon: <Diamond className="w-6 h-6 text-red-600" />,
+    color: "from-red-100/80 to-amber-100/60",
+  },
+  {
+    id: "distribuzione",
+    title: "Distribuzione",
+    icon: <Shuffle className="w-6 h-6 text-green-600" />,
+    color: "from-green-100/80 to-amber-100/60",
+  },
+  {
+    id: "svolgimento",
+    title: "Come si Gioca",
+    icon: <PlayCircle className="w-6 h-6 text-blue-600" />,
+    color: "from-blue-100/80 to-amber-100/60",
+  },
+  {
+    id: "comunicazione",
+    title: "Comunicazione",
+    icon: <MessageCircle className="w-6 h-6 text-purple-600" />,
+    color: "from-purple-100/80 to-amber-100/60",
+  },
+  {
+    id: "punteggi",
+    title: "Punteggi",
+    icon: <Trophy className="w-6 h-6 text-yellow-600" />,
+    color: "from-yellow-100/80 to-amber-100/60",
+  },
+  {
+    id: "strategie",
+    title: "Strategie",
+    icon: <Brain className="w-6 h-6 text-indigo-600" />,
+    color: "from-indigo-100/80 to-amber-100/60",
+  },
+  {
+    id: "faq",
+    title: "FAQ",
+    icon: <Info className="w-6 h-6 text-sky-600" />,
+    color: "from-sky-100/80 to-amber-100/60",
+  },
 ];
 
 const GameRules = () => {
@@ -54,15 +107,112 @@ const GameRules = () => {
   return (
     <>
       <Helmet>
-        <title>Regole Marafone Romagnolo | Gioco di Carte Maraffa</title>
+        <title>
+          Regole Marafone Romagnolo | Maraffone, Beccaccino, Trionfo
+        </title>
         <meta
           name="description"
-          content="Scopri tutte le regole ufficiali del Marafone Romagnolo, il gioco di carte tradizionale della Romagna. Maraffa, briscola, punteggi, strategie e FAQ."
+          content="Scopri tutte le regole ufficiali del Marafone Romagnolo (Maraffone, Beccaccino, Maraffa e Trionfo), il gioco di carte tradizionale della Romagna. Punteggi, strategie e FAQ complete."
         />
         <meta
           name="keywords"
-          content="regole marafone, regole maraffa, gioco di carte romagnolo, carte romagnole, briscola, tradizione, bar romagnolo, marafone, maraffa, punteggi, strategie, faq"
+          content="regole marafone, regole maraffa, regole maraffone, regole beccaccino, regole trionfo, gioco di carte romagnolo, carte romagnole, briscola, tradizione, bar romagnolo, marafone, maraffa, maraffone, beccaccino, trionfo, punteggi, strategie, faq, come giocare marafone, come giocare maraffone, come giocare beccaccino, come giocare trionfo"
         />
+        <link rel="canonical" href="https://marafone-romagnolo.it/regole" />
+        <meta
+          property="og:title"
+          content="Regole Complete Marafone Romagnolo | Maraffone, Beccaccino, Trionfo"
+        />
+        <meta
+          property="og:description"
+          content="Guida completa alle regole del Marafone Romagnolo e sue varianti regionali. Impara punteggi, strategie e dichiarazioni per Maraffone, Beccaccino, Maraffa e Trionfo."
+        />
+        <meta
+          property="og:url"
+          content="https://marafone-romagnolo.it/regole"
+        />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter:title"
+          content="Regole Marafone Romagnolo | Maraffone, Beccaccino, Trionfo"
+        />
+        <meta
+          name="twitter:description"
+          content="Scopri tutte le regole ufficiali del Marafone Romagnolo e sue varianti regionali della Romagna."
+        />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "Come giocare al Marafone Romagnolo",
+            description:
+              "Regole complete del Marafone Romagnolo (Maraffone, Beccaccino, Maraffa, Trionfo), il tradizionale gioco di carte della Romagna",
+            image: "https://marafone-romagnolo.it/img/logo-rosso.jpg",
+            totalTime: "PT45M",
+            estimatedCost: {
+              "@type": "MonetaryAmount",
+              currency: "EUR",
+              value: "0",
+            },
+            supply: [
+              {
+                "@type": "HowToSupply",
+                name: "Mazzo da 40 carte romagnole",
+              },
+              {
+                "@type": "HowToSupply",
+                name: "4 giocatori",
+              },
+            ],
+            tool: [
+              {
+                "@type": "HowToTool",
+                name: "Tavolo da gioco",
+              },
+            ],
+            step: [
+              {
+                "@type": "HowToStep",
+                name: "Distribuzione carte",
+                text: "Distribuire 10 carte per giocatore in senso antiorario",
+              },
+              {
+                "@type": "HowToStep",
+                name: "Scelta briscola",
+                text: "Chi ha il 4 di denari sceglie la briscola",
+              },
+              {
+                "@type": "HowToStep",
+                name: "Gioco delle carte",
+                text: "Giocare rispettando l'obbligo di colore",
+              },
+              {
+                "@type": "HowToStep",
+                name: "Conteggio punti",
+                text: "Raggiungere 41 punti per vincere",
+              },
+            ],
+            about: [
+              {
+                "@type": "Thing",
+                name: "Maraffone",
+              },
+              {
+                "@type": "Thing",
+                name: "Beccaccino",
+              },
+              {
+                "@type": "Thing",
+                name: "Maraffa",
+              },
+              {
+                "@type": "Thing",
+                name: "Trionfo",
+              },
+            ],
+          })}
+        </script>
       </Helmet>
       <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
         <Header />
@@ -181,9 +331,11 @@ const GameRules = () => {
                     Introduzione
                   </SectionTitle>
                   <p className="text-lg text-amber-950 leading-relaxed mb-2">
-                    Il <b>Marafone Romagnolo</b> è un gioco di carte tradizionale
-                    della Romagna, appartenente alla famiglia della briscola. Si
-                    gioca in 4, a squadre di 2, con un mazzo da 40 carte.
+                    Il <b>Marafone Romagnolo</b> (noto anche come{" "}
+                    <b>Maraffone</b>, <b>Beccaccino</b>, <b>Maraffa</b> o{" "}
+                    <b>Trionfo</b>) è un gioco di carte tradizionale della
+                    Romagna, appartenente alla famiglia della briscola. Si gioca
+                    in 4, a squadre di 2, con un mazzo da 40 carte.
                   </p>
                   <p className="text-lg text-amber-950 leading-relaxed">
                     L'obiettivo è raggiungere <b>41 punti</b> prima degli
@@ -222,10 +374,12 @@ const GameRules = () => {
                   </SectionTitle>
                   <div className="grid md:grid-cols-2 gap-4">
                     <ul className="list-disc pl-6 text-lg text-amber-950 mb-2">
-                      <li>Si usa un mazzo da 40 carte (romagnolo o spagnolo).</li>
                       <li>
-                        <b>Valori decrescenti:</b> 3, 2, asso, re, cavallo, fante,
-                        7, 6, 5, 4.
+                        Si usa un mazzo da 40 carte (romagnolo o spagnolo).
+                      </li>
+                      <li>
+                        <b>Valori decrescenti:</b> 3, 2, asso, re, cavallo,
+                        fante, 7, 6, 5, 4.
                       </li>
                       <li>
                         <b>Scartini:</b> 7, 6, 5, 4 (non valgono punti).
@@ -234,8 +388,8 @@ const GameRules = () => {
                         <b>Figure:</b> re, cavallo, fante.
                       </li>
                       <li>
-                        <b>Marafone:</b> hai scelto la briscola e possiedi asso, 2
-                        e 3 di briscola.
+                        <b>Marafone:</b> hai scelto la briscola e possiedi asso,
+                        2 e 3 di briscola.
                       </li>
                     </ul>
                     <div className="flex flex-col gap-2 text-base text-amber-900">
@@ -248,8 +402,8 @@ const GameRules = () => {
                       <div className="flex items-center gap-2">
                         <Crown className="w-5 h-5 text-amber-700" />{" "}
                         <span>
-                          <b>Asso</b> è la carta che vale di più, ma attenzione: 3
-                          e 2 vincono sempre su di lui.
+                          <b>Asso</b> è la carta che vale di più, ma attenzione:
+                          3 e 2 vincono sempre su di lui.
                         </span>
                       </div>
                     </div>
@@ -268,8 +422,8 @@ const GameRules = () => {
                         volta, fino a 10 carte per giocatore.
                       </li>
                       <li>
-                        Chi ha il 4 di denari decide la briscola di quella mano e
-                        inizia a giocare.
+                        Chi ha il 4 di denari decide la briscola di quella mano
+                        e inizia a giocare.
                       </li>
                       <li>
                         La mano successiva starà al giocatore alla destra di chi
@@ -297,14 +451,15 @@ const GameRules = () => {
                       Se non si ha il seme, si può giocare qualsiasi altro seme.
                     </li>
                     <li>
-                      Vince la presa la briscola più alta, altrimenti la carta più
-                      alta del seme iniziale.
+                      Vince la presa la briscola più alta, altrimenti la carta
+                      più alta del seme iniziale.
                     </li>
                     <li>Il vincitore della presa inizia la successiva.</li>
                     <li>
-                      Alla fine della <b>mano</b>, ovvero quando tutti esauriscono
-                      le carte in mano, la briscola della mano successiva viene
-                      scelta dal giocatore successivo al precedente "dichiarante".
+                      Alla fine della <b>mano</b>, ovvero quando tutti
+                      esauriscono le carte in mano, la briscola della mano
+                      successiva viene scelta dal giocatore successivo al
+                      precedente "dichiarante".
                     </li>
                   </ol>
                   <div className="flex flex-wrap gap-2 mt-4">
@@ -365,7 +520,8 @@ const GameRules = () => {
                         Asso: <b>1 punto</b>
                       </li>
                       <li>
-                        Tre, due, re, cavallo, fante: <b>1/3 di punto</b> ciascuna
+                        Tre, due, re, cavallo, fante: <b>1/3 di punto</b>{" "}
+                        ciascuna
                       </li>
                       <li>
                         7, 6, 5, 4: <b>0 punti</b>
@@ -374,9 +530,9 @@ const GameRules = () => {
                         L'ultima presa ("bàga"): <b>1 punto</b>
                       </li>
                       <li>
-                        <b>Marafone</b> (hai scelto la briscola e possiedi asso, 2
-                        e 3 di briscola): <b>+3 punti extra</b>, vengono aggiunti
-                        agli 11 totali
+                        <b>Marafone</b> (hai scelto la briscola e possiedi asso,
+                        2 e 3 di briscola): <b>+3 punti extra</b>, vengono
+                        aggiunti agli 11 totali
                       </li>
                     </ul>
                   </div>
@@ -421,9 +577,9 @@ const GameRules = () => {
                     </dt>
                     <dd className="mb-2 text-amber-950">
                       La maraffa va dichiarato subito all'inizio della mano
-                      giocando l'asso di briscola come prima carta della partita,
-                      questo vale unicamente se hai scelto la briscola e possiedi
-                      asso, 2 e 3 di briscola.
+                      giocando l'asso di briscola come prima carta della
+                      partita, questo vale unicamente se hai scelto la briscola
+                      e possiedi asso, 2 e 3 di briscola.
                     </dd>
                     <dt className="font-bold mt-2">
                       Cosa succede in caso di parità di punti?
@@ -433,12 +589,11 @@ const GameRules = () => {
                     </dd>
                   </dl>
                 </section>
-
               </CardContent>
             </Card>
           </main>
         </div>
-        
+
         <Footer />
       </div>
     </>

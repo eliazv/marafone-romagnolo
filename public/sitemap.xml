@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
-  
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+
   <!-- Homepage - Maraffa Romagnola Online Gratis -->
   <url>
     <loc>https://marafone-romagnolo.it/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://marafone-romagnolo.it/img/logo.png</image:loc>
-      <image:title>Maraffa Romagnola - Gioco di Carte Online Gratis</image:title>
-      <image:caption>Marafone Romagnolo - Il vero gioco di carte tradizionale della Romagna</image:caption>
+      <image:title>Marafone Romagnolo - Gioco di Carte Online Gratis (Beccaccino,
+        Maraffa, Trionfo)</image:title>
+      <image:caption>Marafone Romagnolo - Il vero gioco di carte tradizionale della Romagna, noto
+        anche come Maraffone, Beccaccino, Maraffa e Trionfo</image:caption>
     </image:image>
   </url>
-  
+
   <!-- Game Page -->
   <url>
     <loc>https://marafone-romagnolo.it/gioca</loc>
@@ -23,15 +25,44 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
+
   <!-- Rules Page -->
   <url>
     <loc>https://marafone-romagnolo.it/regole</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
+  <!-- Regional Variants Pages -->
+  <url>
+    <loc>https://marafone-romagnolo.it/maraffone</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://marafone-romagnolo.it/beccaccino</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://marafone-romagnolo.it/maraffa</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://marafone-romagnolo.it/trionfo</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- About Page -->
   <url>
     <loc>https://marafone-romagnolo.it/about</loc>
@@ -39,7 +70,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+
   <!-- Download Page -->
   <url>
     <loc>https://marafone-romagnolo.it/download</loc>

@@ -11,6 +11,10 @@ import BlogArticle from "./pages/BlogArticle";
 import Support from "./pages/Support";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import Maraffone from "./pages/Maraffone";
+import Beccaccino from "./pages/Beccaccino";
+import Maraffa from "./pages/Maraffa";
+import Trionfo from "./pages/Trionfo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +33,10 @@ const App = () => (
           <Route path="/supporto" element={<Support />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/termini-utilizzo" element={<TermsOfService />} />
+          <Route path="/maraffone" element={<Maraffone />} />
+          <Route path="/beccaccino" element={<Beccaccino />} />
+          <Route path="/maraffa" element={<Maraffa />} />
+          <Route path="/trionfo" element={<Trionfo />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
