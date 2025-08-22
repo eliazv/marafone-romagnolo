@@ -7,6 +7,7 @@ import {
   BookOpenText,
   FileBadge2,
   Facebook,
+  Instagram,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { carteImages } from "@/lib/carteImages";
@@ -190,6 +191,15 @@ const Footer = () => {
               >
                 <Facebook className="inline h-4 w-4 mr-2" />
                 Segui su Facebook
+              </a>
+              <a
+                href="https://www.instagram.com/marafoneromagnolo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-marafone-yellow transition-colors flex items-center"
+              >
+                <Instagram className="inline h-4 w-4 mr-2" />
+                Segui su Instagram
               </a>
               <a
                 href="https://www.eliazavatta.it/"

@@ -2,18 +2,47 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, HelpCircle, Mail, Bug, FileText, Download, Users, Trash2 } from "lucide-react";
+import {
+  ArrowLeft,
+  HelpCircle,
+  Mail,
+  FileText,
+  Download,
+  Users,
+  Trash2,
+  Facebook,
+  Instagram,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { carteImages } from "@/lib/carteImages";
 
 const SECTIONS = [
-  { id: "contatti", title: "Contatti", icon: <Mail className="w-6 h-6 text-blue-700" />, color: "from-blue-100/80 to-blue-200/60" },
-  { id: "faq", title: "FAQ", icon: <HelpCircle className="w-6 h-6 text-green-600" />, color: "from-green-100/80 to-green-200/60" },
-  { id: "privacy", title: "Privacy", icon: <FileText className="w-6 h-6 text-purple-600" />, color: "from-purple-100/80 to-purple-200/60" },
-  { id: "download", title: "Download", icon: <Download className="w-6 h-6 text-amber-600" />, color: "from-amber-100/80 to-amber-200/60" }
+  {
+    id: "contatti",
+    title: "Contatti",
+    icon: <Mail className="w-6 h-6 text-blue-700" />,
+    color: "from-blue-100/80 to-blue-200/60",
+  },
+  {
+    id: "faq",
+    title: "FAQ",
+    icon: <HelpCircle className="w-6 h-6 text-green-600" />,
+    color: "from-green-100/80 to-green-200/60",
+  },
+  {
+    id: "privacy",
+    title: "Privacy",
+    icon: <FileText className="w-6 h-6 text-purple-600" />,
+    color: "from-purple-100/80 to-purple-200/60",
+  },
+  {
+    id: "download",
+    title: "Download",
+    icon: <Download className="w-6 h-6 text-amber-600" />,
+    color: "from-amber-100/80 to-amber-200/60",
+  },
 ];
 
 const Support = () => {
@@ -167,7 +196,6 @@ const Support = () => {
           <main className="py-2">
             <Card className="overflow-hidden border-0 md:border-4 border-amber-800/50 shadow-xl relative bg-gradient-to-br from-amber-50/90 to-orange-100/60">
               <CardContent className="p-4 md:p-8 relative z-10">
-                
                 <section id="contatti" className="mb-12 scroll-mt-24">
                   <SectionTitle icon={SECTIONS[0].icon} color="text-blue-800">
                     📧 Contatti
@@ -177,9 +205,11 @@ const Support = () => {
                       <div className="flex items-center gap-3">
                         <Mail className="w-6 h-6 text-blue-700" />
                         <div>
-                          <p className="font-semibold text-blue-900">Email di supporto:</p>
-                          <a 
-                            href="mailto:marafoneromagnolo@gmail.com?subject=Supporto%20Maraffa%20Romagnola" 
+                          <p className="font-semibold text-blue-900">
+                            Email di supporto:
+                          </p>
+                          <a
+                            href="mailto:marafoneromagnolo@gmail.com?subject=Supporto%20Maraffa%20Romagnola"
                             className="text-blue-700 hover:text-blue-800 font-medium underline transition-colors"
                           >
                             marafoneromagnolo@gmail.com
@@ -189,15 +219,51 @@ const Support = () => {
                       <div className="flex items-center gap-3">
                         <Users className="w-6 h-6 text-blue-700" />
                         <div>
-                          <p className="font-semibold text-blue-900">Sviluppatore:</p>
+                          <p className="font-semibold text-blue-900">
+                            Sviluppatore:
+                          </p>
                           <p className="text-blue-800">Elia Zavatta</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
                         <HelpCircle className="w-6 h-6 text-blue-700" />
                         <div>
-                          <p className="font-semibold text-blue-900">Tempo di risposta:</p>
+                          <p className="font-semibold text-blue-900">
+                            Tempo di risposta:
+                          </p>
                           <p className="text-blue-800">Entro 48 ore</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Facebook className="w-6 h-6 text-blue-700" />
+                        <div>
+                          <p className="font-semibold text-blue-900">
+                            Pagina Facebook per rimanere aggiornato:
+                          </p>
+                          <a
+                            href="https://www.facebook.com/people/Marafone-romagnolo/61579215599753/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-700 hover:text-blue-800 font-medium underline transition-colors"
+                          >
+                            Segui su Facebook
+                          </a>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Instagram className="w-6 h-6 text-blue-700" />
+                        <div>
+                          <p className="font-semibold text-blue-900">
+                            Pagina Instagram per rimanere aggiornato:
+                          </p>
+                          <a
+                            href="https://www.instagram.com/marafoneromagnolo/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-700 hover:text-blue-800 font-medium underline transition-colors"
+                          >
+                            Segui su Instagram
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -208,38 +274,38 @@ const Support = () => {
                   <SectionTitle icon={SECTIONS[1].icon} color="text-green-700">
                     ❓ Domande Frequenti (FAQ)
                   </SectionTitle>
-                  
+
                   <div className="space-y-4">
                     <FaqItem
                       icon="🐛"
                       question="Come posso segnalare un bug o un problema?"
                       answer="Invia un'email a marafoneromagnolo@gmail.com con una descrizione dettagliata del problema, includendo il modello del dispositivo e la versione dell'app."
                     />
-                    
+
                     <FaqItem
                       icon="🃏"
                       question="Come funziona il gioco della Maraffa?"
                       answer="La Maraffa è un gioco di carte tradizionale romagnolo. Puoi consultare le regole complete direttamente nell'app nella sezione 'Regole' o visitare la pagina regole di questo sito."
                     />
-                    
+
                     <FaqItem
                       icon="📱"
                       question="Posso giocare offline?"
                       answer="Sì! L'app funziona completamente offline. Le funzionalità online (multiplayer, classifiche) richiedono una connessione internet."
                     />
-                    
+
                     <FaqItem
                       icon="🗑️"
                       question="Come posso eliminare il mio account?"
                       answer="Puoi eliminare il tuo account direttamente dall'app: vai su Profilo > Impostazioni (icona ingranaggio) > Elimina Account. Questa azione è irreversibile."
                     />
-                    
+
                     <FaqItem
                       icon="💰"
                       question="L'app è gratuita?"
                       answer="Sì, l'app è completamente gratuita. Sono disponibili acquisti opzionali per rimuovere le pubblicità e supportare lo sviluppo."
                     />
-                    
+
                     <FaqItem
                       icon="📲"
                       question="Su quali dispositivi funziona l'app?"
@@ -260,18 +326,25 @@ const Support = () => {
                   </SectionTitle>
                   <div className="bg-purple-50/80 rounded-xl p-6 border border-purple-200/50">
                     <p className="text-purple-900 mb-4">
-                      Rispettiamo la tua privacy. L'app raccoglie solo i dati necessari per il funzionamento del gioco.
+                      Rispettiamo la tua privacy. L'app raccoglie solo i dati
+                      necessari per il funzionamento del gioco.
                     </p>
                     <div className="space-y-2">
                       <p className="text-purple-800">
                         📋 Per maggiori informazioni, consulta la nostra{" "}
-                        <Link to="/privacy-policy" className="text-purple-700 hover:text-purple-800 font-medium underline">
+                        <Link
+                          to="/privacy-policy"
+                          className="text-purple-700 hover:text-purple-800 font-medium underline"
+                        >
                           Informativa sulla Privacy
                         </Link>
                       </p>
                       <p className="text-purple-800">
                         📜 Consulta anche i nostri{" "}
-                        <Link to="/termini-utilizzo" className="text-purple-700 hover:text-purple-800 font-medium underline">
+                        <Link
+                          to="/termini-utilizzo"
+                          className="text-purple-700 hover:text-purple-800 font-medium underline"
+                        >
                           Termini d'Utilizzo
                         </Link>
                       </p>
@@ -279,10 +352,13 @@ const Support = () => {
                     <div className="mt-4 p-4 bg-purple-100/50 rounded-lg">
                       <div className="flex items-center gap-2 mb-2">
                         <Trash2 className="w-5 h-5 text-purple-700" />
-                        <span className="font-semibold text-purple-900">Eliminazione Dati</span>
+                        <span className="font-semibold text-purple-900">
+                          Eliminazione Dati
+                        </span>
                       </div>
                       <p className="text-purple-800 text-sm">
-                        Se desideri eliminare completamente i tuoi dati, puoi farlo direttamente dall'app o contattarci via email. 
+                        Se desideri eliminare completamente i tuoi dati, puoi
+                        farlo direttamente dall'app o contattarci via email.
                         L'eliminazione è immediata e irreversibile.
                       </p>
                     </div>
@@ -293,17 +369,21 @@ const Support = () => {
                   <SectionTitle icon={SECTIONS[3].icon} color="text-amber-700">
                     📱 Download
                   </SectionTitle>
-                  <p className="text-amber-950 mb-4">Scarica l'app sui tuoi dispositivi:</p>
+                  <p className="text-amber-950 mb-4">
+                    Scarica l'app sui tuoi dispositivi:
+                  </p>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="bg-green-50/80 rounded-xl p-6 border border-green-200/50">
                       <h4 className="font-bold text-green-900 mb-2 flex items-center gap-2">
                         <Download className="w-5 h-5" />
                         Android
                       </h4>
-                      <p className="text-green-800 mb-4">Disponibile su Google Play Store</p>
-                      <a 
-                        href="https://play.google.com/store/apps/details?id=com.eliazavatta.maraffa" 
-                        target="_blank" 
+                      <p className="text-green-800 mb-4">
+                        Disponibile su Google Play Store
+                      </p>
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.eliazavatta.maraffa"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors font-medium"
                       >
@@ -311,16 +391,18 @@ const Support = () => {
                         Scarica per Android
                       </a>
                     </div>
-                    
+
                     <div className="bg-blue-50/80 rounded-xl p-6 border border-blue-200/50">
                       <h4 className="font-bold text-blue-900 mb-2 flex items-center gap-2">
                         <Download className="w-5 h-5" />
                         iOS
                       </h4>
-                      <p className="text-blue-800 mb-4">Disponibile su App Store</p>
-                      <a 
-                        href="https://apps.apple.com/us/app/marafone-beccaccino-romagnolo/id6749573579" 
-                        target="_blank" 
+                      <p className="text-blue-800 mb-4">
+                        Disponibile su App Store
+                      </p>
+                      <a
+                        href="https://apps.apple.com/us/app/marafone-beccaccino-romagnolo/id6749573579"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors font-medium"
                       >
@@ -330,12 +412,11 @@ const Support = () => {
                     </div>
                   </div>
                 </section>
-
               </CardContent>
             </Card>
           </main>
         </div>
-        
+
         <Footer />
       </div>
     </>
