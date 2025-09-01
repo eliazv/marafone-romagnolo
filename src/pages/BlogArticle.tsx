@@ -36,6 +36,50 @@ const BlogArticle = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
+      <Helmet>
+        <title>{article.title} | Blog Marafone Romagnolo</title>
+        <meta name="description" content={article.description} />
+        <meta name="keywords" content={`${article.category}, ${article.title}, marafone, maraffa, beccaccino, trionfo, carte, gioco, romagnolo`} />
+        <link rel="canonical" href={`https://marafone-romagnolo.it/blog/${article.slug}`} />
+        <meta property="og:title" content={article.title} />
+        <meta property="og:description" content={article.description} />
+        <meta property="og:url" content={`https://marafone-romagnolo.it/blog/${article.slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content={`https://marafone-romagnolo.it${article.image}`} />
+        <meta property="article:published_time" content={new Date(article.date).toISOString()} />
+        <meta property="article:modified_time" content={new Date(article.date).toISOString()} /> {/* Assuming published and modified are the same for now */}
+        <meta property="article:section" content={article.category} />
+        <meta property="article:tag" content={article.category} /> {/* Can add more tags if available in article object */}
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": article.title,
+            "description": article.description,
+            "image": `https://marafone-romagnolo.it${article.image}`,
+            "datePublished": new Date(article.date).toISOString(),
+            "dateModified": new Date(article.date).toISOString(), // Assuming published and modified are the same for now
+            "author": {
+              "@type": "Person",
+              "name": "Elia Zavatta" // Assuming Elia Zavatta is the author for all articles
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Marafone Team",
+              "url": "https://marafone-romagnolo.it/",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://marafone-romagnolo.it/img/logo-rosso.jpg"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://marafone-romagnolo.it/blog/${article.slug}`
+            }
+          })}
+        </script>
+      </Helmet>
       <Header />
       
       {/* Hero Section */}

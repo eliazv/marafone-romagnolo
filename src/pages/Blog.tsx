@@ -22,6 +22,22 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
+      <Helmet>
+        <title>Blog Marafone Romagnolo | Articoli, Strategie e Curiosità sui Giochi di Carte</title>
+        <meta
+          name="description"
+          content="Esplora il blog del Marafone Romagnolo per scoprire articoli, strategie avanzate, curiosità e la storia dei giochi di carte tradizionali della Romagna come Maraffa, Beccaccino e Trionfo."
+        />
+        <meta
+          name="keywords"
+          content="blog marafone, blog maraffa, blog beccaccino, blog trionfo, articoli giochi carte, strategie giochi carte, curiosità giochi carte, storia giochi carte romagnoli, marafone romagnolo blog, giochi di carte romagnoli"
+        />
+        <link rel="canonical" href="https://marafone-romagnolo.it/blog" />
+        <meta property="og:title" content="Blog Marafone Romagnolo | Articoli, Strategie e Curiosità sui Giochi di Carte" />
+        <meta property="og:description" content="Esplora il blog del Marafone Romagnolo per scoprire articoli, strategie avanzate, curiosità e la storia dei giochi di carte tradizionali della Romagna come Maraffa, Beccaccino e Trionfo." />
+        <meta property="og:url" content="https://marafone-romagnolo.it/blog" />
+        <meta property="og:type" content="blog" />
+      </Helmet>
       <Header />
       
       {/* Hero Section */}

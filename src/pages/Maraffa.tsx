@@ -16,20 +16,44 @@ const Maraffa = () => {
   return (
     <>
       <Helmet>
-        <title>Maraffa Romagnola | Combinazione Asso, 2 e 3 di Briscola</title>
+        <title>Maraffa Carte - Gioco Romagnolo Gratis | Regole Maraffa Online</title>
         <meta
           name="description"
-          content="Maraffa è il nome della combinazione di asso, due e tre del seme di briscola nel gioco romagnolo. Usato anche come sinonimo del gioco stesso."
+          content="Maraffa carte: gioco romagnolo gratis online. Regole complete della Maraffa gioco tradizionale con carte romagnole. App gratuita per smartphone."
         />
         <meta
           name="keywords"
-          content="maraffa, maraffa romagnola, combinazione maraffa, asso due tre briscola, maraffa gioco carte, maraffa romagna, regole maraffa, come fare maraffa"
+          content="maraffa carte, maraffa gioco, maraffa romagnola gratis, regole maraffa online, come giocare maraffa, maraffa app gratis, maraffa carte romagnole, maraffa tradizionale, maraffa briscola, gioco maraffa smartphone"
         />
         <link rel="canonical" href="https://marafone-romagnolo.it/maraffa" />
-        <meta property="og:title" content="Maraffa Romagnola | La Combinazione Speciale di Briscola" />
-        <meta property="og:description" content="Scopri la Maraffa, la combinazione di asso, due e tre di briscola che caratterizza il gioco romagnolo." />
+        <meta property="og:title" content="Maraffa Carte - Gioco Romagnolo Gratis | Regole Maraffa Online" />
+        <meta property="og:description" content="Maraffa carte: gioco romagnolo gratis online. Regole complete della Maraffa gioco tradizionale con carte romagnole. App gratuita per smartphone." />
         <meta property="og:url" content="https://marafone-romagnolo.it/maraffa" />
         <meta property="og:type" content="article" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Game",
+            "name": "Maraffa",
+            "alternateName": ["Maraffa Carte", "Maraffa Gioco", "Marafone Romagnolo Maraffa"],
+            "description": "La Maraffa è una combinazione speciale di carte (Asso, Due, Tre di briscola) nel gioco romagnolo, e talvolta il nome stesso del gioco. Scopri come si forma e il suo significato.",
+            "url": "https://marafone-romagnolo.it/maraffa",
+            "genre": ["Card Game", "Traditional Game", "Italian Game"],
+            "gamePlatform": ["Web Browser", "Android", "Mobile"],
+            "numberOfPlayers": "2-4", // Assuming it can be played by 2-4 players
+            "playMode": "MultiPlayer",
+            "image": "https://marafone-romagnolo.it/img/logo-rosso.jpg", // Or a specific image for Maraffa
+            "author": {
+              "@type": "Person",
+              "name": "Elia Zavatta"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Marafone Team",
+              "url": "https://marafone-romagnolo.it/"
+            }
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">

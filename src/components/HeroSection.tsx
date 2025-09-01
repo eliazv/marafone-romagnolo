@@ -75,7 +75,7 @@ const HeroSection = () => {
               className="font-game text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto font-semibold relative"
               style={{ textShadow: "0 2px 8px #000, 0 1px 0 #fff8" }}
             >
-              Il celebre gioco di carte della Romagna (Maraffone, Beccaccino, Maraffa, Trionfo),{" "}
+              Il celebre gioco di carte della Romagna,{" "}
               <br className="hidden md:block" />
               ora anche sul tuo smartphone!
             </p>

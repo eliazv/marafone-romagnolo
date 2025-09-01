@@ -16,20 +16,44 @@ const Trionfo = () => {
   return (
     <>
       <Helmet>
-        <title>Trionfo Romagnolo | Provincia di Ferrara - Regole e Come Giocare</title>
+        <title>Trionfo Carte - Gioco Romagnolo Ferrara | Regole Trionfo Gratis</title>
         <meta
           name="description"
-          content="Trionfo è il nome usato nella provincia di Ferrara per il gioco di carte romagnolo. Variante che si può giocare a 4 o 5 giocatori con regole di dichiarazione."
+          content="Trionfo carte: gioco romagnolo gratis della provincia di Ferrara. Regole complete del Trionfo gioco tradizionale con carte romagnole online."
         />
         <meta
           name="keywords"
-          content="trionfo, trionfo ferrara, trionfo provincia ferrara, gioco carte trionfo, regole trionfo, come giocare trionfo, trionfo 5 giocatori, trionfo briscola"
+          content="trionfo carte, trionfo gioco, trionfo ferrara, trionfo provincia ferrara, gioco carte trionfo gratis, regole trionfo online, come giocare trionfo, trionfo app gratis, trionfo carte romagnole, trionfo 5 giocatori"
         />
         <link rel="canonical" href="https://marafone-romagnolo.it/trionfo" />
-        <meta property="og:title" content="Trionfo Romagnolo | Il Nome Usato nella Provincia di Ferrara" />
-        <meta property="og:description" content="Scopri il Trionfo, variante del gioco di carte usata nella provincia di Ferrara, giocabile anche a 5 giocatori." />
+        <meta property="og:title" content="Trionfo Carte - Gioco Romagnolo Ferrara | Regole Trionfo Gratis" />
+        <meta property="og:description" content="Trionfo carte: gioco romagnolo gratis della provincia di Ferrara. Regole complete del Trionfo gioco tradizionale con carte romagnole online." />
         <meta property="og:url" content="https://marafone-romagnolo.it/trionfo" />
         <meta property="og:type" content="article" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Game",
+            "name": "Trionfo",
+            "alternateName": ["Trionfo Carte", "Trionfo Gioco", "Marafone Romagnolo Variante Ferrara"],
+            "description": "Il Trionfo è una variante del Marafone/Beccaccino giocata nella provincia di Ferrara, caratterizzata dalla possibilità di giocare anche in cinque giocatori. Scopri le sue regole e peculiarità.",
+            "url": "https://marafone-romagnolo.it/trionfo",
+            "genre": ["Card Game", "Traditional Game", "Italian Game"],
+            "gamePlatform": ["Web Browser", "Android", "Mobile"],
+            "numberOfPlayers": "4-5",
+            "playMode": "MultiPlayer",
+            "image": "https://marafone-romagnolo.it/img/logo-rosso.jpg", // Or a specific image for Trionfo
+            "author": {
+              "@type": "Person",
+              "name": "Elia Zavatta"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Marafone Team",
+              "url": "https://marafone-romagnolo.it/"
+            }
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">

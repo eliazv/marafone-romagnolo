@@ -16,20 +16,44 @@ const Beccaccino = () => {
   return (
     <>
       <Helmet>
-        <title>Beccaccino Romagnolo | Ravenna, Faenza - Regole e Come Giocare</title>
+        <title>Beccaccino Carte - Gioco Romagnolo Ravenna e Faenza | Regole Gratis</title>
         <meta
           name="description"
-          content="Beccaccino è il nome usato a Ravenna e Faenza per il tradizionale gioco di carte romagnolo. Sinonimo regionale di Maraffone con le stesse regole."
+          content="Beccaccino carte: gioco romagnolo gratis usato a Ravenna e Faenza. Regole complete del Beccaccino gioco tradizionale con carte romagnole online."
         />
         <meta
           name="keywords"
-          content="beccaccino, beccaccino ravenna, beccaccino faenza, gioco carte beccaccino, regole beccaccino, come giocare beccaccino, beccaccino romagnolo, beccaccino sinonimo maraffone"
+          content="beccaccino carte, beccaccino gioco, beccaccino ravenna, beccaccino faenza, gioco carte beccaccino, regole beccaccino gratis, come giocare beccaccino, beccaccino romagnolo online, beccaccino carte romagnole, beccaccino app gratis"
         />
         <link rel="canonical" href="https://marafone-romagnolo.it/beccaccino" />
-        <meta property="og:title" content="Beccaccino Romagnolo | Il Nome Usato a Ravenna e Faenza" />
-        <meta property="og:description" content="Scopri il Beccaccino, sinonimo regionale usato a Ravenna e Faenza per il gioco di carte romagnolo." />
+        <meta property="og:title" content="Beccaccino Carte - Gioco Romagnolo Ravenna e Faenza | Regole Gratis" />
+        <meta property="og:description" content="Beccaccino carte: gioco romagnolo gratis usato a Ravenna e Faenza. Regole complete del Beccaccino gioco tradizionale con carte romagnole online." />
         <meta property="og:url" content="https://marafone-romagnolo.it/beccaccino" />
         <meta property="og:type" content="article" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Game",
+            "name": "Beccaccino",
+            "alternateName": ["Beccaccino Carte", "Beccaccino Gioco", "Marafone Romagnolo Variante Ravenna"],
+            "description": "Il Beccaccino è una variante del Marafone Romagnolo, giocato principalmente a Ravenna e Faenza. Scopri le regole e come giocare a questo tradizionale gioco di carte romagnolo.",
+            "url": "https://marafone-romagnolo.it/beccaccino",
+            "genre": ["Card Game", "Traditional Game", "Italian Game"],
+            "gamePlatform": ["Web Browser", "Android", "Mobile"],
+            "numberOfPlayers": "4",
+            "playMode": "MultiPlayer",
+            "image": "https://marafone-romagnolo.it/img/logo-rosso.jpg", // Or a specific image for Beccaccino
+            "author": {
+              "@type": "Person",
+              "name": "Elia Zavatta"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Marafone Team",
+              "url": "https://marafone-romagnolo.it/"
+            }
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">

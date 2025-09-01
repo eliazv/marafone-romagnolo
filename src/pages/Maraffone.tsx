@@ -16,20 +16,44 @@ const Maraffone = () => {
   return (
     <>
       <Helmet>
-        <title>Maraffone Romagnolo | Forlì, Cesena - Regole e Come Giocare</title>
+        <title>Maraffone Carte - Gioco Romagnolo Forlì e Cesena | Regole Gratis</title>
         <meta
           name="description"
-          content="Maraffone (con doppia f) è il nome usato a Forlì, Cesena e Romagna per il tradizionale gioco di carte. Deriva dal dialetto 'marafon' che significa furbacchione."
+          content="Maraffone carte: gioco romagnolo gratis di Forlì, Cesena e Romagna. Regole complete del Maraffone gioco tradizionale con carte romagnole online."
         />
         <meta
           name="keywords"
-          content="maraffone, maraffone forlì, maraffone cesena, maraffone romagna, gioco carte maraffone, regole maraffone, come giocare maraffone, maraffone tradizionale, maraffone dialetto romagnolo"
+          content="maraffone carte, maraffone gioco, maraffone forlì, maraffone cesena, maraffone romagna gratis, gioco carte maraffone online, regole maraffone gratis, come giocare maraffone, maraffone app gratis, maraffone carte romagnole"
         />
         <link rel="canonical" href="https://marafone-romagnolo.it/maraffone" />
-        <meta property="og:title" content="Maraffone Romagnolo | Il Nome Usato a Forlì e Cesena" />
-        <meta property="og:description" content="Scopri il Maraffone, nome tradizionale del gioco di carte usato a Forlì, Cesena e in tutta la Romagna." />
+        <meta property="og:title" content="Maraffone Carte - Gioco Romagnolo Forlì e Cesena | Regole Gratis" />
+        <meta property="og:description" content="Maraffone carte: gioco romagnolo gratis di Forlì, Cesena e Romagna. Regole complete del Maraffone gioco tradizionale con carte romagnole online." />
         <meta property="og:url" content="https://marafone-romagnolo.it/maraffone" />
         <meta property="og:type" content="article" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Game",
+            "name": "Maraffone",
+            "alternateName": ["Maraffone Carte", "Maraffone Gioco", "Marafone Romagnolo Forlì Cesena"],
+            "description": "Il Maraffone è il nome tradizionale del gioco di carte romagnolo usato a Forlì, Cesena e in Romagna. Scopri le regole e l'etimologia di questo affascinante gioco.",
+            "url": "https://marafone-romagnolo.it/maraffone",
+            "genre": ["Card Game", "Traditional Game", "Italian Game"],
+            "gamePlatform": ["Web Browser", "Android", "Mobile"],
+            "numberOfPlayers": "4",
+            "playMode": "MultiPlayer",
+            "image": "https://marafone-romagnolo.it/img/logo-rosso.jpg", // Or a specific image for Maraffone
+            "author": {
+              "@type": "Person",
+              "name": "Elia Zavatta"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Marafone Team",
+              "url": "https://marafone-romagnolo.it/"
+            }
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
