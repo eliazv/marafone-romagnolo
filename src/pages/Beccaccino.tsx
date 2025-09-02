@@ -16,10 +16,10 @@ const Beccaccino = () => {
   return (
     <>
       <Helmet>
-        <title>Beccaccino Carte - Gioco Romagnolo Ravenna e Faenza | Regole Gratis</title>
+        <title>Beccaccino Carte Online: Gioco Romagnolo con Carte Romagnole | Regole Gratis</title>
         <meta
           name="description"
-          content="Beccaccino carte: gioco romagnolo gratis usato a Ravenna e Faenza. Regole complete del Beccaccino gioco tradizionale con carte romagnole online."
+          content="Beccaccino carte online: scopri il gioco romagnolo tradizionale con carte romagnole. Regole complete e come giocare a Beccaccino gratis."
         />
         <meta
           name="keywords"
@@ -75,10 +75,10 @@ const Beccaccino = () => {
             </div>
 
             <h1 className="font-retro text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
-              Beccaccino
+              Beccaccino: Il Gioco di Carte Romagnolo Online
             </h1>
             <p className="font-game text-xl opacity-90 max-w-4xl leading-relaxed">
-              Il nome usato a Ravenna e Faenza per il gioco di carte romagnolo
+              Il nome tradizionale del gioco di carte romagnolo, ora disponibile online.
             </p>
           </div>
         </section>

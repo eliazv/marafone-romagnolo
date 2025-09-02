@@ -16,10 +16,10 @@ const Maraffone = () => {
   return (
     <>
       <Helmet>
-        <title>Maraffone Carte - Gioco Romagnolo Forlì e Cesena | Regole Gratis</title>
+        <title>Maraffone Carte Online: Gioco Romagnolo con Carte Romagnole | Regole Gratis</title>
         <meta
           name="description"
-          content="Maraffone carte: gioco romagnolo gratis di Forlì, Cesena e Romagna. Regole complete del Maraffone gioco tradizionale con carte romagnole online."
+          content="Maraffone carte online: scopri il gioco romagnolo tradizionale con carte romagnole. Regole complete e come giocare a Maraffone gratis."
         />
         <meta
           name="keywords"
@@ -75,10 +75,10 @@ const Maraffone = () => {
             </div>
 
             <h1 className="font-retro text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
-              Maraffone
+              Maraffone: Il Gioco di Carte Romagnolo Online
             </h1>
             <p className="font-game text-xl opacity-90 max-w-4xl leading-relaxed">
-              Il nome tradizionale usato a Forlì, Cesena e in Romagna
+              Il nome tradizionale del gioco di carte romagnolo, ora disponibile online.
             </p>
           </div>
         </section>

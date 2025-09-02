@@ -16,10 +16,10 @@ const Trionfo = () => {
   return (
     <>
       <Helmet>
-        <title>Trionfo Carte - Gioco Romagnolo Ferrara | Regole Trionfo Gratis</title>
+        <title>Trionfo Carte Online: Gioco Romagnolo con Carte Romagnole | Regole Gratis</title>
         <meta
           name="description"
-          content="Trionfo carte: gioco romagnolo gratis della provincia di Ferrara. Regole complete del Trionfo gioco tradizionale con carte romagnole online."
+          content="Trionfo carte online: scopri il gioco romagnolo tradizionale con carte romagnole. Regole complete e come giocare a Trionfo gratis."
         />
         <meta
           name="keywords"
@@ -75,10 +75,10 @@ const Trionfo = () => {
             </div>
 
             <h1 className="font-retro text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
-              Trionfo
+              Trionfo: Il Gioco di Carte Romagnolo Online
             </h1>
             <p className="font-game text-xl opacity-90 max-w-4xl leading-relaxed">
-              Il nome usato nella provincia di Ferrara
+              Il nome tradizionale del gioco di carte romagnolo, ora disponibile online.
             </p>
           </div>
         </section>

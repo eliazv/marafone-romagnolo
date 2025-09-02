@@ -23,10 +23,10 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
       <Helmet>
-        <title>Blog Marafone Romagnolo | Articoli, Strategie e Curiosità sui Giochi di Carte</title>
+        <title>Blog Marafone Romagnolo Online: Articoli, Strategie e Curiosità sulle Carte Romagnole</title>
         <meta
           name="description"
-          content="Esplora il blog del Marafone Romagnolo per scoprire articoli, strategie avanzate, curiosità e la storia dei giochi di carte tradizionali della Romagna come Maraffa, Beccaccino e Trionfo."
+          content="Esplora il blog del Marafone Romagnolo online per scoprire articoli, strategie, curiosità e la storia dei giochi di carte romagnoli come Maraffa, Beccaccino e Trionfo."
         />
         <meta
           name="keywords"
@@ -127,14 +127,14 @@ const Blog = () => {
                 <BookOpen className="h-12 w-12 text-marafone-yellow" />
               </motion.div>
               <h1 className="font-retro text-5xl md:text-6xl">
-                Blog Marafone
+                Blog Marafone Romagnolo Online
               </h1>
             </div>
           </FadeInUp>
 
           <FadeInUp delay={0.4}>
             <p className="font-game text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              Tutto quello che c'è da sapere sul Marafone Romagnolo: storia, strategie, curiosità e molto altro per diventare un vero esperto di questo affascinante gioco di carte della tradizione romagnola.
+              Tutto quello che c'è da sapere sul Marafone Romagnolo online: storia, strategie, curiosità e molto altro per diventare un vero esperto di questo affascinante gioco di carte romagnolo.
             </p>
           </FadeInUp>
 

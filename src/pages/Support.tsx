@@ -78,10 +78,10 @@ const Support = () => {
   return (
     <>
       <Helmet>
-        <title>Supporto - Maraffa Romagnola | Assistenza e FAQ</title>
+        <title>Supporto | Marafone Romagnolo Online: Assistenza e FAQ</title>
         <meta
           name="description"
-          content="Centro assistenza per Maraffa Romagnola. FAQ, contatti per supporto tecnico, segnalazione bug e informazioni sulla privacy."
+          content="Centro assistenza per Marafone Romagnolo Online. FAQ, contatti per supporto tecnico, segnalazione bug e informazioni sulla privacy."
         />
         <meta
           name="keywords"
@@ -168,11 +168,11 @@ const Support = () => {
             </div>
 
             <h1 className="font-retro text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
-              🃏 Supporto Maraffa Romagnola
+              🃏 Supporto Marafone Romagnolo Online
             </h1>
 
             <p className="font-game text-xl opacity-90 max-w-4xl leading-relaxed">
-              Centro assistenza per il gioco di carte tradizionale della Romagna
+              Centro assistenza per il gioco di carte romagnolo online
             </p>
           </div>
         </section>

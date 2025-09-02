@@ -87,10 +87,10 @@ const TermsOfService = () => {
   return (
     <>
       <Helmet>
-        <title>Termini d'Utilizzo | Marafone Romagnolo - Maraffa</title>
+        <title>Termini d'Utilizzo | Marafone Romagnolo</title>
         <meta
           name="description"
-          content="Leggi i Termini d'Utilizzo di Marafone Romagnolo, il gioco di carte Maraffa. Condizioni d'uso, regole del gioco online e offline, diritti e doveri degli utenti."
+          content="Consulta i Termini d'Utilizzo di Marafone Romagnolo. Condizioni d'uso, regole del gioco e diritti degli utenti."
         />
         <meta
           name="keywords"

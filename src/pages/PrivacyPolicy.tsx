@@ -88,10 +88,10 @@ const PrivacyPolicy = () => {
   return (
     <>
       <Helmet>
-        <title>Privacy Policy | Marafone Romagnolo - Maraffa</title>
+        <title>Privacy Policy | Marafone Romagnolo</title>
         <meta
           name="description"
-          content="Leggi la Privacy Policy di Marafone Romagnolo, il gioco di carte Maraffa. Scopri come vengono gestiti i dati, la sicurezza e i tuoi diritti. App 100% offline, nessuna raccolta dati personale."
+          content="Consulta la Privacy Policy di Marafone Romagnolo. Scopri come gestiamo i tuoi dati, la sicurezza e i tuoi diritti. La nostra app è 100% offline e non raccoglie dati personali."
         />
         <meta
           name="keywords"
