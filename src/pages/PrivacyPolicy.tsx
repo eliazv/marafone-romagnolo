@@ -97,6 +97,7 @@ const PrivacyPolicy = () => {
           name="keywords"
           content="privacy policy marafone, privacy maraffa, dati personali, sicurezza, gioco di carte romagnolo, app offline, marafone, maraffa, romagna, carte, regolamento privacy"
         />
+        <link rel="canonical" href="https://www.marafone-romagnolo.it/privacy-policy" />
       </Helmet>
       <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
         <Header />

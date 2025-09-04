@@ -87,6 +87,7 @@ const Support = () => {
           name="keywords"
           content="supporto maraffa, assistenza tecnica, FAQ, bug report, contatti, privacy, eliminazione account"
         />
+        <link rel="canonical" href="https://www.marafone-romagnolo.it/supporto" />
       </Helmet>
       <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
         <Header />

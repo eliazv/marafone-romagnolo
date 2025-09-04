@@ -96,6 +96,7 @@ const TermsOfService = () => {
           name="keywords"
           content="termini utilizzo marafone, terms maraffa, condizioni uso, gioco di carte romagnolo, app mobile, marafone, maraffa, romagna, carte, regolamento"
         />
+        <link rel="canonical" href="https://www.marafone-romagnolo.it/termini-utilizzo" />
       </Helmet>
       <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
         <Header />

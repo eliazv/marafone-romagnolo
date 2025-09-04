@@ -8,16 +8,31 @@ import { componentTagger } from "lovable-tagger";
 // --- Helper Functions ---
 
 function getStaticRoutes() {
+    // Define explicit mapping for routes based on App.tsx
+    const routeMapping = {
+        'Index': '/',
+        'GameRules': '/regole',
+        'Blog': '/blog',
+        'Support': '/supporto',
+        'PrivacyPolicy': '/privacy-policy',
+        'TermsOfService': '/termini-utilizzo',
+        'Maraffone': '/maraffone',
+        'Beccaccino': '/beccaccino',
+        'Maraffa': '/maraffa',
+        'Trionfo': '/trionfo'
+    };
+
     const pagesDir = path.resolve(__dirname, 'src/pages');
     const pageFiles = fs.readdirSync(pagesDir);
-    const excludedPages = ['NotFound.tsx', 'BlogArticle.tsx', 'GameRules.tsx'];
+    const excludedPages = ['NotFound.tsx', 'BlogArticle.tsx'];
     
     return pageFiles
         .filter(file => file.endsWith('.tsx') && !excludedPages.includes(file))
         .map(file => {
             const pageName = file.replace('.tsx', '');
-            return pageName === 'Index' ? '/' : `/${pageName.toLowerCase()}`;
-        });
+            return routeMapping[pageName] || `/${pageName.toLowerCase()}`;
+        })
+        .filter(route => route !== undefined); // Remove any undefined routes
 }
 
 function getBlogRoutes() {
@@ -36,8 +51,8 @@ function getBlogRoutes() {
 
 const staticRoutes = getStaticRoutes();
 const dynamicRoutes = getBlogRoutes();
-// Ensure root is present and no duplicates
-const allRoutes = [ ...new Set(['/', ...staticRoutes, ...dynamicRoutes])];
+// Remove duplicates and ensure only unique routes
+const allRoutes = [...new Set([...staticRoutes, ...dynamicRoutes])];
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -50,9 +65,10 @@ export default defineConfig(({ mode }) => ({
     sitemap({
       hostname: 'https://www.marafone-romagnolo.it',
       dynamicRoutes: allRoutes,
-      transform: ({ url, lastmod }) => {
+      transform: (url, lastmod) => {
         let priority = 0.8;
         let changefreq = 'monthly';
+
 
         if (url === '/') {
           priority = 1.0;
@@ -60,16 +76,19 @@ export default defineConfig(({ mode }) => ({
         } else if (url.startsWith('/blog/')) {
           priority = 0.7;
           changefreq = 'weekly';
-        } else if (['/maraffone', '/marafone', '/beccaccino', '/trionfo'].includes(url)) {
+        } else if (['/maraffone', '/maraffa', '/beccaccino', '/trionfo'].includes(url)) {
           priority = 0.9;
           changefreq = 'monthly';
-        } else if (['/privacypolicy', '/termsofservice'].includes(url)) { // Corrected paths
+        } else if (['/privacy-policy', '/termini-utilizzo'].includes(url)) {
           priority = 0.3;
           changefreq = 'yearly';
+        } else if (['/supporto', '/regole'].includes(url)) {
+          priority = 0.6;
+          changefreq = 'monthly';
         }
 
         return {
-          loc: url,
+          url,
           lastmod,
           priority,
           changefreq,

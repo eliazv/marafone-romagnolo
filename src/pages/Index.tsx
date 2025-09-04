@@ -13,6 +13,7 @@ const Index = () => {
       <Helmet>
         <title>Marafone Romagnolo Online: Gioca a Trionfo, Maraffa, Beccaccino e altre Carte Romagnole</title>
         <meta name="description" content="Scopri il Marafone Romagnolo online! Gioca a Trionfo, Maraffa, Beccaccino e le autentiche carte romagnole. Unisciti alla community e sfida giocatori da tutta Italia." />
+        <link rel="canonical" href="https://www.marafone-romagnolo.it/" />
       </Helmet>
       <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
         <HeroSection />
