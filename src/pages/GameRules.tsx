@@ -108,11 +108,12 @@ const GameRules = () => {
     <>
       <Helmet>
         <title>
-          Regole Marafone Romagnolo Online: Gioco di Carte Romagnole | Maraffone, Beccaccino, Trionfo
+          Regole Marafone Romagnolo: Gioco di Carte Romagnole | Maraffone,
+          Beccaccino, Trionfo
         </title>
         <meta
           name="description"
-          content="Scopri tutte le regole ufficiali del Marafone Romagnolo online (Maraffone, Beccaccino, Maraffa e Trionfo), il gioco di carte tradizionale romagnolo. Punteggi, strategie e FAQ complete."
+          content="Scopri tutte le regole ufficiali del Marafone Romagnolo (Maraffone, Beccaccino, Maraffa e Trionfo), il gioco di carte tradizionale romagnolo. Punteggi, strategie e FAQ complete."
         />
         <meta
           name="keywords"
@@ -295,7 +296,7 @@ const GameRules = () => {
             </div>
 
             <h1 className="font-retro text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
-              Regole del Marafone Romagnolo Online
+              Regole del Marafone Romagnolo
             </h1>
 
             <p className="font-game text-xl opacity-90 max-w-4xl leading-relaxed">

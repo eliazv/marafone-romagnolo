@@ -1,5 +1,11 @@
-import { Helmet } from 'react-helmet';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Helmet } from "react-helmet";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -24,23 +30,32 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
       <Helmet>
-        <title>Blog Marafone Romagnolo Online: Articoli, Strategie e Curiosità sulle Carte Romagnole</title>
+        <title>
+          Blog Marafone Romagnolo: Articoli, Strategie e Curiosità sulle Carte
+          Romagnole
+        </title>
         <meta
           name="description"
-          content="Esplora il blog del Marafone Romagnolo online per scoprire articoli, strategie, curiosità e la storia dei giochi di carte romagnoli come Maraffa, Beccaccino e Trionfo."
+          content="Esplora il blog del Marafone Romagnolo per scoprire articoli, strategie, curiosità e la storia dei giochi di carte romagnoli come Maraffa, Beccaccino e Trionfo."
         />
         <meta
           name="keywords"
           content="blog marafone, blog maraffa, blog beccaccino, blog trionfo, articoli giochi carte, strategie giochi carte, curiosità giochi carte, storia giochi carte romagnoli, marafone romagnolo blog, giochi di carte romagnoli"
         />
         <link rel="canonical" href="https://marafone-romagnolo.it/blog" />
-        <meta property="og:title" content="Blog Marafone Romagnolo | Articoli, Strategie e Curiosità sui Giochi di Carte" />
-        <meta property="og:description" content="Esplora il blog del Marafone Romagnolo per scoprire articoli, strategie avanzate, curiosità e la storia dei giochi di carte tradizionali della Romagna come Maraffa, Beccaccino e Trionfo." />
+        <meta
+          property="og:title"
+          content="Blog Marafone Romagnolo | Articoli, Strategie e Curiosità sui Giochi di Carte"
+        />
+        <meta
+          property="og:description"
+          content="Esplora il blog del Marafone Romagnolo per scoprire articoli, strategie avanzate, curiosità e la storia dei giochi di carte tradizionali della Romagna come Maraffa, Beccaccino e Trionfo."
+        />
         <meta property="og:url" content="https://marafone-romagnolo.it/blog" />
         <meta property="og:type" content="blog" />
       </Helmet>
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative py-16 px-4 bg-marafone-red text-white overflow-hidden">
         {/* Carte decorative animate */}
@@ -128,14 +143,16 @@ const Blog = () => {
                 <BookOpen className="h-12 w-12 text-marafone-yellow" />
               </motion.div>
               <h1 className="font-retro text-5xl md:text-6xl">
-                Blog Marafone Romagnolo Online
+                Articoli Marafone
               </h1>
             </div>
           </FadeInUp>
 
           <FadeInUp delay={0.4}>
             <p className="font-game text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              Tutto quello che c'è da sapere sul Marafone Romagnolo online: storia, strategie, curiosità e molto altro per diventare un vero esperto di questo affascinante gioco di carte romagnolo.
+              Tutto quello che c'è da sapere sul Marafone Romagnolo: storia,
+              strategie, curiosità e molto altro per diventare un vero esperto
+              di questo affascinante gioco di carte romagnolo.
             </p>
           </FadeInUp>
 
@@ -229,54 +246,65 @@ const Blog = () => {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allArticles.map((article, index) => (
               <StaggerItem key={article.id}>
-                <Link to={article.slug === 'regole' ? '/regole' : article.slug === 'tornei' ? '/tornei' : `/blog/${article.slug}`}>
+                <Link
+                  to={
+                    article.slug === "regole"
+                      ? "/regole"
+                      : article.slug === "tornei"
+                      ? "/tornei"
+                      : `/blog/${article.slug}`
+                  }
+                >
                   <motion.div
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.03,
-                      transition: { duration: 0.2 }
+                      transition: { duration: 0.2 },
                     }}
                     whileTap={{ scale: 0.98 }}
                     className="h-full cursor-pointer"
                   >
                     <Card className="h-full bg-white/95 backdrop-blur-sm border-2 border-marafone-yellow/30 hover:border-marafone-red/50 transition-all duration-300 shadow-lg hover:shadow-xl">
-                    <CardHeader className="pb-4">
-                      <div className="relative mb-4 flex justify-center">
-                        <motion.img
-                          src={article.image}
-                          alt={article.title}
-                          className="w-16 h-24 object-contain drop-shadow-lg"
-                          whileHover={{
-                            rotate: [0, -5, 5, 0],
-                            transition: { duration: 0.5 }
-                          }}
-                        />
-                      </div>
-                      
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs font-game bg-marafone-yellow/20 text-marafone-dark px-3 py-1 rounded-full border border-marafone-yellow/50">
-                          {article.category}
-                        </span>
-                        <div className="flex items-center gap-2 text-marafone-red/70 text-sm">
-                          <Calendar className="h-3 w-3" />
-                          <span className="font-game">
-                            {new Date(article.date).toLocaleDateString('it-IT', {
-                              year: 'numeric',
-                              month: 'short',
-                              day: 'numeric'
-                            })}
-                          </span>
+                      <CardHeader className="pb-4">
+                        <div className="relative mb-4 flex justify-center">
+                          <motion.img
+                            src={article.image}
+                            alt={article.title}
+                            className="w-16 h-24 object-contain drop-shadow-lg"
+                            whileHover={{
+                              rotate: [0, -5, 5, 0],
+                              transition: { duration: 0.5 },
+                            }}
+                          />
                         </div>
-                      </div>
-                      
-                      <CardTitle className="font-game text-xl text-marafone-dark line-clamp-2 mb-3">
-                        {article.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="pt-0">
-                      <CardDescription className="font-game text-marafone-dark/70 line-clamp-4">
-                        {article.description}
-                      </CardDescription>
-                    </CardContent>
+
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-xs font-game bg-marafone-yellow/20 text-marafone-dark px-3 py-1 rounded-full border border-marafone-yellow/50">
+                            {article.category}
+                          </span>
+                          <div className="flex items-center gap-2 text-marafone-red/70 text-sm">
+                            <Calendar className="h-3 w-3" />
+                            <span className="font-game">
+                              {new Date(article.date).toLocaleDateString(
+                                "it-IT",
+                                {
+                                  year: "numeric",
+                                  month: "short",
+                                  day: "numeric",
+                                }
+                              )}
+                            </span>
+                          </div>
+                        </div>
+
+                        <CardTitle className="font-game text-xl text-marafone-dark line-clamp-2 mb-3">
+                          {article.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <CardDescription className="font-game text-marafone-dark/70 line-clamp-4">
+                          {article.description}
+                        </CardDescription>
+                      </CardContent>
                     </Card>
                   </motion.div>
                 </Link>

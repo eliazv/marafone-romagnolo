@@ -78,16 +78,19 @@ const Support = () => {
   return (
     <>
       <Helmet>
-        <title>Supporto | Marafone Romagnolo Online: Assistenza e FAQ</title>
+        <title>Supporto | Marafone Romagnolo: Assistenza e FAQ</title>
         <meta
           name="description"
-          content="Centro assistenza per Marafone Romagnolo Online. FAQ, contatti per supporto tecnico, segnalazione bug e informazioni sulla privacy."
+          content="Centro assistenza per Marafone Romagnolo. FAQ, contatti per supporto tecnico, segnalazione bug e informazioni sulla privacy."
         />
         <meta
           name="keywords"
           content="supporto maraffa, assistenza tecnica, FAQ, bug report, contatti, privacy, eliminazione account"
         />
-        <link rel="canonical" href="https://www.marafone-romagnolo.it/supporto" />
+        <link
+          rel="canonical"
+          href="https://www.marafone-romagnolo.it/supporto"
+        />
       </Helmet>
       <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
         <Header />
@@ -169,7 +172,7 @@ const Support = () => {
             </div>
 
             <h1 className="font-retro text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
-              🃏 Supporto Marafone Romagnolo Online
+              🃏 Supporto Marafone Romagnolo
             </h1>
 
             <p className="font-game text-xl opacity-90 max-w-4xl leading-relaxed">
