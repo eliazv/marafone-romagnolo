@@ -472,6 +472,77 @@ export const allArticles = [
     `,
   },*/
   {
+    id: 8,
+    title: "Tornei di Marafone Romagnolo",
+    description:
+      "Scopri tutti i tornei locali di Marafone Romagnolo nella tua zona. Iscriviti agli eventi, sfida altri appassionati e vivi la tradizione delle carte romagnole!",
+    date: "2025-06-02",
+    image: "/img/carte/a-coppe.png",
+    slug: "tornei",
+    category: "Eventi",
+    isExternalLink: true,
+    content: `
+      <h2>🏆 Tornei di Marafone Romagnolo</h2>
+
+      <p>Vuoi partecipare ai <strong>tornei locali di Marafone</strong> e sfidare altri appassionati? Questa è la pagina che fa per te!</p>
+
+      <div style="background: linear-gradient(135deg, #f5f5dc 0%, #e6d7b7 100%); padding: 2rem; border-radius: 15px; border: 3px solid #8B2635; margin: 2rem 0; text-align: center;">
+        <h3 style="color: #8B2635; margin-top: 0; font-size: 1.5rem;">🎯 Cosa Troverai nella Pagina Tornei</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+          <div style="background: rgba(255,255,255,0.7); padding: 1rem; border-radius: 10px;">
+            <strong>📅 Eventi Locali</strong><br>
+            <small>Tornei in programma</small>
+          </div>
+          <div style="background: rgba(255,255,255,0.7); padding: 1rem; border-radius: 10px;">
+            <strong>📍 Dove e Quando</strong><br>
+            <small>Luoghi e date</small>
+          </div>
+          <div style="background: rgba(255,255,255,0.7); padding: 1rem; border-radius: 10px;">
+            <strong>💶 Quote Iscrizione</strong><br>
+            <small>Informazioni sui costi</small>
+          </div>
+          <div style="background: rgba(255,255,255,0.7); padding: 1rem; border-radius: 10px;">
+            <strong>✉️ Proponi Tornei</strong><br>
+            <small>Aggiungi il tuo evento</small>
+          </div>
+        </div>
+
+        <p style="font-size: 1.1rem; color: #8B2635; margin: 1.5rem 0;">
+          <strong>Trova il torneo perfetto per te e vivi l'emozione della competizione!</strong>
+        </p>
+
+        <div style="background: #8B2635; color: white; padding: 1rem; border-radius: 10px; margin-top: 1.5rem;">
+          <p style="margin: 0; font-size: 1.1rem;">
+            <strong>🎯 Clicca questo articolo per vedere tutti i tornei disponibili!</strong>
+          </p>
+        </div>
+      </div>
+
+      <h3>🌟 Perché Partecipare ai Tornei?</h3>
+
+      <ul>
+        <li><strong>🏆 Competizione sana</strong> - Mettiti alla prova con altri giocatori</li>
+        <li><strong>🤝 Nuove amicizie</strong> - Conosci la community di appassionati</li>
+        <li><strong>🎪 Atmosfera autentica</strong> - Vivi la tradizione romagnola</li>
+        <li><strong>🎁 Premi e riconoscimenti</strong> - Trofei e premi per i vincitori!</li>
+      </ul>
+
+      <blockquote style="border-left: 4px solid #f4d03f; background: #fef9e7; padding: 1rem; margin: 2rem 0; font-style: italic;">
+        <p><strong>"I tornei di Marafone sono dove la tradizione incontra la competizione!"</strong></p>
+        <footer>— Spirito romagnolo</footer>
+      </blockquote>
+
+      <h3>✉️ Hai un Torneo da Proporre?</h3>
+
+      <p>Se organizzi tornei locali di Marafone e vuoi farli conoscere alla community, puoi facilmente proporli attraverso la nostra pagina dedicata. Basta un clic per inviare le informazioni del tuo evento!</p>
+
+      <h3>🚀 Trova il Tuo Torneo!</h3>
+
+      <p>Non perdere tempo! Clicca su questo articolo e scopri tutti i tornei in programma nella tua zona. La prossima sfida ti aspetta!</p>
+    `,
+  },
+  {
     id: 7,
     title: "Regole Complete del Marafone Romagnolo",
     description:
@@ -961,5 +1032,5 @@ export const allArticles = [
   },*/
 ];
 
-// Get only preview articles (first 2) for BlogSection
-export const previewArticles = allArticles.slice(0, 2);
+// Get only preview articles (first 3) for BlogSection
+export const previewArticles = allArticles.slice(0, 3);

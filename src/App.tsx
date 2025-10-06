@@ -15,6 +15,7 @@ import Maraffone from "./pages/Maraffone";
 import Beccaccino from "./pages/Beccaccino";
 import Maraffa from "./pages/Maraffa";
 import Trionfo from "./pages/Trionfo";
+import Tournaments from "./pages/Tournaments";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/beccaccino" element={<Beccaccino />} />
           <Route path="/maraffa" element={<Maraffa />} />
           <Route path="/trionfo" element={<Trionfo />} />
+          <Route path="/tornei" element={<Tournaments />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

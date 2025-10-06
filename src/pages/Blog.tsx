@@ -229,7 +229,7 @@ const Blog = () => {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allArticles.map((article, index) => (
               <StaggerItem key={article.id}>
-                <Link to={article.slug === 'regole' ? '/regole' : `/blog/${article.slug}`}>
+                <Link to={article.slug === 'regole' ? '/regole' : article.slug === 'tornei' ? '/tornei' : `/blog/${article.slug}`}>
                   <motion.div
                     whileHover={{ 
                       scale: 1.03,
