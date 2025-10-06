@@ -218,7 +218,7 @@ const GameRules = () => {
       <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
         <Header />
         {/* Hero Section */}
-        <section className="relative py-16 px-4 bg-marafone-red text-white overflow-hidden">
+        <section className="relative pt-16 pb-8 px-4 bg-marafone-red text-white overflow-hidden">
           {/* Carte decorative animate */}
           <div className="absolute inset-0 pointer-events-none select-none z-0">
             {carteImages.slice(0, 4).map((src, i) => {
@@ -281,7 +281,7 @@ const GameRules = () => {
             })}
           </div>
 
-          <div className="container mx-auto relative z-10 pt-16">
+          <div className="container px-0 md:px-4 mx-auto relative z-10 pt-10">
             <div className="flex items-center gap-4 mb-6">
               <Button
                 variant="secondary"

@@ -1,63 +1,40 @@
-import {
-  Gamepad,
-  Brain,
-  Award,
-  Handshake,
-  Smartphone,
-  Users,
-  Trophy,
-  Heart,
-} from "lucide-react";
+import { Brain, Smartphone, Users, Trophy } from "lucide-react";
 import { carteImages } from "@/lib/carteImages";
 import {
   FadeInUp,
   StaggerContainer,
   StaggerItem,
-  ScaleIn,
 } from "@/components/ui/animated-element";
-import { motion } from "framer-motion";
 
 const FeaturesSection = () => {
   const features = [
     {
       icon: <Smartphone className="h-12 w-12 text-marafone-red" />,
-      title: "Gioca offline",
-      description: "Gioca offline senza connessione internet, ovunque tu sia.",
-      highlight: "Sempre Disponibile",
+      title: "Gioca ovunque",
+      description:
+        "Sfida i tuoi amici online o la CPU anche senza connessione. Il divertimento continua sempre, anche offline!",
+      highlight: "Gioca!",
     },
     {
       icon: <Brain className="h-12 w-12 text-marafone-red" />,
-      title: "Sfida la CPU",
+      title: "IA Romagnola",
       description:
-        "Tre livelli di difficoltà, perfetta per principianti e giocatori esperti.",
+        "Un'intelligenza artificiale veramente romagnola: scegli tra 3 livelli di difficoltà e migliora partita dopo partita.",
       highlight: "3 Livelli",
     },
     {
       icon: <Users className="h-12 w-12 text-marafone-red" />,
-      title: "Modalità online",
+      title: "Gioca online",
       description:
-        "Modalità online con classifiche e sistema amici per sfidare altri appassionati.",
-      highlight: "Community",
-    },
-    {
-      icon: <Award className="h-12 w-12 text-marafone-red" />,
-      title: "Tavoli unici",
-      description: "Tavoli personalizzati per rendere ogni partita unica.",
-      highlight: "Personalizza",
-    },
-    {
-      icon: <Heart className="h-12 w-12 text-marafone-red" />,
-      title: "Tradizione autentica",
-      description:
-        "Perfetto per chi ama il Tressette e vuole scoprire le sue varianti regionali.",
-      highlight: "Autentico",
+        "Sfida altri giocatori romagnoli, aggiungi amici e scala le classifiche nella modalità online!",
+      highlight: "Multiplayer",
     },
     {
       icon: <Trophy className="h-12 w-12 text-marafone-red" />,
-      title: "Comunità unita",
+      title: "Comunità Romagnola",
       description:
-        "Marafone Romagnolo è molto più di un semplice gioco: è una comunità che unisce generazioni attraverso le carte.",
-      highlight: "Generazioni",
+        "Unisciti alla prima community digitale dedicata alla Maraffa: tornei locali, eventi e passione vera per il gioco di carte più amato in Romagna.",
+      highlight: "Community",
     },
   ];
 
@@ -161,7 +138,7 @@ const FeaturesSection = () => {
           </h2>
         </FadeInUp>
 
-        <StaggerContainer className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {features.map((feature, index) => (
             <StaggerItem
               key={index}
@@ -212,19 +189,19 @@ const FeaturesSection = () => {
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <StaggerItem>
                 <div className="font-retro text-3xl md:text-4xl text-marafone-yellow mb-2">
-                  1000+
+                  2000+
                 </div>
                 <div className="font-game">Giocatori Attivi</div>
               </StaggerItem>
               <StaggerItem>
                 <div className="font-retro text-3xl md:text-4xl text-marafone-yellow mb-2">
-                  10K+
+                  20K+
                 </div>
                 <div className="font-game">Partite Giocate</div>
               </StaggerItem>
               <StaggerItem>
                 <div className="font-retro text-3xl md:text-4xl text-marafone-yellow mb-2">
-                  4.8★
+                  4.4★
                 </div>
                 <div className="font-game">Valutazione Media</div>
               </StaggerItem>

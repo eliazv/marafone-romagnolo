@@ -89,7 +89,7 @@ const Tournaments = () => {
       <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
         <Header />
         {/* Hero Section */}
-        <section className="relative py-16 px-4 bg-marafone-red text-white overflow-hidden">
+        <section className="relative pt-16 pb-8 px-4 bg-marafone-red text-white overflow-hidden">
           {/* Carte decorative animate */}
           <div className="absolute inset-0 pointer-events-none select-none z-0">
             {carteImages.slice(0, 4).map((src, i) => {
@@ -152,7 +152,7 @@ const Tournaments = () => {
             })}
           </div>
 
-          <div className="container mx-auto relative z-10 pt-16">
+          <div className="container px-0 md:px-4 mx-auto relative z-10 pt-10">
             <div className="flex items-center gap-4 mb-6">
               <Button
                 variant="secondary"
@@ -182,25 +182,29 @@ const Tournaments = () => {
           <main className="py-2">
             <Card className="overflow-hidden border-0 md:border-4 border-amber-800/50 shadow-xl relative bg-gradient-to-br from-amber-50/90 to-orange-100/60">
               <CardContent className="p-4 md:p-8 relative z-10">
-                {/* Bottone per richiedere aggiunta torneo */}
-                <div className="mb-8 flex justify-center">
-                  <Button
-                    onClick={handleRequestTournament}
-                    className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game font-bold text-lg px-6 py-6 rounded-xl shadow-lg"
-                  >
-                    <Mail className="h-5 w-5 mr-2" />
-                    Proponi il tuo torneo
-                  </Button>
-                </div>
-
                 {/* Lista tornei */}
                 <section className="mb-2">
-                  <h2 className="text-2xl font-bold mb-6 flex items-center gap-3 border-b-2 pb-2 text-amber-800">
-                    <span className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-amber-200 to-amber-400 shadow">
-                      <Trophy className="w-6 h-6 text-amber-700" />
-                    </span>
-                    Tornei in Programma
-                  </h2>
+                  <div className="mb-6 border-b-2 pb-2">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                      <h2 className="text-2xl font-bold flex items-center gap-3 text-amber-800">
+                        <span className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-amber-200 to-amber-400 shadow">
+                          <Trophy className="w-6 h-6 text-amber-700" />
+                        </span>
+                        Tornei in Programma
+                      </h2>
+
+                      {/* Button below title on mobile, right-aligned on md+; not full-width */}
+                      <div className="flex md:justify-end">
+                        <Button
+                          onClick={handleRequestTournament}
+                          className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game font-bold text-lg px-6 py-3 rounded-xl shadow-lg mx-auto md:mx-0"
+                        >
+                          <Mail className="h-5 w-5 mr-2" />
+                          Proponi il tuo torneo
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
 
                   {TOURNAMENTS.length === 0 ? (
                     <div className="text-center py-12 text-amber-800">
