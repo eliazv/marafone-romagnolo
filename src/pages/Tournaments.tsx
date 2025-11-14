@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import {
-  ArrowLeft,
   Trophy,
   MapPin,
   Euro,
@@ -16,6 +14,12 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { carteImages } from "@/lib/carteImages";
+import {
+  FadeInUp,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/ui/animated-element";
+import { motion } from "framer-motion";
 
 // Tipo per i tornei
 interface Tournament {
@@ -145,136 +149,158 @@ const Tournaments = () => {
           </div>
 
           <div className="container px-0 md:px-4 mx-auto relative z-10 pt-10">
-            <div className="flex items-center gap-4 mb-6">
-              <Button
-                variant="secondary"
-                className="bg-marafone-yellow text-marafone-dark hover:bg-marafone-yellow/90 font-game font-bold"
-                asChild
-              >
-                <Link to="/">
-                  <ArrowLeft className="h-4 w-4 mr-2" />
-                  Torna alla Home
-                </Link>
-              </Button>
-            </div>
+            <FadeInUp delay={0.2}>
+              <h1 className="font-retro text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
+                Tornei di Marafone Romagnolo
+              </h1>
+            </FadeInUp>
 
-            <h1 className="font-retro text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
-              Tornei di Marafone Romagnolo
-            </h1>
-
-            <p className="font-game text-xl opacity-90 max-w-4xl leading-relaxed">
-              Scopri i tornei locali e partecipa alle competizioni di carte
-              romagnole
-            </p>
+            <FadeInUp delay={0.4}>
+              <p className="font-game text-xl opacity-90 max-w-4xl leading-relaxed">
+                Scopri i tornei locali e partecipa alle competizioni di carte
+                romagnole
+              </p>
+            </FadeInUp>
           </div>
         </section>
 
         <div className="md:max-w-4xl md:mx-auto px-0 md:px-4 mt-4">
           {/* Main content */}
           <main className="py-2">
-            <Card className="overflow-hidden border-0 md:border-4 border-amber-800/50 shadow-xl relative bg-gradient-to-br from-amber-50/90 to-orange-100/60">
-              <CardContent className="p-4 md:p-8 relative z-10">
+            <Card className="overflow-hidden border-0 md:border-4 border-amber-800/50 shadow-xl relative bg-gradient-to-br from-amber-50/90 to-orange-100/60 rounded-3xl">
+              <CardContent className="p-6 md:p-10 relative z-10">
                 {/* Lista tornei */}
                 <section className="mb-2">
-                  <div className="mb-6 border-b-2 pb-2">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                      <h2 className="text-2xl font-bold flex items-center gap-3 text-amber-800">
-                        <span className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-amber-200 to-amber-400 shadow">
-                          <Trophy className="w-6 h-6 text-amber-700" />
-                        </span>
-                        Tornei in Programma
-                      </h2>
+                  <FadeInUp delay={0.2}>
+                    <div className="mb-6 border-b-2 pb-2">
+                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <h2 className="text-2xl font-bold flex items-center gap-3 text-amber-800">
+                          <motion.span
+                            className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-amber-200 to-amber-400 shadow-lg"
+                            whileHover={{ rotate: 10, scale: 1.1 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            <Trophy className="w-7 h-7 text-amber-700" />
+                          </motion.span>
+                          Tornei in Programma
+                        </h2>
 
-                      {/* Button below title on mobile, right-aligned on md+; not full-width */}
-                      <div className="flex md:justify-end">
-                        <Button
-                          onClick={handleRequestTournament}
-                          className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game font-bold text-lg px-6 py-3 rounded-xl shadow-lg mx-auto md:mx-0"
-                        >
-                          <Mail className="h-5 w-5 mr-2" />
-                          Proponi il tuo torneo
-                        </Button>
+                        {/* Button below title on mobile, right-aligned on md+; not full-width */}
+                        <div className="flex md:justify-end">
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <Button
+                              onClick={handleRequestTournament}
+                              className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game font-bold text-lg px-6 py-3 rounded-xl shadow-lg mx-auto md:mx-0"
+                            >
+                              <Mail className="h-5 w-5 mr-2" />
+                              Proponi il tuo torneo
+                            </Button>
+                          </motion.div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </FadeInUp>
 
                   {TOURNAMENTS.length === 0 ? (
-                    <div className="text-center py-12 text-amber-800">
-                      <Trophy className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                      <p className="text-xl font-game">
-                        Nessun torneo in programma al momento.
-                      </p>
-                      <p className="text-base mt-2">
-                        Controlla più tardi o proponi il tuo evento!
-                      </p>
-                    </div>
+                    <FadeInUp delay={0.4}>
+                      <div className="text-center py-12 text-amber-800">
+                        <Trophy className="w-16 h-16 mx-auto mb-4 opacity-50" />
+                        <p className="text-xl font-game">
+                          Nessun torneo in programma al momento.
+                        </p>
+                        <p className="text-base mt-2">
+                          Controlla più tardi o proponi il tuo evento!
+                        </p>
+                      </div>
+                    </FadeInUp>
                   ) : (
-                    <div className="grid gap-6">
+                    <StaggerContainer className="grid gap-6">
                       {TOURNAMENTS.map((tournament) => (
-                        <Card
+                        <StaggerItem
                           key={tournament.id}
-                          className="overflow-hidden border-2 border-amber-300/60 shadow-md hover:shadow-xl transition-shadow bg-gradient-to-br from-amber-50 to-orange-50/40"
+                          className="overflow-hidden border-2 border-amber-300/60 shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-amber-50 to-orange-50/40 rounded-2xl"
                         >
-                          <CardContent className="p-6">
-                            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                              <div className="flex-1">
-                                <h3 className="text-2xl font-bold text-amber-900 mb-2 flex items-center gap-2">
-                                  <Trophy className="w-6 h-6 text-yellow-600" />
-                                  {tournament.name}
-                                </h3>
+                          <motion.div
+                            whileHover={{
+                              y: -5,
+                              transition: { duration: 0.2 },
+                            }}
+                          >
+                            <CardContent className="p-8">
+                              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                                <div className="flex-1">
+                                  <h3 className="text-2xl font-bold text-amber-900 mb-3 flex items-center gap-3">
+                                    <motion.div
+                                      whileHover={{ rotate: 10, scale: 1.1 }}
+                                      transition={{ duration: 0.2 }}
+                                    >
+                                      <Trophy className="w-7 h-7 text-yellow-600" />
+                                    </motion.div>
+                                    {tournament.name}
+                                  </h3>
 
-                                {tournament.date && (
-                                  <Badge
-                                    variant="outline"
-                                    className="bg-amber-100/80 border-amber-400 text-amber-900 mb-3"
-                                  >
-                                    {tournament.date}
-                                  </Badge>
-                                )}
+                                  {tournament.date && (
+                                    <Badge
+                                      variant="outline"
+                                      className="bg-amber-100/80 border-amber-400 text-amber-900 mb-4 px-3 py-1"
+                                    >
+                                      <Calendar className="w-4 h-4 mr-1" />
+                                      {tournament.date}
+                                    </Badge>
+                                  )}
 
-                                {tournament.description && (
-                                  <p className="text-amber-900 mb-4">
-                                    {tournament.description}
-                                  </p>
-                                )}
+                                  {tournament.description && (
+                                    <p className="text-amber-900 mb-4 leading-relaxed">
+                                      {tournament.description}
+                                    </p>
+                                  )}
 
-                                <div className="space-y-2">
-                                  <div className="flex items-center gap-2 text-amber-900">
-                                    <MapPin className="w-5 h-5 text-red-600" />
-                                    <span className="font-medium">
-                                      {tournament.location}
-                                    </span>
-                                  </div>
+                                  <div className="space-y-3">
+                                    <div className="flex items-center gap-3 text-amber-900">
+                                      <MapPin className="w-5 h-5 text-red-600 flex-shrink-0" />
+                                      <span className="font-medium">
+                                        {tournament.location}
+                                      </span>
+                                    </div>
 
-                                  <div className="flex items-center gap-2 text-amber-900">
-                                    <Euro className="w-5 h-5 text-green-600" />
-                                    <span className="font-medium">
-                                      Quota: {tournament.fee}
-                                    </span>
+                                    <div className="flex items-center gap-3 text-amber-900">
+                                      <Euro className="w-5 h-5 text-green-600 flex-shrink-0" />
+                                      <span className="font-medium">
+                                        Quota: {tournament.fee}
+                                      </span>
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
 
-                              <div className="flex md:flex-col gap-2">
-                                <Button
-                                  asChild
-                                  className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game font-bold"
-                                >
-                                  <a
-                                    href={tournament.registrationLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                <div className="flex md:flex-col gap-3 md:self-start">
+                                  <motion.div
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
                                   >
-                                    <ExternalLink className="h-4 w-4 mr-2" />
-                                    Iscriviti
-                                  </a>
-                                </Button>
+                                    <Button
+                                      asChild
+                                      className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game font-bold px-6 py-3 rounded-xl shadow-lg"
+                                    >
+                                      <a
+                                        href={tournament.registrationLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                      >
+                                        <ExternalLink className="h-4 w-4 mr-2" />
+                                        Iscriviti
+                                      </a>
+                                    </Button>
+                                  </motion.div>
+                                </div>
                               </div>
-                            </div>
-                          </CardContent>
-                        </Card>
+                            </CardContent>
+                          </motion.div>
+                        </StaggerItem>
                       ))}
-                    </div>
+                    </StaggerContainer>
                   )}
                 </section>
               </CardContent>

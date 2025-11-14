@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import {
-  ArrowLeft,
   Scroll,
   Diamond,
   Shuffle,
@@ -21,6 +19,8 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { carteImages } from "@/lib/carteImages";
+import { FadeInUp } from "@/components/ui/animated-element";
+import { motion } from "framer-motion";
 
 const SECTIONS = [
   {
@@ -282,26 +282,17 @@ const GameRules = () => {
           </div>
 
           <div className="container px-0 md:px-4 mx-auto relative z-10 pt-10">
-            <div className="flex items-center gap-4 mb-6">
-              <Button
-                variant="secondary"
-                className="bg-marafone-yellow text-marafone-dark hover:bg-marafone-yellow/90 font-game font-bold"
-                asChild
-              >
-                <Link to="/">
-                  <ArrowLeft className="h-4 w-4 mr-2" />
-                  Torna alla Home
-                </Link>
-              </Button>
-            </div>
+            <FadeInUp delay={0.2}>
+              <h1 className="font-retro text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
+                Regole del Marafone Romagnolo
+              </h1>
+            </FadeInUp>
 
-            <h1 className="font-retro text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
-              Regole del Marafone Romagnolo
-            </h1>
-
-            <p className="font-game text-xl opacity-90 max-w-4xl leading-relaxed">
-              Impara a giocare al tradizionale gioco di carte romagnolo online
-            </p>
+            <FadeInUp delay={0.4}>
+              <p className="font-game text-xl opacity-90 max-w-4xl leading-relaxed">
+                Impara a giocare al tradizionale gioco di carte romagnolo online
+              </p>
+            </FadeInUp>
           </div>
         </section>
 
@@ -309,23 +300,25 @@ const GameRules = () => {
           {/* Indice compatto in cima */}
           <nav className="mb-6 flex flex-wrap gap-1.5 justify-center px-2">
             {SECTIONS.map((s) => (
-              <button
+              <motion.button
                 key={s.id}
-                className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-md font-medium transition-all text-sm border border-amber-200/60 bg-amber-50/70 hover:bg-amber-100/80 text-amber-800 shadow-sm hover:shadow-md active:scale-95`}
+                className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-md font-medium transition-all text-sm border border-amber-200/60 bg-amber-50/70 hover:bg-amber-100/80 text-amber-800 shadow-sm hover:shadow-md`}
                 onClick={() => scrollToSection(s.id)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <span className="w-4 h-4 flex items-center justify-center">
                   {React.cloneElement(s.icon, { className: "w-4 h-4" })}
                 </span>
                 <span className="text-xs font-semibold">{s.title}</span>
-              </button>
+              </motion.button>
             ))}
           </nav>
 
           {/* Main content */}
           <main className="py-2">
-            <Card className="overflow-hidden border-0 md:border-4 border-amber-800/50 shadow-xl relative bg-gradient-to-br from-amber-50/90 to-orange-100/60">
-              <CardContent className="p-4 md:p-8 relative z-10">
+            <Card className="overflow-hidden border-0 md:border-4 border-amber-800/50 shadow-xl relative bg-gradient-to-br from-amber-50/90 to-orange-100/60 rounded-3xl">
+              <CardContent className="p-6 md:p-10 relative z-10">
                 {/* Introduzione */}
                 <section id="introduzione" className="mb-12 scroll-mt-24">
                   <SectionTitle icon={SECTIONS[0].icon} color="text-amber-800">
@@ -528,7 +521,7 @@ const GameRules = () => {
                         7, 6, 5, 4: <b>0 punti</b>
                       </li>
                       <li>
-                        L'ultima presa ("bàga"): <b>1 punto</b>
+                        L'ultima presa: <b>1 punto</b>
                       </li>
                       <li>
                         <b>Marafone</b> (hai scelto la briscola e possiedi asso,
@@ -552,14 +545,7 @@ const GameRules = () => {
                     <li>
                       Ricorda le carte già giocate, soprattutto le briscole.
                     </li>
-                    <li>
-                      Punta a vincere l'ultima presa (
-                      <span className="inline-flex items-center gap-1">
-                        <Target className="w-4 h-4 text-amber-700" />
-                        bàga
-                      </span>
-                      ).
-                    </li>
+                    <li>Punta a vincere l'ultima presa</li>
                     <li>
                       Comunica solo tramite le carte giocate e le dichiarazioni
                       ammesse.
@@ -615,9 +601,13 @@ function SectionTitle({
     <h2
       className={`text-2xl font-bold mb-4 flex items-center gap-3 border-b-2 pb-2 ${color}`}
     >
-      <span className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-amber-200 to-amber-400 shadow">
+      <motion.span
+        className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-amber-200 to-amber-400 shadow-lg"
+        whileHover={{ rotate: 10, scale: 1.1 }}
+        transition={{ duration: 0.2 }}
+      >
         {icon}
-      </span>
+      </motion.span>
       {children}
     </h2>
   );
@@ -633,11 +623,17 @@ function CallCard({
   desc: string;
 }) {
   return (
-    <div className="bg-gradient-to-br from-amber-100/70 to-orange-100/40 rounded-xl p-4 border-2 border-amber-700/20 flex flex-col items-start shadow">
+    <motion.div
+      className="bg-gradient-to-br from-amber-100/70 to-orange-100/40 rounded-xl p-4 border-2 border-amber-700/20 flex flex-col items-start shadow"
+      whileHover={{
+        y: -5,
+        transition: { duration: 0.2 },
+      }}
+    >
       <span className="text-3xl mb-2">{emoji}</span>
       <span className="font-bold text-amber-800 text-lg mb-1">{title}</span>
       <span className="text-amber-950 text-base">{desc}</span>
-    </div>
+    </motion.div>
   );
 }
 
