@@ -1,3 +1,4 @@
+import { Users, Trophy } from "lucide-react";
 import {
   FadeInUp,
   StaggerContainer,
@@ -6,17 +7,29 @@ import {
 import { motion } from "framer-motion";
 
 const ScreenshotsSection = () => {
+  const features2 = [
+    {
+      icon: <Users className="h-12 w-12 text-marafone-red" />,
+      title: "Gioca online",
+      description:
+        "Sfida altri giocatori romagnoli, aggiungi amici e scala le classifiche nella modalità online!",
+    },
+    {
+      icon: <Trophy className="h-12 w-12 text-marafone-red" />,
+      title: "Comunità Romagnola",
+      description:
+        "Unisciti alla prima community digitale dedicata alla Maraffa: tornei locali, eventi e passione vera per il gioco di carte più amato in Romagna.",
+    },
+  ];
+
   const screenshots = [
     {
       img: "/img/screen-playstore/photo_2025-11-14_19-45-39.jpg",
-      title: "Modalità di gioco",
-      description:
-        'Scegli come giocare: affronta la CPU con 3 livelli di difficoltà per allenarti, sfida amici e giocatori da tutta la Romagna nella modalità online, oppure gioca offline ovunque tu sia. Ogni partita è personalizzabile: puoi scegliere il punteggio di vittoria, attivare o disattivare le regole opzionali come il "busso" e il "volo", e giocare sia in coppia che in singolo.',
+      showFeatures: true,
     },
     {
       img: "/img/screen-playstore/Screenshot 2025-11-14 194943.png",
-      title: " ",
-      description: " ",
+      showFeatures: false,
     },
   ];
 
@@ -47,7 +60,7 @@ const ScreenshotsSection = () => {
                   >
                     <img
                       src={screenshot.img}
-                      alt={screenshot.title}
+                      alt="Screenshot"
                       className="object-cover w-full rounded-2xl shadow-lg"
                       loading="lazy"
                     />
@@ -61,13 +74,34 @@ const ScreenshotsSection = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                  <h3 className="font-retro text-3xl text-marafone-dark mb-4">
-                    {screenshot.title}
-                  </h3>
-                  <p className="font-game text-lg text-marafone-dark/70 leading-relaxed">
-                    {screenshot.description}
-                  </p>
-                  {index === 1 && (
+                  {screenshot.showFeatures ? (
+                    <StaggerContainer className="grid grid-cols-1 gap-6">
+                      {features2.map((feature, idx) => (
+                        <StaggerItem
+                          key={idx}
+                          className="bg-white rounded-xl p-6 hover:shadow-xl transition-all duration-300 border border-marafone-yellow/20 hover:border-marafone-red/30 group"
+                          whileHover={{
+                            y: -5,
+                            transition: { duration: 0.2 },
+                          }}
+                        >
+                          <div className="flex items-start gap-4">
+                            <div className="flex-shrink-0 p-3 bg-gradient-to-br from-marafone-red/10 to-marafone-yellow/10 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                              {feature.icon}
+                            </div>
+                            <div className="flex-1 text-left">
+                              <h4 className="font-game font-bold text-lg text-marafone-dark mb-2">
+                                {feature.title}
+                              </h4>
+                              <p className="font-game text-md text-marafone-dark/70 leading-relaxed">
+                                {feature.description}
+                              </p>
+                            </div>
+                          </div>
+                        </StaggerItem>
+                      ))}
+                    </StaggerContainer>
+                  ) : (
                     <>
                       <h3 className="font-retro text-2xl md:text-3xl text-marafone-dark text-center mb-8">
                         Unisciti a migliaia di giocatori romagnoli

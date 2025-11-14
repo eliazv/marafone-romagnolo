@@ -1,4 +1,12 @@
-import { Brain, Smartphone, Users, Trophy, MapPin, Calendar, Euro } from "lucide-react";
+import {
+  Brain,
+  Smartphone,
+  Users,
+  Trophy,
+  MapPin,
+  Calendar,
+  Euro,
+} from "lucide-react";
 import {
   FadeInUp,
   StaggerContainer,
