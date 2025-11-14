@@ -62,7 +62,8 @@ const FeaturesSection = () => {
             Perché scegliere Marafone Romagnolo?
           </h2>
           <p className="font-game text-base text-center text-marafone-dark/60 mb-12 max-w-2xl mx-auto">
-            Tutto quello che ti serve per vivere l'esperienza autentica del gioco romagnolo
+            Tutto quello che ti serve per vivere l'esperienza autentica del
+            gioco romagnolo
           </p>
         </FadeInUp>
 
@@ -111,7 +112,7 @@ const FeaturesSection = () => {
               }}
             >
               <img
-                src="/img/screen gioco.png"
+                src="/img/screen-playstore/photo_2025-11-14_15-13-54.jpg"
                 alt="Screenshot del gioco Marafone Romagnolo"
                 className="object-cover w-full rounded-2xl shadow-lg"
                 loading="lazy"
@@ -131,13 +132,17 @@ const FeaturesSection = () => {
                 <div className="font-retro text-4xl md:text-5xl text-marafone-red mb-2">
                   2000+
                 </div>
-                <div className="font-game text-marafone-dark/70">Giocatori Attivi</div>
+                <div className="font-game text-marafone-dark/70">
+                  Giocatori Attivi
+                </div>
               </StaggerItem>
               <StaggerItem>
                 <div className="font-retro text-4xl md:text-5xl text-marafone-red mb-2">
                   20K+
                 </div>
-                <div className="font-game text-marafone-dark/70">Partite Giocate</div>
+                <div className="font-game text-marafone-dark/70">
+                  Partite Giocate
+                </div>
               </StaggerItem>
               <StaggerItem>
                 <div className="font-retro text-4xl md:text-5xl text-marafone-red mb-2">
@@ -157,7 +162,9 @@ const FeaturesSection = () => {
                     </svg>
                   </a>
                 </div>
-                <div className="font-game text-marafone-dark/70">Unisciti al Gruppo WhatsApp</div>
+                <div className="font-game text-marafone-dark/70">
+                  Unisciti al Gruppo WhatsApp
+                </div>
               </StaggerItem>
             </StaggerContainer>
           </div>

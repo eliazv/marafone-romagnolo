@@ -8,22 +8,16 @@ import { motion } from "framer-motion";
 const ScreenshotsSection = () => {
   const screenshots = [
     {
-      img: "img/onboarding/gioca-onboarding.png",
+      img: "/img/screen-playstore/photo_2025-11-14_19-45-39.jpg",
       title: "Modalità di gioco",
       description:
         "Scegli tra diverse modalità: classica, veloce, contro l'IA o online!",
     },
     {
-      img: "/img/screen gioco.png",
+      img: "/img/screen-playstore/Screenshot 2025-11-14 194943.png",
       title: "Partita in corso",
       description:
         "Interfaccia fedele al tavolo da bar romagnolo, carte grandi e leggibili.",
-    },
-    {
-      img: "img/onboarding/profilo-onboarding.png",
-      title: "Classifica e progressi",
-      description:
-        "Scala la classifica, sblocca achievement e confronta i tuoi risultati!",
     },
   ];
 
@@ -33,7 +27,11 @@ const ScreenshotsSection = () => {
         <div className="space-y-20">
           {screenshots.map((screenshot, index) => (
             <StaggerItem key={index}>
-              <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+              <div
+                className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${
+                  index % 2 === 1 ? "md:flex-row-reverse" : ""
+                }`}
+              >
                 <motion.div
                   className="flex-1 max-w-xs md:max-w-sm"
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}

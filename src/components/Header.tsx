@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import { Star, BookOpen, HelpCircle, Edit3, Trophy } from "lucide-react";
+import { BookOpen, Edit3, Trophy } from "lucide-react";
 
 // Componente menu mobile con overlay e animazioni
 function MobileMenu({ onMenuStateChange }) {
@@ -81,32 +81,6 @@ function MobileMenu({ onMenuStateChange }) {
           {/* Menu items */}
           <div className="px-3 space-y-2">
             <button
-              className="w-full group relative overflow-hidden bg-gradient-to-r from-yellow-50 to-yellow-100 hover:from-yellow-100 hover:to-yellow-200 text-marafone-dark hover:text-marafone-red transition-all duration-300 px-6 py-4 rounded-2xl text-left font-game text-lg border border-yellow-200/50 hover:border-yellow-300 hover:shadow-lg hover:shadow-yellow-500/20 transform hover:scale-[1.02] active:scale-[0.98]"
-              onClick={() => {
-                setOpen(false);
-                const el = document.getElementById("features");
-                if (el) {
-                  if (window.location.pathname !== "/") {
-                    window.location.href = "/#features";
-                  } else {
-                    el.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }
-                } else {
-                  window.location.href = "/#features";
-                }
-              }}
-            >
-              <div className="flex items-center space-x-3">
-                <Star
-                  className="w-6 h-6 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
-                  strokeWidth={2.2}
-                />
-                <span>Funzionalità</span>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-            </button>
-
-            <button
               className="w-full group relative overflow-hidden bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 text-marafone-dark hover:text-marafone-red transition-all duration-300 px-6 py-4 rounded-2xl text-left font-game text-lg border border-blue-200/50 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-500/20 transform hover:scale-[1.02] active:scale-[0.98]"
               onClick={() => {
                 setOpen(false);
@@ -124,23 +98,6 @@ function MobileMenu({ onMenuStateChange }) {
             </button>
 
             <button
-              className="w-full group relative overflow-hidden bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 text-marafone-dark hover:text-marafone-red transition-all duration-300 px-6 py-4 rounded-2xl text-left font-game text-lg border border-purple-200/50 hover:border-purple-300 hover:shadow-lg hover:shadow-purple-500/20 transform hover:scale-[1.02] active:scale-[0.98]"
-              onClick={() => {
-                setOpen(false);
-                window.location.href = "/blog";
-              }}
-            >
-              <div className="flex items-center space-x-3">
-                <Edit3
-                  className="w-6 h-6 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
-                  strokeWidth={2.2}
-                />
-                <span>Articoli</span>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-            </button>
-
-            <button
               className="w-full group relative overflow-hidden bg-gradient-to-r from-amber-50 to-amber-100 hover:from-amber-100 hover:to-amber-200 text-marafone-dark hover:text-marafone-red transition-all duration-300 px-6 py-4 rounded-2xl text-left font-game text-lg border border-amber-200/50 hover:border-amber-300 hover:shadow-lg hover:shadow-amber-500/20 transform hover:scale-[1.02] active:scale-[0.98]"
               onClick={() => {
                 setOpen(false);
@@ -153,6 +110,23 @@ function MobileMenu({ onMenuStateChange }) {
                   strokeWidth={2.2}
                 />
                 <span>Tornei</span>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+            </button>
+
+            <button
+              className="w-full group relative overflow-hidden bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 text-marafone-dark hover:text-marafone-red transition-all duration-300 px-6 py-4 rounded-2xl text-left font-game text-lg border border-purple-200/50 hover:border-purple-300 hover:shadow-lg hover:shadow-purple-500/20 transform hover:scale-[1.02] active:scale-[0.98]"
+              onClick={() => {
+                setOpen(false);
+                window.location.href = "/blog";
+              }}
+            >
+              <div className="flex items-center space-x-3">
+                <Edit3
+                  className="w-6 h-6 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
+                  strokeWidth={2.2}
+                />
+                <span>Articoli</span>
               </div>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </button>
@@ -212,28 +186,6 @@ const Header = () => {
         <button
           className="relative font-game text-xl text-marafone-dark hover:text-marafone-red transition-all duration-300 px-4 py-2 rounded-xl bg-transparent border-none cursor-pointer group overflow-hidden hover:bg-marafone-yellow/10 hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
           onClick={() => {
-            const el = document.getElementById("features");
-            if (el) {
-              if (window.location.pathname !== "/") {
-                window.location.href = "/#features";
-              } else {
-                el.scrollIntoView({ behavior: "smooth", block: "start" });
-              }
-            } else {
-              window.location.href = "/#features";
-            }
-          }}
-        >
-          <Star
-            className="w-6 h-6 lg:mr-1 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
-            strokeWidth={2.2}
-          />
-          <span className="relative z-10 hidden lg:block">Funzionalità</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-marafone-yellow/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
-        </button>
-        <button
-          className="relative font-game text-xl text-marafone-dark hover:text-marafone-red transition-all duration-300 px-4 py-2 rounded-xl bg-transparent border-none cursor-pointer group overflow-hidden hover:bg-marafone-yellow/10 hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
-          onClick={() => {
             window.location.href = "/regole";
           }}
         >
@@ -247,19 +199,6 @@ const Header = () => {
         <button
           className="relative font-game text-xl text-marafone-dark hover:text-marafone-red transition-all duration-300 px-4 py-2 rounded-xl bg-transparent border-none cursor-pointer group overflow-hidden hover:bg-marafone-yellow/10 hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
           onClick={() => {
-            window.location.href = "/blog";
-          }}
-        >
-          <Edit3
-            className="w-6 h-6 lg:mr-1 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
-            strokeWidth={2.2}
-          />
-          <span className="relative z-10 hidden lg:block">Articoli</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-marafone-yellow/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
-        </button>
-        <button
-          className="relative font-game text-xl text-marafone-dark hover:text-marafone-red transition-all duration-300 px-4 py-2 rounded-xl bg-transparent border-none cursor-pointer group overflow-hidden hover:bg-marafone-yellow/10 hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
-          onClick={() => {
             window.location.href = "/tornei";
           }}
         >
@@ -268,6 +207,19 @@ const Header = () => {
             strokeWidth={2.2}
           />
           <span className="relative z-10 hidden lg:block">Tornei</span>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-marafone-yellow/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
+        </button>
+        <button
+          className="relative font-game text-xl text-marafone-dark hover:text-marafone-red transition-all duration-300 px-4 py-2 rounded-xl bg-transparent border-none cursor-pointer group overflow-hidden hover:bg-marafone-yellow/10 hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
+          onClick={() => {
+            window.location.href = "/blog";
+          }}
+        >
+          <Edit3
+            className="w-6 h-6 lg:mr-1 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
+            strokeWidth={2.2}
+          />
+          <span className="relative z-10 hidden lg:block">Articoli</span>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-marafone-yellow/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
         </button>
       </nav>
