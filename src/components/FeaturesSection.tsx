@@ -168,7 +168,7 @@ const FeaturesSection = () => {
               }}
             >
               <img
-                src="/img/screen-playstore/Screenshot 2025-11-14 194943.png"
+                src="/img/screen-playstore/photo_2025-11-14_19-45-39.jpg"
                 alt="Partita in corso"
                 className="object-cover w-full rounded-2xl shadow-lg"
                 loading="lazy"
@@ -244,7 +244,7 @@ const FeaturesSection = () => {
               }}
             >
               <img
-                src="/img/screen-playstore/photo_2025-11-14_19-45-39.jpg"
+                src="/img/screen-playstore/Screenshot 2025-11-14 194943.png"
                 alt="Screenshot del gioco Marafone Romagnolo"
                 className="object-cover w-full rounded-2xl shadow-lg"
                 loading="lazy"
