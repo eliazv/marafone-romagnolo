@@ -141,9 +141,19 @@
 }
 
 /* Max width constraint for desktop */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px !important;
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+}
+
 @media (min-width: 1536px) {
   .container {
-    max-width: 1400px !important;
+    max-width: 1200px !important;
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
   }
 }
 
