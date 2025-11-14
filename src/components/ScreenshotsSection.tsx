@@ -28,7 +28,7 @@ const ScreenshotsSection = () => {
       showFeatures: true,
     },
     {
-      img: "/img/screen-playstore/Screenshot 2025-11-14 194943.png",
+      img: "/img/screen-playstore/photo_2025-11-14_19-45-39.jpg",
       showFeatures: false,
     },
   ];

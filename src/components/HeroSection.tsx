@@ -70,7 +70,7 @@ const HeroSection = () => {
           </FadeInUp>
 
           {/* Subtitle */}
-          <FadeInUp delay={0.6}>
+          {/* <FadeInUp delay={0.6}>
             <p
               className="font-game text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto font-semibold relative"
               style={{ textShadow: "0 2px 8px #000, 0 1px 0 #fff8" }}
@@ -79,7 +79,7 @@ const HeroSection = () => {
               <br className="hidden md:block" />
               ora anche sul tuo smartphone!
             </p>
-          </FadeInUp>
+          </FadeInUp> */}
           {/* CTA Buttons - immagini store */}
           <FadeInUp delay={1.0}>
             <div className="flex flex-col sm:flex-row gap-1 justify-center items-center mb-8 w-full max-w-lg sm:max-w-2xl mx-auto">

@@ -21,7 +21,7 @@ const BlogSection = () => {
   return (
     <section
       id="blog"
-      className="relative py-16 px-4 bg-gradient-to-b from-white to-marafone-beige/20 overflow-hidden"
+      className="relative py-10 px-4 bg-gradient-to-b from-white to-marafone-beige/20 overflow-hidden"
     >
       <div className="container mx-auto text-center relative z-10 max-w-6xl">
         <FadeInUp delay={0.2}>
@@ -35,7 +35,8 @@ const BlogSection = () => {
 
         <FadeInUp delay={0.4}>
           <p className="font-game text-base mb-10 max-w-2xl mx-auto text-marafone-dark/70">
-            Approfondimenti, strategie e curiosità sul mondo del Marafone Romagnolo
+            Approfondimenti, strategie e curiosità sul mondo del Marafone
+            Romagnolo
           </p>
         </FadeInUp>
 
@@ -59,34 +60,37 @@ const BlogSection = () => {
                   whileTap={{ scale: 0.95 }}
                   className="h-full cursor-pointer"
                 >
-                  <Card className="h-full bg-white/90 backdrop-blur-sm border-2 border-marafone-yellow/30 hover:border-marafone-red/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                  <Card className="h-full bg-white/90 backdrop-blur-sm border-2 border-marafone-yellow/30 hover:border-marafone-red/50 transition-all duration-300 shadow-lg hover:shadow-xl text-left">
                     <CardHeader className="pb-3 pt-4">
-                      <div className="relative mb-2">
+                      <div className="flex items-start gap-4 mb-2">
                         <img
                           src={article.image}
                           alt={article.title}
-                          className="w-16 h-24 mx-auto object-contain drop-shadow-lg"
+                          className="w-16 h-24 object-contain drop-shadow-lg flex-shrink-0"
                         />
-                      </div>
-                      <CardTitle className="font-game text-base text-marafone-dark line-clamp-2">
-                        {article.title}
-                      </CardTitle>
-                      <div className="flex items-center justify-center gap-1.5 text-marafone-red/70 text-xs">
-                        <Calendar className="h-3 w-3" />
-                        <span className="font-game">
-                          {new Date(article.date).toLocaleDateString("it-IT", {
-                            year: "numeric",
-                            month: "short",
-                            day: "numeric",
-                          })}
-                        </span>
+                        <div className="flex-1">
+                          <CardTitle className="font-game text-base text-marafone-dark line-clamp-2 text-left">
+                            {article.title}
+                          </CardTitle>
+                          {/* <div className="flex items-center gap-1.5 text-marafone-red/70 text-xs mt-1">
+                            <Calendar className="h-3 w-3" />
+                            <span className="font-game">
+                              {new Date(article.date).toLocaleDateString(
+                                "it-IT",
+                                {
+                                  year: "numeric",
+                                  month: "short",
+                                  day: "numeric",
+                                }
+                              )}
+                            </span>
+                          </div> */}
+                          <CardDescription className="font-game text-sm text-marafone-dark/70 line-clamp-2 text-left mt-2">
+                            {article.description}
+                          </CardDescription>
+                        </div>
                       </div>
                     </CardHeader>
-                    <CardContent className="pt-0 pb-4">
-                      <CardDescription className="font-game text-sm text-marafone-dark/70 line-clamp-2">
-                        {article.description}
-                      </CardDescription>
-                    </CardContent>
                   </Card>
                 </motion.div>
               </Link>

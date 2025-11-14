@@ -32,12 +32,12 @@ interface Tournament {
 const TOURNAMENTS: Tournament[] = [
   {
     id: "bar-rita",
-    name: "Torneo Settimanale - Bar Rita",
+    name: "Bar Rita",
     location: "Via Ravegnana 357, Ravenna",
     fee: "10€",
     registrationLink: "https://maps.app.goo.gl/AGs7pc21DxtWokho6",
     date: "Ogni Martedì ore 20:15",
-    description: "Torneo settimanale di Marafone Romagnolo presso il Bar Rita. Atmosfera amichevole e competizione garantita!",
+    description: "Torneo settimanale di Marafone Romagnolo presso il Bar Rita",
   },
 ];
 
