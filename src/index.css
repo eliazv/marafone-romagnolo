@@ -139,3 +139,15 @@
   backface-visibility: hidden;
   perspective: 1000px;
 }
+
+/* Max width constraint for desktop */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1400px !important;
+  }
+}
+
+/* Global container constraint */
+body > div {
+  max-width: 100%;
+}

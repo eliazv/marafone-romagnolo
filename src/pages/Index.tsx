@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import HeroSection from "@/components/HeroSection";
-import ScreenshotCarousel from "@/components/ScreenshotCarousel";
+// import ScreenshotCarousel from "@/components/ScreenshotCarousel";
 import FeaturesSection from "@/components/FeaturesSection";
 import ScreenshotsSection from "@/components/ScreenshotsSection";
 import BlogSection from "@/components/BlogSection";
@@ -17,7 +17,7 @@ const Index = () => {
       </Helmet>
       <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
         <HeroSection />
-        <ScreenshotCarousel />
+        {/* <ScreenshotCarousel /> */}
         <FeaturesSection />
         <ScreenshotsSection />
         <BlogSection />
