@@ -30,15 +30,6 @@ const ScreenshotsSection = () => {
   return (
     <section className="relative py-20 px-4 bg-white overflow-hidden">
       <div className="container mx-auto relative z-10 max-w-6xl">
-        <FadeInUp delay={0.2}>
-          <h2 className="font-retro text-4xl md:text-5xl text-center text-marafone-red mb-4">
-            Il Gioco in Azione
-          </h2>
-          <p className="font-game text-lg text-center text-marafone-dark/70 mb-16 max-w-2xl mx-auto">
-            Scopri l'esperienza autentica del Marafone Romagnolo direttamente sul tuo smartphone
-          </p>
-        </FadeInUp>
-
         <div className="space-y-20">
           {screenshots.map((screenshot, index) => (
             <StaggerItem key={index}>

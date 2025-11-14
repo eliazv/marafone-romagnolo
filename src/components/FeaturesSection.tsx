@@ -4,6 +4,7 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/ui/animated-element";
+import { motion } from "framer-motion";
 
 const FeaturesSection = () => {
   const features = [
@@ -65,32 +66,59 @@ const FeaturesSection = () => {
           </p>
         </FadeInUp>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          {features.map((feature, index) => (
-            <StaggerItem
-              key={index}
-              className="bg-white rounded-xl p-6 hover:shadow-xl transition-all duration-300 border border-marafone-yellow/20 hover:border-marafone-red/30 group"
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-16">
+          {/* Features grid */}
+          <StaggerContainer className="flex-1 grid grid-cols-1 gap-6">
+            {features.map((feature, index) => (
+              <StaggerItem
+                key={index}
+                className="bg-white rounded-xl p-6 hover:shadow-xl transition-all duration-300 border border-marafone-yellow/20 hover:border-marafone-red/30 group"
+                whileHover={{
+                  y: -5,
+                  transition: { duration: 0.2 },
+                }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 p-3 bg-gradient-to-br from-marafone-red/10 to-marafone-yellow/10 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                    {feature.icon}
+                  </div>
+                  <div className="flex-1 text-left">
+                    <h4 className="font-game font-bold text-lg text-marafone-dark mb-2">
+                      {feature.title}
+                    </h4>
+                    <p className="font-game text-sm text-marafone-dark/70 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+
+          {/* Screenshot */}
+          <motion.div
+            className="flex-1 max-w-xs md:max-w-sm mx-auto"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <motion.div
+              className="bg-gradient-to-br from-marafone-red/10 to-marafone-yellow/10 rounded-3xl p-4 shadow-2xl border border-marafone-yellow/20"
               whileHover={{
-                y: -5,
-                transition: { duration: 0.2 },
+                scale: 1.02,
+                transition: { duration: 0.3 },
               }}
             >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 p-3 bg-gradient-to-br from-marafone-red/10 to-marafone-yellow/10 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                  {feature.icon}
-                </div>
-                <div className="flex-1 text-left">
-                  <h4 className="font-game font-bold text-lg text-marafone-dark mb-2">
-                    {feature.title}
-                  </h4>
-                  <p className="font-game text-sm text-marafone-dark/70 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+              <img
+                src="/img/screen gioco.png"
+                alt="Screenshot del gioco Marafone Romagnolo"
+                className="object-cover w-full rounded-2xl shadow-lg"
+                loading="lazy"
+              />
+            </motion.div>
+          </motion.div>
+        </div>
 
         {/* Sezione statistiche */}
         <FadeInUp delay={0.8}>
