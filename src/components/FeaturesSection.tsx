@@ -41,30 +41,27 @@ const FeaturesSection = () => {
   return (
     <section
       id="features"
-      className="relative py-20 px-4 bg-gradient-to-b from-marafone-beige/30 to-white overflow-hidden"
+      className="relative py-10 px-4 bg-gradient-to-b from-marafone-beige/30 to-white overflow-hidden"
     >
       <div className="container mx-auto relative z-10 max-w-6xl">
         <FadeInUp delay={0.2}>
           <p className="font-game text-base md:text-lg text-center text-marafone-dark/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Benvenuto su <strong>Marafone Romagnolo</strong>, il gioco di carte
-            tradizionale romagnolo finalmente disponibile in versione digitale
-            per smartphone e tablet. Conosciuto anche come{" "}
-            <strong>Maraffone</strong>, <strong>Beccaccino</strong>,{" "}
+            Benvenuto su <strong>Marafone Romagnolo</strong>! Conosciuto anche
+            come <strong>Maraffone</strong>, <strong>Beccaccino</strong>,{" "}
             <strong>Maraffa</strong> o <strong>Trionfo</strong>, questo gioco è
             una variante del Tressette che ha radici profonde nella cultura e
-            nella tradizione romagnola, amata nelle case e nei bar di Forlì,
-            Cesena, Ravenna e tutta la Romagna.
+            nella tradizione romagnola.
           </p>
         </FadeInUp>
 
         <FadeInUp delay={0.4}>
-          <h2 className="font-retro text-3xl md:text-4xl text-center text-marafone-red mb-3">
+          <h2 className="font-retro text-3xl md:text-4xl  text-center text-marafone-red mb-8">
             Perché scegliere Marafone Romagnolo?
           </h2>
-          <p className="font-game text-base text-center text-marafone-dark/60 mb-12 max-w-2xl mx-auto">
+          {/* <p className="font-game text-base text-center text-marafone-dark/60 mb-12 max-w-2xl mx-auto">
             Tutto quello che ti serve per vivere l'esperienza autentica del
             gioco romagnolo
-          </p>
+          </p> */}
         </FadeInUp>
 
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-16">
@@ -87,7 +84,7 @@ const FeaturesSection = () => {
                     <h4 className="font-game font-bold text-lg text-marafone-dark mb-2">
                       {feature.title}
                     </h4>
-                    <p className="font-game text-sm text-marafone-dark/70 leading-relaxed">
+                    <p className="font-game text-md text-marafone-dark/70 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>

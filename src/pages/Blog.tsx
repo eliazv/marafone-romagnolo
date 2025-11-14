@@ -172,7 +172,7 @@ const Blog = () => {
       </section>
 
       {/* Articles Grid */}
-      <section className="py-20 px-4 relative overflow-hidden">
+      <section className="py-10 px-4 relative overflow-hidden">
         {/* Carte decorative per la sezione articoli */}
         <div className="absolute inset-0 pointer-events-none select-none z-0">
           {carteImages.slice(25, 30).map((src, i) => {

@@ -12,7 +12,7 @@ const CommunitySection = () => {
   return (
     <section
       id="community"
-      className="relative py-20 px-4 bg-marafone-red text-white overflow-hidden"
+      className="relative py-10 px-4 bg-marafone-red text-white overflow-hidden"
     >
       {/* Carte decorative animate */}
       <div className="absolute inset-0 pointer-events-none select-none z-0">
@@ -230,7 +230,7 @@ const CommunitySection = () => {
                   const shareData = {
                     title: "Marafone Romagnolo",
                     text: "Scarica Marafone Romagnolo!",
-                    url: "https://play.google.com/store/apps/details?id=com.eliazavatta.maraffa",
+                    url: "https://www.marafone-romagnolo.it/",
                   };
                   if (navigator.share) {
                     try {
