@@ -9,6 +9,7 @@ import {
   Euro,
   ExternalLink,
   Mail,
+  Calendar,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -29,24 +30,15 @@ interface Tournament {
 
 // Lista tornei - da modificare quando necessario
 const TOURNAMENTS: Tournament[] = [
-  // {
-  //   id: "1",
-  //   name: "Torneo Primavera 2025",
-  //   location: "Rimini, Romagna",
-  //   fee: "15€",
-  //   registrationLink: "https://example.com/torneo1",
-  //   date: "15 Marzo 2025",
-  //   description: "Torneo amatoriale aperto a tutti",
-  // },
-  // {
-  //   id: "2",
-  //   name: "Campionato Estivo Marafone",
-  //   location: "Cesena, Romagna",
-  //   fee: "20€",
-  //   registrationLink: "https://example.com/torneo2",
-  //   date: "20 Giugno 2025",
-  //   description: "Campionato ufficiale con premi in palio",
-  // },
+  {
+    id: "bar-rita",
+    name: "Torneo Settimanale - Bar Rita",
+    location: "Via Ravegnana 357, Ravenna",
+    fee: "10€",
+    registrationLink: "https://maps.app.goo.gl/AGs7pc21DxtWokho6",
+    date: "Ogni Martedì ore 20:15",
+    description: "Torneo settimanale di Marafone Romagnolo presso il Bar Rita. Atmosfera amichevole e competizione garantita!",
+  },
 ];
 
 const Tournaments = () => {

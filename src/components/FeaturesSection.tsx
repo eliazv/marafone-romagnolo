@@ -22,20 +22,6 @@ const FeaturesSection = () => {
         "Un'intelligenza artificiale veramente romagnola: scegli tra 3 livelli di difficoltà e migliora partita dopo partita.",
       highlight: "3 Livelli",
     },
-    {
-      icon: <Users className="h-12 w-12 text-marafone-red" />,
-      title: "Gioca online",
-      description:
-        "Sfida altri giocatori romagnoli, aggiungi amici e scala le classifiche nella modalità online!",
-      highlight: "Multiplayer",
-    },
-    {
-      icon: <Trophy className="h-12 w-12 text-marafone-red" />,
-      title: "Comunità Romagnola",
-      description:
-        "Unisciti alla prima community digitale dedicata alla Maraffa: tornei locali, eventi e passione vera per il gioco di carte più amato in Romagna.",
-      highlight: "Community",
-    },
   ];
 
   return (
