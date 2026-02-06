@@ -1,2 +1,2 @@
-- aggiungi una pagina tornei, con stesso layout di regole ad esempio, deve essere una pagina che come contenuto ha una lista di tornei locali che inserisco io da codice. ogni torneo della lista ha: nome, luogo, quota iscrizione , link per iscriversi o per dettagi e boh vedi te se serve altro. la lista in cima deve avere un tasto per chiedere di aggiungere il rpoprio torneo locale che se premuto manda email a marafoneromagnolo@gmail.com . la pagina deve esser epresenta in sezione home i nostri articoli
-- https://pubdash.ezoic.com/setup
+- header togli tornei , metti tasto Gioca! a destra evidenziato
+- migliroa design e disposizione di sezione Perché scegliere Marafone Romagnolo? è troppo lunga elementi troppo grandi

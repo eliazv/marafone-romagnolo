@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import { BookOpen, Edit3, Trophy } from "lucide-react";
+import { BookOpen, Edit3, Play } from "lucide-react";
 
 // Componente menu mobile con overlay e animazioni
 function MobileMenu({ onMenuStateChange }) {
@@ -98,23 +98,6 @@ function MobileMenu({ onMenuStateChange }) {
             </button>
 
             <button
-              className="w-full group relative overflow-hidden bg-gradient-to-r from-amber-50 to-amber-100 hover:from-amber-100 hover:to-amber-200 text-marafone-dark hover:text-marafone-red transition-all duration-300 px-6 py-4 rounded-2xl text-left font-game text-lg border border-amber-200/50 hover:border-amber-300 hover:shadow-lg hover:shadow-amber-500/20 transform hover:scale-[1.02] active:scale-[0.98]"
-              onClick={() => {
-                setOpen(false);
-                window.location.href = "/tornei";
-              }}
-            >
-              <div className="flex items-center space-x-3">
-                <Trophy
-                  className="w-6 h-6 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
-                  strokeWidth={2.2}
-                />
-                <span>Tornei</span>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-            </button>
-
-            <button
               className="w-full group relative overflow-hidden bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 text-marafone-dark hover:text-marafone-red transition-all duration-300 px-6 py-4 rounded-2xl text-left font-game text-lg border border-purple-200/50 hover:border-purple-300 hover:shadow-lg hover:shadow-purple-500/20 transform hover:scale-[1.02] active:scale-[0.98]"
               onClick={() => {
                 setOpen(false);
@@ -127,6 +110,25 @@ function MobileMenu({ onMenuStateChange }) {
                   strokeWidth={2.2}
                 />
                 <span>Articoli</span>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+            </button>
+
+            <button
+              className="w-full group relative overflow-hidden bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 transition-all duration-300 px-6 py-4 rounded-2xl text-left font-game text-lg border border-red-400/50 hover:shadow-lg hover:shadow-red-500/40 transform hover:scale-[1.02] active:scale-[0.98]"
+              onClick={() => {
+                setOpen(false);
+                window.open("https://gioco.marafone-romagnolo.it/", "_blank");
+              }}
+            >
+              <div className="flex items-center space-x-3">
+                <Play
+                  className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300"
+                  fill="currentColor"
+                />
+                <span className="font-bold uppercase tracking-wider">
+                  Gioca!
+                </span>
               </div>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </button>
@@ -182,7 +184,7 @@ const Header = () => {
       </div>
 
       {/* Menu desktop: visibile solo su desktop */}
-      <nav className="hidden md:flex flex-1 justify-center gap-8 lg:gap-12">
+      <nav className="hidden md:flex items-center ml-auto gap-4 lg:gap-6">
         <button
           className="relative font-game text-xl text-marafone-dark hover:text-marafone-red transition-all duration-300 px-4 py-2 rounded-xl bg-transparent border-none cursor-pointer group overflow-hidden hover:bg-marafone-yellow/10 hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
           onClick={() => {
@@ -199,19 +201,6 @@ const Header = () => {
         <button
           className="relative font-game text-xl text-marafone-dark hover:text-marafone-red transition-all duration-300 px-4 py-2 rounded-xl bg-transparent border-none cursor-pointer group overflow-hidden hover:bg-marafone-yellow/10 hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
           onClick={() => {
-            window.location.href = "/tornei";
-          }}
-        >
-          <Trophy
-            className="w-6 h-6 lg:mr-1 text-marafone-dark group-hover:text-marafone-red transition-colors duration-300"
-            strokeWidth={2.2}
-          />
-          <span className="relative z-10 hidden lg:block">Tornei</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-marafone-yellow/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
-        </button>
-        <button
-          className="relative font-game text-xl text-marafone-dark hover:text-marafone-red transition-all duration-300 px-4 py-2 rounded-xl bg-transparent border-none cursor-pointer group overflow-hidden hover:bg-marafone-yellow/10 hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
-          onClick={() => {
             window.location.href = "/blog";
           }}
         >
@@ -221,6 +210,17 @@ const Header = () => {
           />
           <span className="relative z-10 hidden lg:block">Articoli</span>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-marafone-yellow/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
+        </button>
+
+        <button
+          className="relative font-game text-xl text-white bg-marafone-red hover:bg-marafone-red/90 transition-all duration-300 px-6 py-2.5 rounded-xl border-none cursor-pointer group overflow-hidden shadow-lg hover:shadow-red-500/30 hover:scale-105 active:scale-95 flex items-center gap-2"
+          onClick={() => {
+            window.open("https://gioco.marafone-romagnolo.it/", "_blank");
+          }}
+        >
+          <Play className="w-5 h-5 text-white" fill="currentColor" />
+          <span className="relative z-10 uppercase tracking-wide">Gioca!</span>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
         </button>
       </nav>
     </header>
