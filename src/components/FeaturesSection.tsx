@@ -13,8 +13,8 @@ const FeaturesSection = () => {
   const screens = [
     "/img/screen-playstore/photo_2025-11-14_15-13-54.jpg",
     "/img/screen-playstore/photo_2025-11-14_19-45-39.jpg",
-    "/img/screen-playstore/Screenshot 2025-11-14 194449.png",
-    "/img/screen-playstore/Screenshot 2025-11-14 194523.png",
+    // "/img/screen-playstore/Screenshot 2025-11-14 194449.png",
+    // "/img/screen-playstore/Screenshot 2025-11-14 194523.png",
     "/img/screen-playstore/Screenshot 2025-11-14 194943.png",
   ];
 
