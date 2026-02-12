@@ -3,23 +3,46 @@ import { Smartphone, Apple } from "lucide-react";
 import { carteImages } from "@/lib/carteImages";
 import Header from "@/components/Header";
 import { FadeInUp, ScaleIn } from "@/components/ui/animated-element";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 // ...Header ora in un componente a parte...
 
 const HeroSection = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
+
   return (
     <>
       <Header />
       <section
+        ref={containerRef}
         className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden pt-32 md:pt-28"
-        style={{
-          backgroundImage: 'url("/img/hero.webp")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
       >
+        {/* Background con effetto Parallax */}
+        <motion.div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: 'url("/img/hero.webp")',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            y,
+            scale,
+            opacity,
+          }}
+        />
+
+        {/* Overlay sfumato per migliorare la leggibilità */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-marafone-dark/40 z-[1]" />
+
         {/* Nessun elemento decorativo o carte nello sfondo */}
 
         <div className="container px-0 mx-auto text-center relative z-10">

@@ -217,10 +217,18 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="border-t border-white/20 pt-8 text-center">
           <p className="font-game opacity-60">
-            © 2025 Marafone Romagnolo. Tutti i diritti riservati.
+            © 2026 Marafone Romagnolo. Tutti i diritti riservati.
           </p>
           <p className="font-game opacity-60 mt-2 text-sm">
-            Made in Romagna by Elia Zavatta
+            Made in Romagna by{" "}
+            <a
+              href="https://www.eliazavatta.it/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-marafone-yellow transition-colors underline underline-offset-4"
+            >
+              Elia Zavatta
+            </a>
           </p>
         </div>
       </div>

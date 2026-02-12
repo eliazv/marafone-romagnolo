@@ -71,7 +71,7 @@ const FeaturesSection = () => {
           <div className="lg:col-span-3 space-y-12">
             <div>
               <FadeInUp delay={0.2}>
-                <p className="font-game text-sm md:text-base text-marafone-dark/80 mb-6 max-w-2xl leading-relaxed">
+                <p className="font-game text-md md:text-base text-marafone-dark/80 mb-6 max-w-2xl leading-relaxed">
                   Benvenuto su <strong>Marafone Romagnolo</strong>! Conosciuto
                   anche come <strong>Maraffone</strong>,{" "}
                   <strong>Beccaccino</strong>, <strong>Maraffa</strong> o{" "}
@@ -166,7 +166,7 @@ const FeaturesSection = () => {
           </div>
 
           {/* Colonna Destra: Screenshot Carousel */}
-          <div className="lg:col-span-2 relative h-full flex items-center justify-center py-8">
+          <div className="lg:col-span-2 relative h-full flex items-center justify-center ">
             <div className="relative w-full max-w-[320px] md:max-w-md aspect-[9/19] bg-marafone-dark/5 rounded-[3rem] p-4 shadow-2xl border border-marafone-red/10 overflow-hidden ring-8 ring-marafone-dark/5">
               <AnimatePresence mode="wait">
                 <motion.img
