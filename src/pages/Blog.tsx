@@ -295,7 +295,7 @@ const Blog = () => {
                           </div>
                         </div>
 
-                        <CardTitle className="font-retro text-2xl text-marafone-dark line-clamp-2 mb-3 leading-tight">
+                        <CardTitle className="font-retro text-xl text-marafone-dark line-clamp-2 mb-3 leading-tight">
                           {article.title}
                         </CardTitle>
                       </CardHeader>

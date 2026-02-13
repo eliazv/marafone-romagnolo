@@ -71,7 +71,7 @@ const BlogSection = () => {
                           className="w-16 h-24 object-contain drop-shadow-lg flex-shrink-0"
                         />
                         <div className="flex-1">
-                          <CardTitle className="font-retro text-lg text-marafone-dark line-clamp-2 text-left leading-tight">
+                          <CardTitle className="font-retro text-base text-marafone-dark line-clamp-2 text-left leading-snug">
                             {article.title}
                           </CardTitle>
                           <CardDescription className="font-game text-sm text-marafone-dark/70 line-clamp-3 text-left mt-2 leading-relaxed">

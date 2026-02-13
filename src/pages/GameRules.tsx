@@ -13,7 +13,9 @@ import {
   Star,
   Target,
   Crown,
+  ArrowLeft,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
@@ -215,90 +217,35 @@ const GameRules = () => {
           })}
         </script>
       </Helmet>
-      <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
+      <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-white">
         <Header />
+
         {/* Hero Section */}
-        <section className="relative pt-16 pb-8 px-4 bg-marafone-red text-white overflow-hidden">
-          {/* Carte decorative animate */}
-          <div className="absolute inset-0 pointer-events-none select-none z-0">
-            {carteImages.slice(0, 4).map((src, i) => {
-              const positions = [
-                {
-                  top: "10%",
-                  left: "8%",
-                  rotate: "-15deg",
-                  size: 40,
-                  anim: "animate-float-slow",
-                },
-                {
-                  top: "20%",
-                  right: "12%",
-                  rotate: "10deg",
-                  size: 45,
-                  anim: "animate-bounce-gentle",
-                },
-                {
-                  bottom: "15%",
-                  left: "15%",
-                  rotate: "8deg",
-                  size: 42,
-                  anim: "animate-float",
-                },
-                {
-                  bottom: "25%",
-                  right: "10%",
-                  rotate: "-12deg",
-                  size: 48,
-                  anim: "animate-float-slow",
-                },
-              ];
-              const pos = positions[i % positions.length];
-              return (
-                <img
-                  key={src}
-                  src={src}
-                  alt="Carta da gioco romagnola"
-                  className={pos.anim}
-                  style={{
-                    position: "absolute",
-                    ...("top" in pos ? { top: pos.top } : {}),
-                    ...("bottom" in pos ? { bottom: pos.bottom } : {}),
-                    ...("left" in pos ? { left: pos.left } : {}),
-                    ...("right" in pos ? { right: pos.right } : {}),
-                    width: pos.size,
-                    height: pos.size * 1.5,
-                    transform: `rotate(${pos.rotate})`,
-                    zIndex: 1,
-                    filter: "drop-shadow(0 2px 8px #0003) blur(0.5px)",
-                    opacity: 0.6,
-                    pointerEvents: "none",
-                    userSelect: "none",
-                    transition: "transform 0.5s",
-                  }}
-                  draggable={false}
-                />
-              );
-            })}
-          </div>
-
-          <div className="container px-0 md:px-4 mx-auto relative z-10 pt-10">
-            <FadeInUp delay={0.2}>
-              <h1 className="font-retro text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
-                Regole del Marafone Romagnolo
+        <section className="relative pt-32 pb-16 px-4 bg-gradient-to-r from-marafone-red to-red-600 text-white overflow-hidden">
+          <div className="absolute inset-0 opacity-10 bg-[url('/img/hero.webp')] bg-cover bg-center" />
+          <div className="container mx-auto relative z-10">
+            <FadeInUp>
+              <Link
+                to="/"
+                className="inline-flex items-center text-white/80 hover:text-white mb-8 transition-colors font-game"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Torna alla Home
+              </Link>
+              <h1 className="font-retro text-5xl md:text-7xl mb-6 leading-tight drop-shadow-lg">
+                Regole Ufficiali
               </h1>
-            </FadeInUp>
-
-            <FadeInUp delay={0.4}>
-              <p className="font-game text-xl opacity-90 max-w-4xl leading-relaxed">
-                Impara a giocare al tradizionale gioco di carte romagnolo online
+              <p className="font-game text-xl md:text-2xl opacity-90 max-w-2xl leading-relaxed">
+                Dal Beccaccino al Marafone: tutto quello che devi sapere per
+                dominare il tavolo.
               </p>
             </FadeInUp>
           </div>
         </section>
 
-        <div className="md:max-w-4xl md:mx-auto px-0 md:px-4 mt-4">
+        <div className="container mx-auto px-4 py-12">
           {/* Indice compatto in cima */}
-          <nav className="mb-8 flex flex-wrap gap-3 justify-center px-2">
+          <nav className="mb-12 flex flex-wrap gap-4 justify-center">
             {SECTIONS.map((s) => (
               <motion.button
                 key={s.id}
