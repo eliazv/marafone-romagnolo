@@ -131,17 +131,58 @@ const Footer = () => {
 
           {/* Quick links */}
           <div>
-            <h4 className="font-game font-bold text-lg mb-4">Link Utili</h4>
+            <h4 className="font-game font-bold text-lg mb-4">
+              Giochi e Regole
+            </h4>
             <ul className="font-game space-y-2 opacity-80">
               <li>
                 <Link
-                  to="/regole"
-                  className="hover:text-marafone-yellow cursor-pointer transition-colors"
+                  to="/maraffone"
+                  className="hover:text-marafone-yellow transition-colors"
                 >
-                  <BookOpenText className="inline h-4 w-4 mr-2" />
-                  Regole del Gioco
+                  Marafone Romagnolo
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/beccaccino"
+                  className="hover:text-marafone-yellow transition-colors"
+                >
+                  Beccaccino Online
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/maraffa"
+                  className="hover:text-marafone-yellow transition-colors"
+                >
+                  Maraffa Gioco
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/trionfo"
+                  className="hover:text-marafone-yellow transition-colors"
+                >
+                  Trionfo Carte
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/regole"
+                  className="hover:text-marafone-yellow cursor-pointer transition-colors mt-2 flex items-center"
+                >
+                  <BookOpenText className="inline h-4 w-4 mr-2" />
+                  Regole Complete
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Quick links */}
+          <div>
+            <h4 className="font-game font-bold text-lg mb-4">Link Utili</h4>
+            <ul className="font-game space-y-2 opacity-80">
               <li>
                 <Link
                   to="/privacy-policy"
@@ -167,6 +208,15 @@ const Footer = () => {
                 >
                   <HelpCircle className="inline h-4 w-4 mr-2" />
                   Supporto
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/blog"
+                  className="hover:text-marafone-yellow cursor-pointer transition-colors flex items-center"
+                >
+                  <Globe className="inline h-4 w-4 mr-2" />
+                  Blog e Novità
                 </Link>
               </li>
             </ul>

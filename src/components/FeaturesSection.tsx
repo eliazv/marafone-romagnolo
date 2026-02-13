@@ -71,6 +71,9 @@ const FeaturesSection = () => {
           <div className="lg:col-span-3 space-y-12">
             <div>
               <FadeInUp delay={0.2}>
+                <h2 className="font-retro text-3xl md:text-4xl text-marafone-dark mb-6">
+                  Caratteristiche del Marafone Romagnolo
+                </h2>
                 <p className="font-game text-md md:text-base text-marafone-dark/80 mb-6 max-w-2xl leading-relaxed">
                   Benvenuto su <strong>Marafone Romagnolo</strong>! Conosciuto
                   anche come <strong>Maraffone</strong>,{" "}

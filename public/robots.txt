@@ -37,7 +37,7 @@ Allow: /
 Crawl-delay: 2
 
 # Sitemap location
-Sitemap: https://marafone-romagnolo.it/sitemap.xml
+Sitemap: https://www.marafone-romagnolo.it/sitemap.xml
 
 # Important pages for crawling
 # Homepage: https://marafone-romagnolo.it/
