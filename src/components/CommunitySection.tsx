@@ -115,7 +115,7 @@ const CommunitySection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Pagina Facebook Marafone Romagnolo"
-                className="block bg-white rounded-xl p-4 shadow-xl border-4 border-marafone-yellow hover:shadow-2xl transition-shadow"
+                className="block bg-white rounded-[32px] p-4 shadow-xl border-4 border-marafone-yellow hover:shadow-2xl transition-all duration-300"
                 style={{ width: "120px", height: "120px" }}
                 whileHover={{
                   scale: 1.05,
@@ -142,7 +142,7 @@ const CommunitySection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Pagina Instagram Marafone Romagnolo"
-                className="block bg-white rounded-xl p-4 shadow-xl border-4 border-marafone-yellow hover:shadow-2xl transition-shadow"
+                className="block bg-white rounded-[32px] p-4 shadow-xl border-4 border-marafone-yellow hover:shadow-2xl transition-all duration-300"
                 style={{ width: "120px", height: "120px" }}
                 whileHover={{
                   scale: 1.05,
@@ -203,7 +203,7 @@ const CommunitySection = () => {
             />
           </StaggerItem>
           {/* Invite Card */}
-          <StaggerItem className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm flex flex-col items-center justify-center text-center md:col-span-1 order-3">
+          <StaggerItem className="bg-white/10 rounded-[32px] p-8 backdrop-blur-sm flex flex-col items-center justify-center text-center md:col-span-1 order-3 border-2 border-white/20">
             <motion.div
               animate={{
                 rotate: [0, 10, -10, 0],
@@ -216,16 +216,16 @@ const CommunitySection = () => {
             >
               <Handshake className="h-12 w-12 text-white mb-2" />
             </motion.div>
-            <h3 className="font-game font-bold text-2xl mb-4">
+            <h3 className="font-retro text-2xl mb-4 text-marafone-yellow">
               Invita gli Amici
             </h3>
-            <p className="font-game mb-6 opacity-80">
+            <p className="font-game mb-6 opacity-80 text-lg">
               Più siete, più ci si diverte! Condividi il gioco con un click
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 variant="secondary"
-                className="bg-marafone-yellow text-marafone-dark hover:bg-marafone-yellow/90 font-game font-bold"
+                className="bg-marafone-yellow text-marafone-dark hover:bg-marafone-yellow/90 font-game font-bold rounded-full px-8 py-6 text-lg shadow-xl"
                 onClick={async () => {
                   const shareData = {
                     title: "Marafone Romagnolo",

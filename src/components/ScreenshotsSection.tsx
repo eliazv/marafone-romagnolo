@@ -79,21 +79,22 @@ const ScreenshotsSection = () => {
                       {features2.map((feature, idx) => (
                         <StaggerItem
                           key={idx}
-                          className="bg-white rounded-xl p-6 hover:shadow-xl transition-all duration-300 border border-marafone-yellow/20 hover:border-marafone-red/30 group"
+                          className="bg-white rounded-[32px] p-8 hover:shadow-2xl transition-all duration-500 border-2 border-marafone-yellow/20 hover:border-marafone-red/30 group"
                           whileHover={{
-                            y: -5,
-                            transition: { duration: 0.2 },
+                            y: -8,
+                            scale: 1.02,
+                            transition: { duration: 0.3 },
                           }}
                         >
-                          <div className="flex items-start gap-4">
-                            <div className="flex-shrink-0 p-3 bg-gradient-to-br from-marafone-red/10 to-marafone-yellow/10 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                            <div className="flex-shrink-0 p-4 bg-gradient-to-br from-marafone-red/10 to-marafone-yellow/10 rounded-2xl group-hover:scale-110 transition-transform duration-500">
                               {feature.icon}
                             </div>
-                            <div className="flex-1 text-left">
-                              <h4 className="font-game font-bold text-lg text-marafone-dark mb-2">
+                            <div className="flex-1 text-center sm:text-left">
+                              <h4 className="font-retro text-2xl text-marafone-dark mb-3">
                                 {feature.title}
                               </h4>
-                              <p className="font-game text-md text-marafone-dark/70 leading-relaxed">
+                              <p className="font-game text-base md:text-lg text-marafone-dark/70 leading-relaxed">
                                 {feature.description}
                               </p>
                             </div>

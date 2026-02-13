@@ -137,14 +137,6 @@ const Footer = () => {
             <ul className="font-game space-y-2 opacity-80">
               <li>
                 <Link
-                  to="/maraffone"
-                  className="hover:text-marafone-yellow transition-colors"
-                >
-                  Marafone Romagnolo
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/beccaccino"
                   className="hover:text-marafone-yellow transition-colors"
                 >

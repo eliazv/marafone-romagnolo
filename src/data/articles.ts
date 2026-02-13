@@ -1,5 +1,38 @@
 // Shared articles data for blog components
 export const allArticles = [
+  {
+    id: "beccaccino",
+    title: "Beccaccino: La Variante di Ravenna",
+    description: "Scopri la storia e le tradizioni del Beccaccino, la celebre variante del Marafone diffusa nella zona di Ravenna e dintorni.",
+    date: "2024-05-15",
+    image: "/img/carte/3- Denari.png",
+    slug: "beccaccino",
+    category: "Varianti",
+    content: "Articolo sul Beccaccino...",
+    isCustomPath: true
+  },
+  {
+    id: "trionfo",
+    title: "Trionfo: Nobiltà e Tradizione a Ferrara",
+    description: "Il Trionfo rappresenta la versione più antica e 'nobile' del gioco, radicata nella cultura ferrarese e del basso delta del Po.",
+    date: "2024-05-14",
+    image: "/img/carte/3- Bastoni.png",
+    slug: "trionfo",
+    category: "Varianti",
+    content: "Articolo sul Trionfo...",
+    isCustomPath: true
+  },
+  {
+    id: "maraffa",
+    title: "Maraffa: L'Anima di Cesena",
+    description: "A Cesena e nel comprensorio cesenate il gioco prende il nome di Maraffa, mantenendo intatto lo spirito competitivo.",
+    date: "2024-05-13",
+    image: "/img/carte/3- Spade.png",
+    slug: "maraffa",
+    category: "Varianti",
+    content: "Articolo sulla Maraffa...",
+    isCustomPath: true
+  },
   /*
   {
     id: 1,

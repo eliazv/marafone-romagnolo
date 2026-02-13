@@ -6,6 +6,7 @@ import {
   StaggerItem,
 } from "@/components/ui/animated-element";
 import { motion, AnimatePresence } from "framer-motion";
+import { Card } from "@/components/ui/card";
 
 const FeaturesSection = () => {
   const [currentScreen, setCurrentScreen] = useState(0);
@@ -91,24 +92,27 @@ const FeaturesSection = () => {
               </FadeInUp>
 
               {/* Griglia Features 2x2 */}
-              <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
+              <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
                 {allFeatures.map((feature, index) => (
-                  <StaggerItem key={index} className="flex items-center gap-5">
-                    <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
-                      <img
-                        src={feature.icon}
-                        alt={feature.title}
-                        className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <h4 className="font-game font-bold text-lg md:text-xl text-marafone-dark">
-                        {feature.title}
-                      </h4>
-                      <p className="font-game text-sm text-marafone-dark/70 leading-relaxed max-w-xs">
-                        {feature.description}
-                      </p>
-                    </div>
+                  <StaggerItem key={index}>
+                    <Card className="group hover:scale-[1.02] transition-all duration-500 border-0 shadow-lg hover:shadow-2xl rounded-[32px] overflow-hidden bg-white/50 backdrop-blur-sm p-6 md:p-8 flex flex-col items-center text-center gap-6">
+                      <div className="relative">
+                        <div className="absolute inset-0 bg-marafone-red/10 rounded-full blur-2xl group-hover:bg-marafone-red/20 transition-colors" />
+                        <img
+                          src={feature.icon}
+                          alt={feature.title}
+                          className="w-24 h-24 md:w-32 md:h-32 relative z-10 transform group-hover:rotate-6 transition-transform duration-500 object-contain"
+                        />
+                      </div>
+                      <div className="space-y-3">
+                        <h4 className="font-retro text-2xl md:text-3xl text-marafone-dark">
+                          {feature.title}
+                        </h4>
+                        <p className="font-game text-base md:text-lg text-marafone-dark/70 leading-relaxed">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </Card>
                   </StaggerItem>
                 ))}
               </StaggerContainer>

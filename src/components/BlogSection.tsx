@@ -45,7 +45,13 @@ const BlogSection = () => {
             <StaggerItem key={article.id}>
               <Link
                 to={
-                  article.slug === "regole"
+                  article.slug === "beccaccino"
+                    ? "/beccaccino"
+                    : article.slug === "trionfo"
+                    ? "/trionfo"
+                    : article.slug === "maraffa"
+                    ? "/maraffa"
+                    : article.slug === "regole"
                     ? "/regole"
                     : article.slug === "tornei"
                     ? "/tornei"
@@ -60,8 +66,8 @@ const BlogSection = () => {
                   whileTap={{ scale: 0.95 }}
                   className="h-full cursor-pointer"
                 >
-                  <Card className="h-full bg-white/90 backdrop-blur-sm border-2 border-marafone-yellow/30 hover:border-marafone-red/50 transition-all duration-300 shadow-lg hover:shadow-xl text-left">
-                    <CardHeader className="pb-3 pt-4">
+                  <Card className="h-full bg-white/90 backdrop-blur-sm border-2 border-marafone-yellow/30 hover:border-marafone-red/50 transition-all duration-300 shadow-lg hover:shadow-xl text-left rounded-[32px] overflow-hidden">
+                    <CardHeader className="pb-3 pt-6 px-6">
                       <div className="flex items-start gap-4 mb-2">
                         <img
                           src={article.image}
@@ -69,23 +75,10 @@ const BlogSection = () => {
                           className="w-16 h-24 object-contain drop-shadow-lg flex-shrink-0"
                         />
                         <div className="flex-1">
-                          <CardTitle className="font-game text-base text-marafone-dark line-clamp-2 text-left">
+                          <CardTitle className="font-retro text-lg text-marafone-dark line-clamp-2 text-left leading-tight">
                             {article.title}
                           </CardTitle>
-                          {/* <div className="flex items-center gap-1.5 text-marafone-red/70 text-xs mt-1">
-                            <Calendar className="h-3 w-3" />
-                            <span className="font-game">
-                              {new Date(article.date).toLocaleDateString(
-                                "it-IT",
-                                {
-                                  year: "numeric",
-                                  month: "short",
-                                  day: "numeric",
-                                }
-                              )}
-                            </span>
-                          </div> */}
-                          <CardDescription className="font-game text-sm text-marafone-dark/70 line-clamp-2 text-left mt-2">
+                          <CardDescription className="font-game text-sm text-marafone-dark/70 line-clamp-3 text-left mt-2 leading-relaxed">
                             {article.description}
                           </CardDescription>
                         </div>
@@ -101,13 +94,13 @@ const BlogSection = () => {
         <FadeInUp delay={0.4}>
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Button
-              size="default"
-              className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game font-bold px-6 py-3"
+              size="lg"
+              className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game font-bold px-8 py-6 rounded-full text-lg shadow-xl"
               asChild
             >
               <Link to="/blog">
                 Vedi Tutti gli Articoli
-                <ArrowRight className="h-4 w-4 ml-2" />
+                <ArrowRight className="h-5 w-5 ml-2" />
               </Link>
             </Button>
           </motion.div>

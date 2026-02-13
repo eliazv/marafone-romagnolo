@@ -1,12 +1,16 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Crown } from "lucide-react";
+import { ArrowLeft, Crown, History, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import {
+  FadeInUp,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/ui/animated-element";
 
 const Maraffa = () => {
   useEffect(() => {
@@ -16,169 +20,161 @@ const Maraffa = () => {
   return (
     <>
       <Helmet>
-        <title>Maraffa Carte Online: Gioco Romagnolo con Carte Romagnole | Regole Gratis</title>
+        <title>
+          Maraffa: Storia e Tradizione del Gioco Romagnolo | Cesena e Forlì
+        </title>
         <meta
           name="description"
-          content="Maraffa carte online: scopri il gioco romagnolo tradizionale con carte romagnole. Regole complete e come giocare a Maraffa gratis."
+          content="Scopri le origini della Maraffa, il nome generale e locale per il Marafone Romagnolo. Storia, origini e nomi per località di questo gioco tradizionale."
         />
-        <meta
-          name="keywords"
-          content="maraffa carte, maraffa gioco, maraffa romagnola gratis, regole maraffa online, come giocare maraffa, maraffa app gratis, maraffa carte romagnole, maraffa tradizionale, maraffa briscola, gioco maraffa smartphone"
+        <link
+          rel="canonical"
+          href="https://www.marafone-romagnolo.it/maraffa"
         />
-        <link rel="canonical" href="https://marafone-romagnolo.it/maraffa" />
-        <meta property="og:title" content="Maraffa Carte - Gioco Romagnolo Gratis | Regole Maraffa Online" />
-        <meta property="og:description" content="Maraffa carte: gioco romagnolo gratis online. Regole complete della Maraffa gioco tradizionale con carte romagnole. App gratuita per smartphone." />
-        <meta property="og:url" content="https://marafone-romagnolo.it/maraffa" />
-        <meta property="og:type" content="article" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Game",
-            "name": "Maraffa",
-            "alternateName": ["Maraffa Carte", "Maraffa Gioco", "Marafone Romagnolo Maraffa"],
-            "description": "La Maraffa è una combinazione speciale di carte (Asso, Due, Tre di briscola) nel gioco romagnolo, e talvolta il nome stesso del gioco. Scopri come si forma e il suo significato.",
-            "url": "https://marafone-romagnolo.it/maraffa",
-            "genre": ["Card Game", "Traditional Game", "Italian Game"],
-            "gamePlatform": ["Web Browser", "Android", "Mobile"],
-            "numberOfPlayers": "2-4", // Assuming it can be played by 2-4 players
-            "playMode": "MultiPlayer",
-            "image": "https://marafone-romagnolo.it/img/logo-rosso.jpg", // Or a specific image for Maraffa
-            "author": {
-              "@type": "Person",
-              "name": "Elia Zavatta"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Marafone Team",
-              "url": "https://marafone-romagnolo.it/"
-            }
-          })}
-        </script>
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow">
+      <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-white">
         <Header />
 
-        <section className="relative py-16 px-4 bg-gradient-to-r from-orange-600 to-red-600 text-white">
-          <div className="container mx-auto relative z-10 pt-16">
-            <div className="flex items-center gap-4 mb-6">
-              <Button
-                variant="secondary"
-                className="bg-marafone-yellow text-marafone-dark hover:bg-marafone-yellow/90 font-game font-bold"
-                asChild
+        <section className="relative pt-32 pb-16 px-4 bg-gradient-to-r from-orange-600 to-red-600 text-white overflow-hidden">
+          <div className="absolute inset-0 opacity-10 bg-[url('/img/hero.webp')] bg-cover bg-center" />
+          <div className="container mx-auto relative z-10">
+            <FadeInUp>
+              <Link
+                to="/"
+                className="inline-flex items-center text-white/80 hover:text-white mb-8 transition-colors font-game"
               >
-                <Link to="/">
-                  <ArrowLeft className="h-4 w-4 mr-2" />
-                  Torna alla Home
-                </Link>
-              </Button>
-            </div>
-
-            <h1 className="font-retro text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
-              Maraffa: Il Gioco di Carte Romagnolo Online
-            </h1>
-            <p className="font-game text-xl opacity-90 max-w-4xl leading-relaxed">
-              La combinazione speciale del gioco di carte romagnolo, ora disponibile online.
-            </p>
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Torna alla Home
+              </Link>
+              <h1 className="font-retro text-5xl md:text-7xl mb-6 leading-tight drop-shadow-lg">
+                Maraffa
+              </h1>
+              <p className="font-game text-xl md:text-2xl opacity-90 max-w-2xl leading-relaxed">
+                Il cuore pulsante del Marafone nelle province di Cesena e Forlì.
+              </p>
+            </FadeInUp>
           </div>
         </section>
 
-        <div className="md:max-w-4xl md:mx-auto px-0 md:px-4 mt-4">
-          <main className="py-2">
-            <Card className="overflow-hidden border-0 md:border-4 border-orange-600/50 shadow-xl relative bg-gradient-to-br from-orange-50/90 to-red-100/60">
-              <CardContent className="p-4 md:p-8 relative z-10">
+        <main className="container mx-auto px-4 py-16">
+          <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <StaggerItem className="lg:col-span-2 space-y-8">
+              <Card className="border-0 shadow-2xl rounded-[32px] overflow-hidden bg-white/80 backdrop-blur-sm">
+                <CardContent className="p-8 md:p-12">
+                  <div className="prose prose-lg max-w-none font-game text-marafone-dark">
+                    <h2 className="font-retro text-3xl text-marafone-red mb-6 uppercase tracking-tight">
+                      Cos'è la Maraffa?
+                    </h2>
+                    <p>
+                      La <strong>Maraffa</strong> (o Marafone) è il nome
+                      generale per il gioco di carte più amato della Romagna.
+                      Più specificamente, il termine indica spesso la
+                      combinazione base di{" "}
+                      <strong>Asso, Due e Tre di briscola</strong>,
+                      colloquialmente chiamata anche "cricca".
+                    </p>
+                    <p>
+                      È il gioco tipico dell'area romagnola centrale, un
+                      pilastro delle domeniche e delle serate invernali. Si
+                      gioca in 4 a coppie, con l'immancabile mazzo da 40 carte
+                      romagnole.
+                    </p>
 
-                <section className="mb-8 text-center">
-                  <div className="bg-blue-50/80 border border-blue-200 rounded-lg p-4 mb-6">
-                    <p className="text-blue-800 text-sm">
-                      <strong>Nota SEO:</strong> Questa pagina è ottimizzata per le ricerche specifiche del termine "Maraffa" 
-                      come combinazione di carte e sinonimo del gioco.
+                    <div className="my-12 p-8 bg-orange-50 rounded-[24px] border border-orange-100 italic quotes">
+                      "La Maraffa è l'anima dei bar della Romagna, un rito che
+                      fonde strategia, fortuna e goliardia."
+                    </div>
+
+                    <h2 className="font-retro text-3xl text-marafone-red mb-6 uppercase tracking-tight">
+                      Etimologia e Varianti
+                    </h2>
+                    <p>Il nome varia sensibilmente a seconda della località:</p>
+                    <ul>
+                      <li>
+                        <strong>Maraffone o Marafone:</strong> Termine
+                        prevalente a Cesena, Forlì e aree limitrofe come San
+                        Mauro Pascoli.
+                      </li>
+                      <li>
+                        <strong>Beccaccino:</strong> Nome d'uso a Ravenna e
+                        Faenza.
+                      </li>
+                      <li>
+                        <strong>Trionfo:</strong> Utilizzato nel ferrarese, a
+                        Imola e persino ad Ancona (come "Tronfo").
+                      </li>
+                    </ul>
+                    <p>
+                      Esistono anche nomi meno comuni come "tresette con
+                      taglio", "pirucco" o "Pastorino" (nella zona di Fanano).
+                    </p>
+
+                    <h2 className="font-retro text-3xl text-marafone-red mb-6 uppercase tracking-tight">
+                      Storia e Origini
+                    </h2>
+                    <p>
+                      La leggenda vuole che il gioco sia nato agli inizi del XIX
+                      secolo a <strong>San Varano</strong>, una piccola frazione
+                      di Forlì. Le carte stesse raccontano storie di secoli di
+                      scambi commerciali, portando simboli arrivati dalla Spagna
+                      e dal mondo arabo.
+                    </p>
+                    <p>
+                      Derivando dal "Trionfo" dei secoli XV-XVI, la Maraffa ha
+                      saputo adattarsi alla vivacità romagnola, trasformandosi
+                      da gioco di corte a gioco popolare, mantenendo però una
+                      disciplina e una strategia degne dei migliori tornei
+                      internazionali.
                     </p>
                   </div>
-                </section>
+                </CardContent>
+              </Card>
+            </StaggerItem>
 
-                <section className="mb-12">
-                  <h2 className="text-3xl font-bold text-orange-800 mb-6">Cos'è la Maraffa</h2>
-                  
-                  <div className="bg-gradient-to-br from-orange-100/70 to-red-100/40 rounded-xl p-6 mb-6 border-2 border-orange-300/30">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Crown className="w-8 h-8 text-orange-700" />
-                      <h3 className="text-2xl font-bold text-orange-800">Definizione</h3>
-                    </div>
-                    <p className="text-lg text-orange-950 leading-relaxed">
-                      <strong>Maraffa</strong> è il nome dato alla <strong>combinazione particolare di carte</strong> 
-                      composta da <strong>asso, due e tre del seme di briscola</strong> nel gioco romagnolo.
-                    </p>
-                  </div>
+            <StaggerItem className="space-y-6">
+              <Card className="border-0 shadow-xl rounded-[32px] bg-orange-600 text-white p-8">
+                <h3 className="font-retro text-2xl mb-6 flex items-center gap-2">
+                  <MapPin className="h-6 w-6 text-marafone-yellow" />
+                  Luoghi del Cuore
+                </h3>
+                <ul className="space-y-4 font-game opacity-90 text-lg">
+                  <li className="flex items-center gap-2">
+                    <div className="h-2 w-2 bg-marafone-yellow rounded-full" />
+                    Cesena e dintorni
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="h-2 w-2 bg-marafone-yellow rounded-full" />
+                    Forlì e San Varano
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="h-2 w-2 bg-marafone-yellow rounded-full" />
+                    San Mauro Pascoli
+                  </li>
+                </ul>
+              </Card>
 
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-red-50/80 rounded-lg p-4 border border-red-200">
-                      <h4 className="font-bold text-red-800 mb-3">🃏 Come Combinazione</h4>
-                      <p className="text-red-950 text-sm">
-                        La Maraffa è la combinazione vincente di <strong>asso, 2 e 3 dello stesso seme di briscola</strong> 
-                        che un giocatore può possedere quando ha scelto la briscola.
-                      </p>
-                    </div>
-
-                    <div className="bg-orange-50/80 rounded-lg p-4 border border-orange-200">
-                      <h4 className="font-bold text-orange-800 mb-3">🎯 Come Sinonimo</h4>
-                      <p className="text-orange-950 text-sm">
-                        Il termine <strong>Maraffa</strong> viene anche usato talvolta come 
-                        <strong> sinonimo dell'intero gioco</strong>, specialmente in Romagna.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    <Badge variant="outline" className="bg-orange-100/80 border-orange-400 text-orange-900">
-                      Asso, 2 e 3 di briscola
-                    </Badge>
-                    <Badge variant="outline" className="bg-orange-100/80 border-orange-400 text-orange-900">
-                      Romagna
-                    </Badge>
-                    <Badge variant="outline" className="bg-orange-100/80 border-orange-400 text-orange-900">
-                      Combinazione vincente
-                    </Badge>
-                  </div>
-                </section>
-
-                <section className="text-center">
-                  <div className="bg-gradient-to-br from-orange-600/10 to-red-400/20 rounded-xl p-6 border-2 border-orange-600/20">
-                    <h3 className="text-xl font-bold text-orange-700 mb-4">
-                      Vuoi sapere come fare la Maraffa?
-                    </h3>
-                    
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <Button 
-                        asChild
-                        className="bg-orange-600 hover:bg-orange-500 text-white font-game font-bold"
-                      >
-                        <Link to="/regole">
-                          Scopri le Regole
-                        </Link>
-                      </Button>
-                      
-                      <Button 
-                        asChild
-                        variant="outline"
-                        className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white font-game font-bold"
-                      >
-                        <a 
-                          href="https://play.google.com/store/apps/details?id=com.eliazavatta.maraffa"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Gioca Subito
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </section>
-
-              </CardContent>
-            </Card>
-          </main>
-        </div>
+              <Card className="border-0 shadow-xl rounded-[32px] bg-white p-8">
+                <h3 className="font-retro text-2xl text-marafone-dark mb-6 flex items-center gap-2">
+                  <History className="h-6 w-6 text-marafone-red" />
+                  Curiosità Storica
+                </h3>
+                <p className="font-game text-marafone-dark/80 leading-relaxed mb-6">
+                  Il Marafone è citato in numerosi racconti popolari come la
+                  prova suprema di abilità mnemonica per i giocatori romagnoli,
+                  capaci di ricordare ogni singola carta calata durante la
+                  smazzata.
+                </p>
+                <Button
+                  className="w-full bg-marafone-red hover:bg-marafone-red/90 rounded-full h-12 font-game font-bold text-lg"
+                  asChild
+                >
+                  <Link to="/regole">Scopri le Regole</Link>
+                </Button>
+              </Card>
+            </StaggerItem>
+          </StaggerContainer>
+        </main>
 
         <Footer />
       </div>
