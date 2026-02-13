@@ -166,36 +166,35 @@ const Tournaments = () => {
 
         <div className="md:max-w-4xl md:mx-auto px-0 md:px-4 mt-4">
           {/* Main content */}
-          <main className="py-2">
-            <Card className="overflow-hidden border-0 md:border-4 border-amber-800/50 shadow-xl relative bg-gradient-to-br from-amber-50/90 to-orange-100/60 rounded-3xl">
-              <CardContent className="p-6 md:p-10 relative z-10">
+          <main className="py-2 pb-12">
+            <Card className="overflow-hidden border-0 shadow-2xl relative bg-white/80 backdrop-blur-sm rounded-[32px]">
+              <CardContent className="p-8 md:p-12 relative z-10">
                 {/* Lista tornei */}
                 <section className="mb-2">
                   <FadeInUp delay={0.2}>
-                    <div className="mb-6 border-b-2 pb-2">
-                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <h2 className="text-2xl font-bold flex items-center gap-3 text-amber-800">
+                    <div className="mb-10 border-b-2 border-amber-100 pb-6">
+                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                        <h2 className="text-3xl font-retro flex items-center gap-4 text-amber-900">
                           <motion.span
-                            className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-amber-200 to-amber-400 shadow-lg"
+                            className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white shadow-xl border-2 border-amber-100"
                             whileHover={{ rotate: 10, scale: 1.1 }}
                             transition={{ duration: 0.2 }}
                           >
-                            <Trophy className="w-7 h-7 text-amber-700" />
+                            <Trophy className="w-8 h-8 text-yellow-600" />
                           </motion.span>
                           Tornei in Programma
                         </h2>
 
-                        {/* Button below title on mobile, right-aligned on md+; not full-width */}
-                        <div className="flex md:justify-end">
+                        <div className="flex">
                           <motion.div
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                           >
                             <Button
                               onClick={handleRequestTournament}
-                              className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game font-bold text-lg px-6 py-3 rounded-xl shadow-lg mx-auto md:mx-0"
+                              className="bg-marafone-red hover:bg-marafone-red/90 text-white font-retro text-lg px-8 py-4 rounded-full shadow-xl transition-all duration-300"
                             >
-                              <Mail className="h-5 w-5 mr-2" />
+                              <Mail className="h-5 w-5 mr-3" />
                               Proponi il tuo torneo
                             </Button>
                           </motion.div>
@@ -221,76 +220,73 @@ const Tournaments = () => {
                       {TOURNAMENTS.map((tournament) => (
                         <StaggerItem
                           key={tournament.id}
-                          className="overflow-hidden border-2 border-amber-300/60 shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-amber-50 to-orange-50/40 rounded-2xl"
+                          className="overflow-hidden border-2 border-amber-50 shadow-xl hover:shadow-2xl transition-all duration-300 bg-white rounded-[32px]"
                         >
                           <motion.div
                             whileHover={{
-                              y: -5,
+                              y: -8,
                               transition: { duration: 0.2 },
                             }}
                           >
-                            <CardContent className="p-8">
-                              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                            <CardContent className="p-10">
+                              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
                                 <div className="flex-1">
-                                  <h3 className="text-2xl font-bold text-amber-900 mb-3 flex items-center gap-3">
-                                    <motion.div
-                                      whileHover={{ rotate: 10, scale: 1.1 }}
-                                      transition={{ duration: 0.2 }}
-                                    >
-                                      <Trophy className="w-7 h-7 text-yellow-600" />
-                                    </motion.div>
+                                  <h3 className="text-3xl font-retro text-amber-950 mb-4 flex items-center gap-4">
+                                    <div className="p-3 bg-amber-50 rounded-2xl">
+                                      <Trophy className="w-8 h-8 text-yellow-600" />
+                                    </div>
                                     {tournament.name}
                                   </h3>
 
                                   {tournament.date && (
                                     <Badge
-                                      variant="outline"
-                                      className="bg-amber-100/80 border-amber-400 text-amber-900 mb-4 px-3 py-1"
+                                      variant="secondary"
+                                      className="bg-marafone-yellow/20 text-amber-900 border-none mb-6 px-4 py-2 rounded-full font-bold text-sm"
                                     >
-                                      <Calendar className="w-4 h-4 mr-1" />
+                                      <Calendar className="w-4 h-4 mr-2" />
                                       {tournament.date}
                                     </Badge>
                                   )}
 
                                   {tournament.description && (
-                                    <p className="text-amber-900 mb-4 leading-relaxed">
+                                    <p className="text-amber-900/80 text-lg mb-6 leading-relaxed">
                                       {tournament.description}
                                     </p>
                                   )}
 
-                                  <div className="space-y-3">
-                                    <div className="flex items-center gap-3 text-amber-900">
-                                      <MapPin className="w-5 h-5 text-red-600 flex-shrink-0" />
-                                      <span className="font-medium">
+                                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div className="flex items-center gap-4 text-amber-900 bg-amber-50/50 p-4 rounded-2xl">
+                                      <MapPin className="w-6 h-6 text-marafone-red flex-shrink-0" />
+                                      <span className="font-bold">
                                         {tournament.location}
                                       </span>
                                     </div>
 
-                                    <div className="flex items-center gap-3 text-amber-900">
-                                      <Euro className="w-5 h-5 text-green-600 flex-shrink-0" />
-                                      <span className="font-medium">
+                                    <div className="flex items-center gap-4 text-amber-900 bg-amber-50/50 p-4 rounded-2xl">
+                                      <Euro className="w-6 h-6 text-green-600 flex-shrink-0" />
+                                      <span className="font-bold">
                                         Quota: {tournament.fee}
                                       </span>
                                     </div>
                                   </div>
                                 </div>
 
-                                <div className="flex md:flex-col gap-3 md:self-start">
+                                <div className="flex md:flex-col gap-4 md:self-center">
                                   <motion.div
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                   >
                                     <Button
                                       asChild
-                                      className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game font-bold px-6 py-3 rounded-xl shadow-lg"
+                                      className="bg-marafone-red hover:bg-marafone-red/90 text-white font-retro text-lg px-8 py-4 rounded-full shadow-lg"
                                     >
                                       <a
                                         href={tournament.registrationLink}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                       >
-                                        <ExternalLink className="h-4 w-4 mr-2" />
-                                        Iscriviti
+                                        <ExternalLink className="h-5 w-5 mr-2" />
+                                        Iscriviti Ora
                                       </a>
                                     </Button>
                                   </motion.div>

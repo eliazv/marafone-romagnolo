@@ -3,11 +3,11 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.marafone-romagnolo.it/</loc>
-    <lastmod>2024-09-04</lastmod>
+    <lastmod>2026-02-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  
+
   <!-- Game Pages -->
   <url>
     <loc>https://www.marafone-romagnolo.it/beccaccino</loc>
@@ -15,97 +15,97 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
+
   <url>
     <loc>https://www.marafone-romagnolo.it/maraffa</loc>
-    <lastmod>2024-09-04</lastmod>
+    <lastmod>2026-02-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
+
   <url>
     <loc>https://www.marafone-romagnolo.it/trionfo</loc>
-    <lastmod>2024-09-04</lastmod>
+    <lastmod>2026-02-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
+
   <!-- Blog Section -->
   <url>
     <loc>https://www.marafone-romagnolo.it/blog</loc>
-    <lastmod>2024-09-04</lastmod>
+    <lastmod>2026-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.marafone-romagnolo.it/blog/origini-marafone-tradizione-romagnola</loc>
-    <lastmod>2024-09-04</lastmod>
+    <lastmod>2026-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+
   <url>
     <loc>https://www.marafone-romagnolo.it/blog/strategie-avanzate-vincere-marafone</loc>
-    <lastmod>2024-09-04</lastmod>
+    <lastmod>2026-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+
   <url>
     <loc>https://www.marafone-romagnolo.it/blog/marafone-vs-tressette-differenze</loc>
-    <lastmod>2024-09-04</lastmod>
+    <lastmod>2026-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+
   <url>
     <loc>https://www.marafone-romagnolo.it/blog/galateo-del-gioco-marafone</loc>
-    <lastmod>2024-09-04</lastmod>
+    <lastmod>2026-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+
   <url>
     <loc>https://www.marafone-romagnolo.it/blog/tornei-competizioni-marafone-romagnolo</loc>
-    <lastmod>2024-09-04</lastmod>
+    <lastmod>2026-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+
   <url>
     <loc>https://www.marafone-romagnolo.it/blog/psicologia-giocatore-marafone</loc>
-    <lastmod>2024-09-04</lastmod>
+    <lastmod>2026-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+
   <!-- Secondary Pages -->
   <url>
     <loc>https://www.marafone-romagnolo.it/regole</loc>
-    <lastmod>2024-09-04</lastmod>
+    <lastmod>2026-02-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
+
   <url>
     <loc>https://www.marafone-romagnolo.it/supporto</loc>
-    <lastmod>2024-09-04</lastmod>
+    <lastmod>2026-02-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
+
   <!-- Legal Pages -->
   <url>
     <loc>https://www.marafone-romagnolo.it/privacy-policy</loc>
-    <lastmod>2024-09-04</lastmod>
+    <lastmod>2026-02-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  
+
   <url>
     <loc>https://www.marafone-romagnolo.it/termini-utilizzo</loc>
-    <lastmod>2024-09-04</lastmod>
+    <lastmod>2026-02-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

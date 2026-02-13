@@ -45,17 +45,13 @@ const BlogSection = () => {
             <StaggerItem key={article.id}>
               <Link
                 to={
-                  article.slug === "beccaccino"
-                    ? "/beccaccino"
-                    : article.slug === "trionfo"
-                    ? "/trionfo"
-                    : article.slug === "maraffa"
-                    ? "/maraffa"
+                  article.isCustomPath
+                    ? `/${article.slug}`
                     : article.slug === "regole"
-                    ? "/regole"
-                    : article.slug === "tornei"
-                    ? "/tornei"
-                    : `/blog/${article.slug}`
+                      ? "/regole"
+                      : article.slug === "tornei"
+                        ? "/tornei"
+                        : `/blog/${article.slug}`
                 }
               >
                 <motion.div

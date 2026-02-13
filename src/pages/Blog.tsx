@@ -248,60 +248,59 @@ const Blog = () => {
               <StaggerItem key={article.id}>
                 <Link
                   to={
-                    article.slug === "regole"
-                      ? "/regole"
-                      : article.slug === "tornei"
-                      ? "/tornei"
+                    article.isCustomPath
+                      ? `/${article.slug}`
                       : `/blog/${article.slug}`
                   }
                 >
                   <motion.div
                     whileHover={{
-                      scale: 1.03,
+                      y: -8,
                       transition: { duration: 0.2 },
                     }}
                     whileTap={{ scale: 0.98 }}
                     className="h-full cursor-pointer"
                   >
-                    <Card className="h-full bg-white/95 backdrop-blur-sm border-2 border-marafone-yellow/30 hover:border-marafone-red/50 transition-all duration-300 shadow-lg hover:shadow-xl">
-                      <CardHeader className="pb-4">
-                        <div className="relative mb-4 flex justify-center">
+                    <Card className="h-full bg-white backdrop-blur-sm border-2 border-amber-50 hover:border-marafone-red/20 transition-all duration-300 shadow-xl hover:shadow-2xl rounded-[32px] overflow-hidden">
+                      <CardHeader className="p-8 pb-4">
+                        <div className="relative mb-6 flex justify-center p-6 bg-amber-50/50 rounded-3xl group">
                           <motion.img
                             src={article.image}
                             alt={article.title}
-                            className="w-16 h-24 object-contain drop-shadow-lg"
+                            className="w-16 h-24 object-contain drop-shadow-xl"
                             whileHover={{
-                              rotate: [0, -5, 5, 0],
+                              rotate: [0, -10, 10, 0],
+                              scale: 1.1,
                               transition: { duration: 0.5 },
                             }}
                           />
                         </div>
 
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-xs font-game bg-marafone-yellow/20 text-marafone-dark px-3 py-1 rounded-full border border-marafone-yellow/50">
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="text-xs font-bold bg-marafone-yellow/20 text-amber-900 px-4 py-1.5 rounded-full border border-marafone-yellow/30">
                             {article.category}
                           </span>
-                          <div className="flex items-center gap-2 text-marafone-red/70 text-sm">
+                          <div className="flex items-center gap-2 text-amber-900/40 text-sm">
                             <Calendar className="h-3 w-3" />
-                            <span className="font-game">
+                            <span className="font-bold">
                               {new Date(article.date).toLocaleDateString(
                                 "it-IT",
                                 {
                                   year: "numeric",
                                   month: "short",
                                   day: "numeric",
-                                }
+                                },
                               )}
                             </span>
                           </div>
                         </div>
 
-                        <CardTitle className="font-game text-xl text-marafone-dark line-clamp-2 mb-3">
+                        <CardTitle className="font-retro text-2xl text-marafone-dark line-clamp-2 mb-3 leading-tight">
                           {article.title}
                         </CardTitle>
                       </CardHeader>
-                      <CardContent className="pt-0">
-                        <CardDescription className="font-game text-marafone-dark/70 line-clamp-4">
+                      <CardContent className="px-8 pb-8 pt-0">
+                        <CardDescription className="text-amber-900/70 text-base leading-relaxed line-clamp-4">
                           {article.description}
                         </CardDescription>
                       </CardContent>

@@ -298,27 +298,35 @@ const GameRules = () => {
 
         <div className="md:max-w-4xl md:mx-auto px-0 md:px-4 mt-4">
           {/* Indice compatto in cima */}
-          <nav className="mb-6 flex flex-wrap gap-1.5 justify-center px-2">
+          <nav className="mb-8 flex flex-wrap gap-3 justify-center px-2">
             {SECTIONS.map((s) => (
               <motion.button
                 key={s.id}
-                className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-md font-medium transition-all text-sm border border-amber-200/60 bg-amber-50/70 hover:bg-amber-100/80 text-amber-800 shadow-sm hover:shadow-md`}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all text-sm border-2 ${
+                  activeSection === s.id
+                    ? "border-marafone-red bg-marafone-red text-white shadow-lg"
+                    : "border-amber-200/60 bg-white/70 hover:bg-white text-amber-900 shadow-sm hover:shadow-md"
+                }`}
                 onClick={() => scrollToSection(s.id)}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="w-4 h-4 flex items-center justify-center">
-                  {React.cloneElement(s.icon, { className: "w-4 h-4" })}
+                <span className="w-5 h-5 flex items-center justify-center">
+                  {React.cloneElement(s.icon, {
+                    className: `w-4 h-4 ${
+                      activeSection === s.id ? "text-white" : ""
+                    }`,
+                  })}
                 </span>
-                <span className="text-xs font-semibold">{s.title}</span>
+                <span className="font-game font-bold">{s.title}</span>
               </motion.button>
             ))}
           </nav>
 
           {/* Main content */}
-          <main className="py-2">
-            <Card className="overflow-hidden border-0 md:border-4 border-amber-800/50 shadow-xl relative bg-gradient-to-br from-amber-50/90 to-orange-100/60 rounded-3xl">
-              <CardContent className="p-6 md:p-10 relative z-10">
+          <main className="py-2 pb-12">
+            <Card className="overflow-hidden border-0 shadow-2xl relative bg-white/80 backdrop-blur-sm rounded-[32px]">
+              <CardContent className="p-8 md:p-12 relative z-10">
                 {/* Introduzione */}
                 <section id="introduzione" className="mb-12 scroll-mt-24">
                   <SectionTitle icon={SECTIONS[0].icon} color="text-amber-800">
@@ -339,22 +347,22 @@ const GameRules = () => {
                     </span>
                     .
                   </p>
-                  <div className="flex flex-wrap gap-2 mt-4">
+                  <div className="flex flex-wrap gap-3 mt-6">
                     <Badge
                       variant="outline"
-                      className="bg-amber-100/80 border-amber-400 text-amber-900"
+                      className="bg-amber-100/50 border-amber-200 text-amber-900 px-4 py-2 rounded-full text-sm font-bold"
                     >
                       Squadre: 2 da 2 giocatori
                     </Badge>
                     <Badge
                       variant="outline"
-                      className="bg-amber-100/80 border-amber-400 text-amber-900"
+                      className="bg-amber-100/50 border-amber-200 text-amber-900 px-4 py-2 rounded-full text-sm font-bold"
                     >
                       Mazzo: 40 carte
                     </Badge>
                     <Badge
                       variant="outline"
-                      className="bg-amber-100/80 border-amber-400 text-amber-900"
+                      className="bg-amber-100/50 border-amber-200 text-amber-900 px-4 py-2 rounded-full text-sm font-bold"
                     >
                       Vince chi arriva a 41 punti
                     </Badge>
@@ -599,10 +607,10 @@ function SectionTitle({
 }) {
   return (
     <h2
-      className={`text-2xl font-bold mb-4 flex items-center gap-3 border-b-2 pb-2 ${color}`}
+      className={`text-3xl font-retro mb-8 flex items-center gap-4 border-b-2 border-amber-100 pb-4 ${color}`}
     >
       <motion.span
-        className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-amber-200 to-amber-400 shadow-lg"
+        className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white shadow-xl border-2 border-amber-100"
         whileHover={{ rotate: 10, scale: 1.1 }}
         transition={{ duration: 0.2 }}
       >
@@ -624,15 +632,19 @@ function CallCard({
 }) {
   return (
     <motion.div
-      className="bg-gradient-to-br from-amber-100/70 to-orange-100/40 rounded-xl p-4 border-2 border-amber-700/20 flex flex-col items-start shadow"
+      className="bg-white hover:bg-amber-50/50 rounded-[32px] p-8 border-2 border-amber-100 shadow-xl flex flex-col items-center text-center transition-colors duration-300"
       whileHover={{
-        y: -5,
+        y: -8,
         transition: { duration: 0.2 },
       }}
     >
-      <span className="text-3xl mb-2">{emoji}</span>
-      <span className="font-bold text-amber-800 text-lg mb-1">{title}</span>
-      <span className="text-amber-950 text-base">{desc}</span>
+      <span className="text-5xl mb-4 p-4 bg-amber-50 rounded-full">
+        {emoji}
+      </span>
+      <span className="font-retro text-2xl text-marafone-red mb-3">
+        {title}
+      </span>
+      <span className="text-amber-900/80 text-lg leading-relaxed">{desc}</span>
     </motion.div>
   );
 }

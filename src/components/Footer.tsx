@@ -101,7 +101,7 @@ const Footer = () => {
               Il gioco di carte tradizionale della Romagna, rivisitato per l'era
               digitale. Porta con te l'atmosfera autentica dei bar romagnoli!
             </p>
-            <div className="flex gap-4 items-center">
+            <div className="flex items-center">
               <a
                 href="https://play.google.com/store/apps/details?id=com.eliazavatta.maraffa"
                 target="_blank"
