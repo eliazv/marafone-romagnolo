@@ -24,11 +24,11 @@ const ScreenshotsSection = () => {
 
   const screenshots = [
     {
-      img: "/img/screen-playstore/photo_2025-11-14_19-45-39.jpg",
+      img: "/img/screen-playstore/photo_2025-11-14_19-45-39.webp",
       showFeatures: true,
     },
     {
-      img: "/img/screen-playstore/photo_2025-11-14_19-45-39.jpg",
+      img: "/img/screen-playstore/photo_2025-11-14_19-45-39.webp",
       showFeatures: false,
     },
   ];

@@ -12,11 +12,9 @@ const FeaturesSection = () => {
   const [currentScreen, setCurrentScreen] = useState(0);
 
   const screens = [
-    "/img/screen-playstore/photo_2025-11-14_15-13-54.jpg",
-    "/img/screen-playstore/photo_2025-11-14_19-45-39.jpg",
-    // "/img/screen-playstore/Screenshot 2025-11-14 194449.png",
-    // "/img/screen-playstore/Screenshot 2025-11-14 194523.png",
-    "/img/screen-playstore/Screenshot 2025-11-14 194943.png",
+    "/img/screen-playstore/photo_2025-11-14_15-13-54.webp",
+    "/img/screen-playstore/photo_2025-11-14_19-45-39.webp",
+    "/img/screen-playstore/screenshot-194943.webp",
   ];
 
   useEffect(() => {
@@ -181,6 +179,8 @@ const FeaturesSection = () => {
                   src={screens[currentScreen]}
                   alt={`Screenshot ${currentScreen + 1}`}
                   className="w-full h-full object-cover rounded-[2rem]"
+                  loading={currentScreen === 0 ? "eager" : "lazy"}
+                  decoding="async"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
