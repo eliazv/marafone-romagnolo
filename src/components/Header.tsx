@@ -40,7 +40,7 @@ function MobileMenu({ onMenuStateChange }) {
         {/* Hamburger button con animazione */}
         <button
           aria-label="Apri menu"
-          className={`relative p-4 rounded-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 ${
+          className={`relative p-2 md:p-4 rounded-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 ${
             open
               ? "bg-gradient-to-br from-red-500 to-red-600 shadow-2xl shadow-red-500/30"
               : "bg-gradient-to-br from-marafone-yellow to-yellow-400 shadow-xl shadow-yellow-500/30 hover:shadow-2xl hover:shadow-yellow-500/40"
@@ -142,6 +142,27 @@ function MobileMenu({ onMenuStateChange }) {
 const Header = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+  const [hideOnScroll, setHideOnScroll] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrollY(currentScrollY);
+      
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setHideOnScroll(true);
+      } else {
+        setHideOnScroll(false);
+      }
+      
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header
@@ -149,7 +170,7 @@ const Header = () => {
         isMobileMenuOpen
           ? "bg-white/95 md:bg-white/80 md:backdrop-blur-lg"
           : "bg-white/70 md:bg-white/80 backdrop-blur-lg"
-      }`}
+      } ${hideOnScroll ? '-translate-y-[120%]' : 'translate-y-0'}`}
       style={{
         left: "50%",
         right: "auto",

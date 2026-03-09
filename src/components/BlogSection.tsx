@@ -23,7 +23,7 @@ const BlogSection = () => {
       id="blog"
       className="relative py-10 px-4 bg-gradient-to-b from-white to-marafone-beige/20 overflow-hidden"
     >
-      <div className="container mx-auto text-center relative z-10 max-w-6xl">
+      <div className="container mx-auto text-center relative z-10 max-w-6xl px-2 md:px-4">
         <FadeInUp delay={0.2}>
           <div className="flex items-center justify-center gap-3 mb-3">
             <BookOpen className="h-7 w-7 text-marafone-red" />

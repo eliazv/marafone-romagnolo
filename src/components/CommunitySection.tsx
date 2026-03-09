@@ -89,7 +89,7 @@ const CommunitySection = () => {
           );
         })}
       </div>
-      <div className="container mx-auto text-center relative z-10">
+      <div className="container mx-auto text-center relative z-10 px-2 md:px-4">
         <FadeInUp delay={0.2}>
           <h2 className="font-retro text-4xl md:text-5xl mb-8">
             Unisciti alla Community!

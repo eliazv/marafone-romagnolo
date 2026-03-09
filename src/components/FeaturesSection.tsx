@@ -66,7 +66,7 @@ const FeaturesSection = () => {
       id="features"
       className="relative py-12 md:py-20 px-4 bg-gradient-to-b from-marafone-beige/30 to-white overflow-hidden"
     >
-      <div className="container mx-auto relative z-10 max-w-7xl">
+      <div className="container mx-auto relative z-10 max-w-7xl px-2 md:px-4">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
           {/* Colonna Sinistra: Intro + Features + Stats */}
           <div className="lg:col-span-3 space-y-12">

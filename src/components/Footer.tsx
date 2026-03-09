@@ -90,7 +90,7 @@ const Footer = () => {
           );
         })}
       </div>
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-10 px-2 md:px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Logo and description */}
           <div className="md:col-span-2">
