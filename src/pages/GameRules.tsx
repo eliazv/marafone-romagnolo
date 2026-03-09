@@ -221,7 +221,7 @@ const GameRules = () => {
         <Header />
 
         {/* Hero Section */}
-        <section className="relative pt-32 pb-16 px-4 bg-gradient-to-r from-marafone-red to-red-600 text-white overflow-hidden">
+        <section className="relative pt-20 sm:pt-32 pb-8 sm:pb-16 px-2 sm:px-4 bg-gradient-to-r from-marafone-red to-red-600 text-white overflow-hidden">
           <div className="absolute inset-0 opacity-10 bg-[url('/img/hero.webp')] bg-cover bg-center" />
           <div className="container mx-auto relative z-10">
             <FadeInUp>
@@ -243,7 +243,7 @@ const GameRules = () => {
           </div>
         </section>
 
-        <div className="container mx-auto px-4 py-12">
+        <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-12">
           {/* Indice compatto in cima */}
           <nav className="mb-12 flex flex-wrap gap-4 justify-center">
             {SECTIONS.map((s) => (
@@ -271,9 +271,9 @@ const GameRules = () => {
           </nav>
 
           {/* Main content */}
-          <main className="py-2 pb-12">
+          <main className="py-2 pb-12 px-1 sm:px-0">
             <Card className="overflow-hidden border-0 shadow-2xl relative bg-white/80 backdrop-blur-sm rounded-[32px]">
-              <CardContent className="p-8 md:p-12 relative z-10">
+              <CardContent className="p-4 sm:p-8 md:p-12 relative z-10">
                 {/* Introduzione */}
                 <section id="introduzione" className="mb-12 scroll-mt-24">
                   <SectionTitle icon={SECTIONS[0].icon} color="text-amber-800">

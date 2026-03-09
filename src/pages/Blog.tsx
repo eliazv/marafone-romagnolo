@@ -57,7 +57,7 @@ const Blog = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-16 px-4 bg-marafone-red text-white overflow-hidden">
+      <section className="relative py-8 sm:py-16 px-2 sm:px-4 bg-marafone-red text-white overflow-hidden">
         {/* Carte decorative animate */}
         <div className="absolute inset-0 pointer-events-none select-none z-0">
           {carteImages.slice(15, 20).map((src, i) => {
@@ -127,7 +127,7 @@ const Blog = () => {
           })}
         </div>
 
-        <div className="container mx-auto text-center relative z-10 pt-16">
+        <div className="container mx-auto text-center relative z-10 pt-8 sm:pt-16">
           <FadeInUp delay={0.2}>
             <div className="flex items-center justify-center gap-4 mb-6">
               <motion.div
@@ -172,7 +172,7 @@ const Blog = () => {
       </section>
 
       {/* Articles Grid */}
-      <section className="py-10 px-4 relative overflow-hidden">
+      <section className="py-5 sm:py-10 px-2 sm:px-4 relative overflow-hidden">
         {/* Carte decorative per la sezione articoli */}
         <div className="absolute inset-0 pointer-events-none select-none z-0">
           {carteImages.slice(25, 30).map((src, i) => {
@@ -262,7 +262,7 @@ const Blog = () => {
                     className="h-full cursor-pointer"
                   >
                     <Card className="h-full bg-white backdrop-blur-sm border-2 border-amber-50 hover:border-marafone-red/20 transition-all duration-300 shadow-xl hover:shadow-2xl rounded-[32px] overflow-hidden">
-                      <CardHeader className="p-8 pb-4">
+                      <CardHeader className="p-4 sm:p-8 pb-2 sm:pb-4">
                         <div className="relative mb-6 flex justify-center p-6 bg-amber-50/50 rounded-3xl group">
                           <motion.img
                             src={article.image}
@@ -299,7 +299,7 @@ const Blog = () => {
                           {article.title}
                         </CardTitle>
                       </CardHeader>
-                      <CardContent className="px-8 pb-8 pt-0">
+                      <CardContent className="px-4 sm:px-8 pb-4 sm:pb-8 pt-0">
                         <CardDescription className="text-amber-900/70 text-base leading-relaxed line-clamp-4">
                           {article.description}
                         </CardDescription>

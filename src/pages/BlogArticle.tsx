@@ -11,19 +11,21 @@ import { allArticles } from "@/data/articles";
 
 const BlogArticle = () => {
   const { slug } = useParams<{ slug: string }>();
-  
+
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
 
-  const article = allArticles.find(art => art.slug === slug);
+  const article = allArticles.find((art) => art.slug === slug);
 
   if (!article) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-marafone-beige to-marafone-yellow flex items-center justify-center">
         <div className="text-center">
-          <h1 className="font-retro text-4xl text-marafone-red mb-4">Articolo non trovato</h1>
+          <h1 className="font-retro text-4xl text-marafone-red mb-4">
+            Articolo non trovato
+          </h1>
           <Link to="/blog">
             <Button className="bg-marafone-red hover:bg-marafone-red/90 text-white font-game">
               Torna al Blog
@@ -39,51 +41,70 @@ const BlogArticle = () => {
       <Helmet>
         <title>{article.title} | Blog Marafone Romagnolo</title>
         <meta name="description" content={article.description} />
-        <meta name="keywords" content={`${article.category}, ${article.title}, marafone, maraffa, beccaccino, trionfo, carte, gioco, romagnolo`} />
-        <link rel="canonical" href={`https://marafone-romagnolo.it/blog/${article.slug}`} />
+        <meta
+          name="keywords"
+          content={`${article.category}, ${article.title}, marafone, maraffa, beccaccino, trionfo, carte, gioco, romagnolo`}
+        />
+        <link
+          rel="canonical"
+          href={`https://marafone-romagnolo.it/blog/${article.slug}`}
+        />
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.description} />
-        <meta property="og:url" content={`https://marafone-romagnolo.it/blog/${article.slug}`} />
+        <meta
+          property="og:url"
+          content={`https://marafone-romagnolo.it/blog/${article.slug}`}
+        />
         <meta property="og:type" content="article" />
-        <meta property="og:image" content={`https://marafone-romagnolo.it${article.image}`} />
-        <meta property="article:published_time" content={new Date(article.date).toISOString()} />
-        <meta property="article:modified_time" content={new Date(article.date).toISOString()} /> {/* Assuming published and modified are the same for now */}
+        <meta
+          property="og:image"
+          content={`https://marafone-romagnolo.it${article.image}`}
+        />
+        <meta
+          property="article:published_time"
+          content={new Date(article.date).toISOString()}
+        />
+        <meta
+          property="article:modified_time"
+          content={new Date(article.date).toISOString()}
+        />{" "}
+        {/* Assuming published and modified are the same for now */}
         <meta property="article:section" content={article.category} />
-        <meta property="article:tag" content={article.category} /> {/* Can add more tags if available in article object */}
-
+        <meta property="article:tag" content={article.category} />{" "}
+        {/* Can add more tags if available in article object */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": article.title,
-            "description": article.description,
-            "image": `https://marafone-romagnolo.it${article.image}`,
-            "datePublished": new Date(article.date).toISOString(),
-            "dateModified": new Date(article.date).toISOString(), // Assuming published and modified are the same for now
-            "author": {
+            headline: article.title,
+            description: article.description,
+            image: `https://marafone-romagnolo.it${article.image}`,
+            datePublished: new Date(article.date).toISOString(),
+            dateModified: new Date(article.date).toISOString(), // Assuming published and modified are the same for now
+            author: {
               "@type": "Person",
-              "name": "Elia Zavatta" // Assuming Elia Zavatta is the author for all articles
+              name: "Elia Zavatta", // Assuming Elia Zavatta is the author for all articles
             },
-            "publisher": {
+            publisher: {
               "@type": "Organization",
-              "name": "Marafone Team",
-              "url": "https://marafone-romagnolo.it/",
-              "logo": {
+              name: "Marafone Team",
+              url: "https://marafone-romagnolo.it/",
+              logo: {
                 "@type": "ImageObject",
-                "url": "https://marafone-romagnolo.it/img/logo-rosso.jpg"
-              }
+                url: "https://marafone-romagnolo.it/img/logo-rosso.jpg",
+              },
             },
-            "mainEntityOfPage": {
+            mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": `https://marafone-romagnolo.it/blog/${article.slug}`
-            }
+              "@id": `https://marafone-romagnolo.it/blog/${article.slug}`,
+            },
           })}
         </script>
       </Helmet>
       <Header />
-      
+
       {/* Hero Section */}
-      <section className="relative py-16 px-4 bg-marafone-red text-white overflow-hidden">
+      <section className="relative py-8 sm:py-16 px-2 sm:px-4 bg-marafone-red text-white overflow-hidden">
         {/* Carte decorative animate */}
         <div className="absolute inset-0 pointer-events-none select-none z-0">
           {carteImages.slice(0, 5).map((src, i) => {
@@ -153,7 +174,7 @@ const BlogArticle = () => {
           })}
         </div>
 
-        <div className="container mx-auto relative z-10 pt-16">
+        <div className="container mx-auto relative z-10 pt-8 sm:pt-16">
           <FadeInUp delay={0.2}>
             <div className="flex items-center gap-4 mb-6">
               <Button
@@ -183,10 +204,10 @@ const BlogArticle = () => {
               <div className="flex items-center gap-2 text-marafone-yellow">
                 <Calendar className="h-5 w-5" />
                 <span className="font-game">
-                  {new Date(article.date).toLocaleDateString('it-IT', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
+                  {new Date(article.date).toLocaleDateString("it-IT", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
                   })}
                 </span>
               </div>
@@ -202,7 +223,7 @@ const BlogArticle = () => {
       </section>
 
       {/* Article Content */}
-      <section className="py-16 px-4">
+      <section className="py-6 sm:py-16 px-2 sm:px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="flex justify-center mb-8">
             <motion.img
@@ -212,17 +233,17 @@ const BlogArticle = () => {
               whileHover={{
                 rotate: [0, -5, 5, 0],
                 scale: [1, 1.05, 1],
-                transition: { duration: 0.5 }
+                transition: { duration: 0.5 },
               }}
             />
           </div>
 
-          <div className="bg-gradient-to-br from-white via-marafone-beige/30 to-white rounded-3xl p-8 md:p-12 shadow-xl border-2 border-marafone-yellow/30 relative overflow-hidden">
+          <div className="bg-gradient-to-br from-white via-marafone-beige/30 to-white rounded-3xl p-4 sm:p-8 md:p-12 shadow-xl border-2 border-marafone-yellow/30 relative overflow-hidden">
             {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-marafone-yellow/20 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-marafone-red/10 to-transparent rounded-full translate-y-12 -translate-x-12"></div>
-            
-            <div 
+
+            <div
               className="prose prose-xl max-w-none relative z-10
                          prose-headings:font-retro prose-headings:mb-8 prose-headings:mt-10 prose-headings:first:mt-0
                          prose-h1:text-4xl prose-h1:text-marafone-red prose-h1:bg-gradient-to-r prose-h1:from-marafone-red prose-h1:to-marafone-red/80 prose-h1:bg-clip-text prose-h1:text-transparent prose-h1:drop-shadow-sm prose-h1:border-b-4 prose-h1:border-marafone-yellow/50 prose-h1:pb-4
@@ -243,12 +264,14 @@ const BlogArticle = () => {
                          prose-pre:bg-gradient-to-br prose-pre:from-marafone-dark prose-pre:to-gray-800 prose-pre:text-white prose-pre:rounded-2xl prose-pre:shadow-2xl prose-pre:border-4 prose-pre:border-marafone-yellow/20 prose-pre:p-6"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
-            
+
             {/* Reading progress indicator */}
             <div className="mt-8 flex items-center justify-center">
               <div className="flex items-center gap-2 bg-marafone-yellow/20 px-4 py-2 rounded-full border border-marafone-yellow/30">
                 <div className="w-2 h-2 bg-marafone-red rounded-full animate-pulse"></div>
-                <span className="text-sm font-game text-marafone-dark font-semibold">Articolo completato</span>
+                <span className="text-sm font-game text-marafone-dark font-semibold">
+                  Articolo completato
+                </span>
                 <div className="w-2 h-2 bg-marafone-red rounded-full animate-pulse"></div>
               </div>
             </div>
