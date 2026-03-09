@@ -47,20 +47,20 @@ function MobileMenu({ onMenuStateChange }) {
           }`}
           onClick={() => setOpen((v) => !v)}
         >
-          <div className="relative w-8 h-8 flex flex-col justify-center items-center">
+          <div className="relative w-6 h-6 md:w-8 md:h-8 flex flex-col justify-center items-center">
             <span
-              className={`block w-6 h-0.5 bg-marafone-dark transition-all duration-300 ${
+              className={`block w-5 h-0.5 bg-marafone-dark transition-all duration-300 ${
                 open ? "rotate-45 translate-y-0.5" : ""
               }`}
             />
             <span
-              className={`block w-6 h-0.5 bg-marafone-dark mt-1.5 transition-all duration-300 ${
+              className={`block w-5 h-0.5 bg-marafone-dark mt-1 transition-all duration-300 ${
                 open ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`block w-6 h-0.5 bg-marafone-dark mt-1.5 transition-all duration-300 ${
-                open ? "-rotate-45 -translate-y-2" : ""
+              className={`block w-5 h-0.5 bg-marafone-dark mt-1 transition-all duration-300 ${
+                open ? "-rotate-45 -translate-y-1.5" : ""
               }`}
             />
           </div>
@@ -81,7 +81,7 @@ function MobileMenu({ onMenuStateChange }) {
           {/* Menu items */}
           <div className="px-3 space-y-2">
             <button
-              className="w-full group relative overflow-hidden bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 text-marafone-dark hover:text-marafone-red transition-all duration-300 px-6 py-4 rounded-2xl text-left font-game text-lg border border-blue-200/50 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-500/20 transform hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full group relative overflow-hidden bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 text-marafone-dark hover:text-marafone-red transition-all duration-300 px-6 py-4 rounded-2xl text-left font-game text-xl border border-blue-200/50 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-500/20 transform hover:scale-[1.02] active:scale-[0.98]"
               onClick={() => {
                 setOpen(false);
                 window.location.href = "/regole";
@@ -98,7 +98,7 @@ function MobileMenu({ onMenuStateChange }) {
             </button>
 
             <button
-              className="w-full group relative overflow-hidden bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 text-marafone-dark hover:text-marafone-red transition-all duration-300 px-6 py-4 rounded-2xl text-left font-game text-lg border border-purple-200/50 hover:border-purple-300 hover:shadow-lg hover:shadow-purple-500/20 transform hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full group relative overflow-hidden bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 text-marafone-dark hover:text-marafone-red transition-all duration-300 px-6 py-4 rounded-2xl text-left font-game text-xl border border-purple-200/50 hover:border-purple-300 hover:shadow-lg hover:shadow-purple-500/20 transform hover:scale-[1.02] active:scale-[0.98]"
               onClick={() => {
                 setOpen(false);
                 window.location.href = "/blog";
@@ -115,7 +115,7 @@ function MobileMenu({ onMenuStateChange }) {
             </button>
 
             <button
-              className="w-full group relative overflow-hidden bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 transition-all duration-300 px-6 py-4 rounded-2xl text-left font-game text-lg border border-red-400/50 hover:shadow-lg hover:shadow-red-500/40 transform hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full group relative overflow-hidden bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 transition-all duration-300 px-6 py-4 rounded-2xl text-left font-game text-xl border border-red-400/50 hover:shadow-lg hover:shadow-red-500/40 transform hover:scale-[1.02] active:scale-[0.98]"
               onClick={() => {
                 setOpen(false);
                 window.open("https://gioco.marafone-romagnolo.it/", "_blank");
