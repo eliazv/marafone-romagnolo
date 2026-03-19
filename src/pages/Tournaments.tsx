@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import {
   Trophy,
@@ -15,6 +14,7 @@ import {
   ArrowLeft,
   Info,
   Users,
+  Loader2,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -39,6 +39,49 @@ interface Tournament {
   description?: string;
 }
 
+// URL del Google Sheet pubblicato come CSV (lettura pubblica)
+const COMMUNITY_SHEET_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vShtN2obGjJXHqRjlC4WaSqdd5GV_FA4cHSHK6gsjp4LVlx1OBvuxrNAi1r9L5f1KRZBHcR3goUtCWe/pub?gid=0&single=true&output=csv";
+
+// URL del Google Apps Script Web App (scrittura)
+// Vedi istruzioni: Extensions → Apps Script → incolla il codice → Deploy → Web App
+const APPS_SCRIPT_URL =
+  "INSERISCI_URL_APPS_SCRIPT";
+
+interface CommunityVenue {
+  nome: string;
+  citta: string;
+  indirizzo: string;
+  giorno: string;
+  quota: string;
+  linkMaps: string;
+}
+
+function parseCSV(text: string): CommunityVenue[] {
+  const lines = text.trim().split("\n");
+  if (lines.length < 2) return [];
+  return lines.slice(1).map((line) => {
+    // gestisce campi con virgola racchiusi tra virgolette
+    const cols: string[] = [];
+    let cur = "";
+    let inQuotes = false;
+    for (const ch of line) {
+      if (ch === '"') { inQuotes = !inQuotes; }
+      else if (ch === "," && !inQuotes) { cols.push(cur.trim()); cur = ""; }
+      else { cur += ch; }
+    }
+    cols.push(cur.trim());
+    return {
+      nome: cols[0] ?? "",
+      citta: cols[1] ?? "",
+      indirizzo: cols[2] ?? "",
+      giorno: cols[3] ?? "",
+      quota: cols[4] ?? "",
+      linkMaps: cols[5] ?? "",
+    };
+  }).filter((v) => v.nome.length > 0);
+}
+
 // Lista tornei - da modificare quando necessario
 const TOURNAMENTS: Tournament[] = [
   {
@@ -52,14 +95,63 @@ const TOURNAMENTS: Tournament[] = [
   },
 ];
 
+const EMPTY_FORM = {
+  nome: "",
+  citta: "",
+  indirizzo: "",
+  giorno: "",
+  quota: "",
+  linkMaps: "",
+};
+
 const Tournaments = () => {
+  const [communityVenues, setCommunityVenues] = useState<CommunityVenue[]>([]);
+  const [loadingVenues, setLoadingVenues] = useState(true);
+  const [form, setForm] = useState(EMPTY_FORM);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitState, setSubmitState] = useState<"idle" | "success" | "error">("idle");
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleRequestTournament = () => {
-    window.location.href =
-      "mailto:marafoneromagnolo@gmail.com?subject=Richiesta Aggiunta Torneo&body=Salve,%0A%0AVorrei proporre l'aggiunta del seguente torneo:%0A%0ANome torneo: %0ALuogo: %0AData: %0AQuota iscrizione: %0ALink registrazione: %0ADescrizione: %0A%0AGrazie";
+  useEffect(() => {
+    fetch(COMMUNITY_SHEET_URL)
+      .then((res) => res.text())
+      .then((text) => setCommunityVenues(parseCSV(text)))
+      .catch(() => {})
+      .finally(() => setLoadingVenues(false));
+  }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setSubmitState("idle");
+    try {
+      // no-cors: il browser non può leggere la risposta ma la richiesta arriva
+      await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: JSON.stringify(form),
+      });
+      setSubmitState("success");
+      setForm(EMPTY_FORM);
+      // ricarica i venues dopo qualche secondo per mostrare la nuova riga
+      setTimeout(() => {
+        fetch(COMMUNITY_SHEET_URL)
+          .then((res) => res.text())
+          .then((text) => setCommunityVenues(parseCSV(text)))
+          .catch(() => {});
+      }, 3000);
+    } catch {
+      setSubmitState("error");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -204,6 +296,88 @@ const Tournaments = () => {
                 )}
               </section>
 
+              {/* Circoli e Bar segnalati dalla community */}
+              {(loadingVenues || communityVenues.length > 0) && (
+                <section id="community-venues">
+                  <FadeInUp>
+                    <div className="flex items-center gap-3 mb-8">
+                      <Users className="h-8 w-8 text-amber-600" />
+                      <h2 className="text-3xl font-retro text-amber-900">
+                        Segnalati dalla Community
+                      </h2>
+                    </div>
+                    <p className="font-game text-amber-900/60 mb-6 -mt-4">
+                      Bar e circoli dove si gioca regolarmente, segnalati dagli
+                      appassionati.
+                    </p>
+                  </FadeInUp>
+
+                  {loadingVenues ? (
+                    <div className="flex justify-center py-8">
+                      <Loader2 className="h-8 w-8 animate-spin text-amber-400" />
+                    </div>
+                  ) : (
+                    <StaggerContainer className="grid gap-4">
+                      {communityVenues.map((venue, i) => (
+                        <StaggerItem
+                          key={i}
+                          className="overflow-hidden border-0 shadow-md hover:shadow-xl transition-all duration-300 bg-white rounded-[24px]"
+                        >
+                          <CardContent className="p-6">
+                            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                              <div className="flex-1">
+                                <h3 className="text-xl font-retro text-amber-950 mb-2">
+                                  {venue.nome}
+                                </h3>
+                                <div className="flex flex-wrap gap-3">
+                                  {venue.giorno && (
+                                    <Badge
+                                      variant="secondary"
+                                      className="bg-marafone-yellow/20 text-amber-900 border-none px-3 py-1 rounded-full font-bold text-xs"
+                                    >
+                                      <Calendar className="w-3 h-3 mr-1 opacity-50" />
+                                      {venue.giorno}
+                                    </Badge>
+                                  )}
+                                  <span className="flex items-center gap-1.5 text-sm text-amber-800">
+                                    <MapPin className="w-4 h-4 text-marafone-red flex-shrink-0" />
+                                    {venue.indirizzo
+                                      ? `${venue.indirizzo}, ${venue.citta}`
+                                      : venue.citta}
+                                  </span>
+                                  {venue.quota && (
+                                    <span className="flex items-center gap-1.5 text-sm text-amber-800">
+                                      <Euro className="w-4 h-4 text-green-600 flex-shrink-0" />
+                                      {venue.quota}
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+                              {venue.linkMaps && (
+                                <Button
+                                  asChild
+                                  variant="outline"
+                                  className="border-amber-200 text-amber-900 hover:bg-amber-50 font-retro rounded-full px-6 shrink-0"
+                                >
+                                  <a
+                                    href={venue.linkMaps}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    <MapPin className="h-4 w-4 mr-2" />
+                                    Mappa
+                                  </a>
+                                </Button>
+                              )}
+                            </div>
+                          </CardContent>
+                        </StaggerItem>
+                      ))}
+                    </StaggerContainer>
+                  )}
+                </section>
+              )}
+
               {/* Form di Segnalazione */}
               <section id="segnala-torneo">
                 <FadeInUp>
@@ -225,81 +399,125 @@ const Tournaments = () => {
                         </div>
                       </div>
 
-                      <form
-                        action="https://formspree.io/f/xeelapew"
-                        method="POST"
-                        className="space-y-6"
-                      >
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                          <div className="space-y-2">
-                            <Label htmlFor="tournament-name">
-                              Nome del torneo
-                            </Label>
-                            <Input
-                              id="tournament-name"
-                              name="nome-torneo"
-                              placeholder="es: Bar Rita"
-                              required
-                              className="rounded-xl border-amber-100 bg-white/50 focus:border-marafone-red"
-                            />
-                          </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="location">Località e Via</Label>
-                            <Input
-                              id="location"
-                              name="luogo"
-                              placeholder="Ravenna, Via..."
-                              required
-                              className="rounded-xl border-amber-100 bg-white/50 focus:border-marafone-red"
-                            />
-                          </div>
+                      {submitState === "success" ? (
+                        <div className="text-center py-12">
+                          <div className="text-5xl mb-4">🎉</div>
+                          <h3 className="text-2xl font-retro text-amber-900 mb-2">
+                            Grazie per la segnalazione!
+                          </h3>
+                          <p className="font-game text-amber-900/70">
+                            Il tuo locale apparirà nella lista tra pochi secondi.
+                          </p>
+                          <Button
+                            onClick={() => setSubmitState("idle")}
+                            variant="outline"
+                            className="mt-6 font-retro border-amber-300 text-amber-900 rounded-full"
+                          >
+                            Segnala un altro
+                          </Button>
                         </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                          <div className="space-y-2">
-                            <Label htmlFor="date">
-                              Quando si gioca? (anche ricorrente)
-                            </Label>
-                            <Input
-                              id="date"
-                              name="data"
-                              placeholder="es: Ogni Martedì ore 20:30"
-                              required
-                              className="rounded-xl border-amber-100 bg-white/50 focus:border-marafone-red"
-                            />
+                      ) : (
+                        <form onSubmit={handleSubmit} className="space-y-6">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="space-y-2">
+                              <Label htmlFor="nome">Nome del locale / torneo</Label>
+                              <Input
+                                id="nome"
+                                name="nome"
+                                value={form.nome}
+                                onChange={handleChange}
+                                placeholder="es: Bar Rita"
+                                required
+                                className="rounded-xl border-amber-100 bg-white/50 focus:border-marafone-red"
+                              />
+                            </div>
+                            <div className="space-y-2">
+                              <Label htmlFor="citta">Città</Label>
+                              <Input
+                                id="citta"
+                                name="citta"
+                                value={form.citta}
+                                onChange={handleChange}
+                                placeholder="es: Ravenna"
+                                required
+                                className="rounded-xl border-amber-100 bg-white/50 focus:border-marafone-red"
+                              />
+                            </div>
                           </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="email">Tua Email (opzionale)</Label>
-                            <Input
-                              id="email"
-                              type="email"
-                              name="email"
-                              placeholder="tua@email.com"
-                              className="rounded-xl border-amber-100 bg-white/50 focus:border-marafone-red"
-                            />
+
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="space-y-2">
+                              <Label htmlFor="indirizzo">Indirizzo</Label>
+                              <Input
+                                id="indirizzo"
+                                name="indirizzo"
+                                value={form.indirizzo}
+                                onChange={handleChange}
+                                placeholder="es: Via Ravegnana 357"
+                                className="rounded-xl border-amber-100 bg-white/50 focus:border-marafone-red"
+                              />
+                            </div>
+                            <div className="space-y-2">
+                              <Label htmlFor="giorno">Quando si gioca?</Label>
+                              <Input
+                                id="giorno"
+                                name="giorno"
+                                value={form.giorno}
+                                onChange={handleChange}
+                                placeholder="es: Ogni Martedì ore 20:15"
+                                required
+                                className="rounded-xl border-amber-100 bg-white/50 focus:border-marafone-red"
+                              />
+                            </div>
                           </div>
-                        </div>
 
-                        <div className="space-y-2">
-                          <Label htmlFor="details">
-                            Dettagli Aggiuntivi (es. quota, premi, contatti)
-                          </Label>
-                          <Textarea
-                            id="details"
-                            name="messaggio"
-                            placeholder="Raccontaci di più sul torneo..."
-                            rows={4}
-                            className="rounded-2xl border-amber-100 bg-white/50 focus:border-marafone-red"
-                          />
-                        </div>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="space-y-2">
+                              <Label htmlFor="quota">Quota iscrizione (opzionale)</Label>
+                              <Input
+                                id="quota"
+                                name="quota"
+                                value={form.quota}
+                                onChange={handleChange}
+                                placeholder="es: 10€ o Gratuito"
+                                className="rounded-xl border-amber-100 bg-white/50 focus:border-marafone-red"
+                              />
+                            </div>
+                            <div className="space-y-2">
+                              <Label htmlFor="linkMaps">Link Google Maps (opzionale)</Label>
+                              <Input
+                                id="linkMaps"
+                                name="linkMaps"
+                                value={form.linkMaps}
+                                onChange={handleChange}
+                                placeholder="https://maps.app.goo.gl/..."
+                                className="rounded-xl border-amber-100 bg-white/50 focus:border-marafone-red"
+                              />
+                            </div>
+                          </div>
 
-                        <Button
-                          type="submit"
-                          className="w-full bg-marafone-red hover:bg-red-700 text-white font-retro text-xl py-8 rounded-2xl shadow-xl transition-all hover:scale-[1.01]"
-                        >
-                          Invia Segnalazione
-                        </Button>
-                      </form>
+                          {submitState === "error" && (
+                            <p className="text-red-600 font-game text-sm">
+                              Invio fallito. Riprova tra qualche secondo.
+                            </p>
+                          )}
+
+                          <Button
+                            type="submit"
+                            disabled={submitting}
+                            className="w-full bg-marafone-red hover:bg-red-700 text-white font-retro text-xl py-8 rounded-2xl shadow-xl transition-all hover:scale-[1.01] disabled:opacity-60 disabled:scale-100"
+                          >
+                            {submitting ? (
+                              <>
+                                <Loader2 className="h-5 w-5 mr-2 animate-spin" />
+                                Invio in corso...
+                              </>
+                            ) : (
+                              "Segnala subito"
+                            )}
+                          </Button>
+                        </form>
+                      )}
                     </CardContent>
                   </Card>
                 </FadeInUp>
