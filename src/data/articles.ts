@@ -6,7 +6,7 @@ export const allArticles = [
     description:
       "Beccaccino, Marafone, Maraffa, Trionfo: sono tutti nomi dello stesso gioco? Scopri le differenze tra le varianti regionali del gioco di carte romagnolo e perché ogni città lo chiama in modo diverso.",
     date: "2026-03-15",
-    image: "/img/carte/a-coppe.png",
+    image: "/img/carte/a-denara.png",
     slug: "differenza-marafone-maraffa-beccaccino-trionfo",
     category: "Guide",
     content: `
@@ -109,7 +109,7 @@ export const allArticles = [
     description:
       "Quanto tempo ci vuole per una partita di Marafone o Beccaccino? Scopri la durata media di una partita, quante mani si giocano e come varia il tempo in base al livello dei giocatori.",
     date: "2026-03-14",
-    image: "/img/carte/4-denara.png",
+    image: "/img/carte/a-spade.png",
     slug: "quanto-dura-partita-marafone-beccaccino",
     category: "Guide",
     content: `
