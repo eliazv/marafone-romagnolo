@@ -1,3 +1,14 @@
+La soluzione più semplice concreta
+Crei un Google Form con i campi: nome locale, indirizzo, giorno/ora, note
+Le risposte vanno in un Google Sheet pubblico in sola lettura
+Il sito fa un fetch() del Sheet come CSV al caricamento della pagina /tornei
+Mostri i risultati in una sezione "Circoli segnalati dalla community" separata da quelli "ufficiali"
+Pro: zero backend, zero costi, auto-moderazione (tu approvi nel Sheet prima di rendere pubblico la riga)
+
+Contro: un piccolo refactor di Tournaments.tsx per il fetch CSV
+
+Vuoi che implementi questa soluzione?
+
 - header togli tornei , metti tasto Gioca! a destra evidenziato
 - migliroa design e disposizione di sezione Perché scegliere Marafone Romagnolo? è troppo lunga elementi troppo grandi
 

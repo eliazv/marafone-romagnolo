@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Read(*)",
+      "Write(*)",
+      "Bash(grep -E \"\\\\.\\(tsx?|jsx?\\)$\")"
+    ]
+  }
+}
